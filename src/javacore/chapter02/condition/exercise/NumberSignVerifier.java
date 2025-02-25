@@ -21,11 +21,11 @@ public class NumberSignVerifier {
             System.out.println("Le chiffre est positif");
         }
 
-        if (number == 0) {
+        else if (number == 0) {
             System.out.println("Le chiffre est neutre");
         }
 
-        if (number < 0) {
+        else if (number < 0) {
             System.out.println("Le chiffre est négatif");
         }
 
