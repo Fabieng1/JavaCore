@@ -10,6 +10,7 @@ public class AgeBasedDiscount {
         if (age <= 25) {
             System.out.println("Vous bénéficiez du forfait jeune");
         }
+        //Sans doute sui-je aller trop vite en utilisant le & ?
         else if (age > 25 & age < 65) {
             System.out.println("Vous ne bénéficiez d'aucune réduction");
         }
