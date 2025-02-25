@@ -13,6 +13,7 @@ public class ParityChecker {
             System.out.println(number + " est un nombre impaire");
         }
 
+        //Exercice bonus
         long number2 = 3333777799999l;
 
         System.out.println("Le modulo de number2 % 2 est : " + number2 % 2);
