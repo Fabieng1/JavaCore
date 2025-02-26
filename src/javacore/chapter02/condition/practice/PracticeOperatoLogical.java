@@ -20,6 +20,12 @@ public class PracticeOperatoLogical {
         boolean trueAndTrueAndTrue  = true && true && true;  // true
         boolean trueAndTrueAndFalse = true && true && false; // false
 
+        boolean trueAndFalseAndTrue = true && false && true; // false
+
+        boolean isPreniumMember = true; // Est-ce que le passager est VIP ?
+
+        boolean isVipFlight = false; // Est-ce que le vol est VIP ?
+
         boolean trueOrTrueOrTrue =  true || true || true;  // true
         boolean trueOrTrueOrFalse = true || true || false; // true
 
@@ -30,7 +36,7 @@ public class PracticeOperatoLogical {
         int age = 15; // Age de l'utilisateur
         int seatAvailable = 40; // Nombre de place disponible dans l'avion
 
-        if (isLoggedIn && age >= 18 && seatAvailable > 0) {
+        if (isLoggedIn && age >= 18 && seatAvailable > 0 && (!isVipFlight || isPreniumMember)) {
 
             System.out.println("Réservation effectuée avec succès !");
             seatAvailable--; // seatAvailable -=1; seatAvailable = seatAvailable - 1;

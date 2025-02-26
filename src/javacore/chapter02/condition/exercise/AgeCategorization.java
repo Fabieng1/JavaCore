@@ -5,7 +5,7 @@ public class AgeCategorization {
     public static void main (String[] args) {
 
         //Enfant, adolescent, jeune adulte, adulte, senior
-        int age = 80;
+        int age = 9;
 
         if (age < 10) {
             System.out.println("Vous êtes un enfant");
