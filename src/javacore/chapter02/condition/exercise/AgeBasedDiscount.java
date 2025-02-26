@@ -5,7 +5,7 @@ public class AgeBasedDiscount {
     public static void main (String[] args) {
 
         //<=, ==, >=, > || <
-        int age = 80;
+        int age = 9;
 
         if (age <= 25) {
             System.out.println("Vous bénéficiez du forfait jeune");
