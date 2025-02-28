@@ -43,7 +43,7 @@ public class FrenchRevenueTaxCalculator {
             System.out.println("Le montant de vos impôts sur le revenu s'élève à " + sommeDePourcentageTranche4);
 
             double  pourcentageDImposition4 = sommeDePourcentageTranche4 * 100 / salary;
-            System.out.println("Votre pourcentage d'imposition est de " + pourcentageDImposition4 + "%");
+            System.out.println("Votre pourcentage d'imposition est de  " + pourcentageDImposition4 + "%");
             System.out.println(sommeDePourcentageTranche4);
 
 
