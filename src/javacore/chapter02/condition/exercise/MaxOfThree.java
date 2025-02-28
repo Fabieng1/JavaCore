@@ -10,7 +10,7 @@ public class MaxOfThree {
 
 
         /*Le code doit déterminé quel chiffre/nombre est le plus grand
-          Les différents tests effectués ont tous réussis
+          Les différents tests effectués ont tous réussis.
          */
 
         if (a < b && b > c) {
