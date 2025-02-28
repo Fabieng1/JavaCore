@@ -20,6 +20,7 @@ public class NumberSignVerifier {
         }*/
 
         //Exercice bonus n°2
+        // Faire mieux, plus intuitif, plus cohérent, plus intitive. Indice de toi : else
         if (number > 0) {
             System.out.println("Le chiffre est positif");
         }
