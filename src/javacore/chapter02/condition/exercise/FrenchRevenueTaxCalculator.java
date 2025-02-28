@@ -16,10 +16,10 @@ public class FrenchRevenueTaxCalculator {
 
         Modification de prédicat pour les rendre plus simple et moins coûteux en tests
 
-        Tu me disais que le fait que le texte de chaque bloque soient identique était un problème. Le changement
+        Tu me disais que le fait que le texte de chaque bloc soient identique était un problème. Le changement
         de pourcentage ne permettait en effet pas de savoir dans quel bloc nous étions
 
-        J'ai inclus dans le texte en dessous de quel trance nous étions, afin de pouvoir faire la différence*/
+        J'ai inclus dans le texte en dessous à afficher dans quelle tranche nous étions, afin de pouvoir faire la différence*/
         if (salary < 11497) {
             System.out.println("Vous touchez moins de 11497€ par an. Votre pourcentage de d'impossission est de " + pourcentage + "%");
         }
