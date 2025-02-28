@@ -35,9 +35,9 @@ public class PracticeOperatorComparison {
 
         System.out.println("Test de priorité (10 + a == 40) : " + priorityTest);
 
-        boolean isDoubleLessThanIt = 5.5 < 6.0;
+        boolean isDoubleLessThanInt = 5.5 < 6.0;
 
-        System.out.println("Test Inter-Type (5.5 < 6.0) : " + isDoubleLessThanIt);
+        System.out.println("Test Inter-Type (5.5 < 6.0) : " + isDoubleLessThanInt);
 
 
 

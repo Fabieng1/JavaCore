@@ -5,9 +5,9 @@ public class ScholarshipEligibility {
     public static void main (String[] args) {
 
         // 3.5, 2,5, 2
-        float studentGpa = 3.6f;
+        float studentGpa = 3.5f;
         // 35000, 50000, 70000
-        int houseHoldIncome = 30000;
+        int houseHoldIncome = 70000;
         // true, false
         boolean hasExtracurricular = true;
 
@@ -17,7 +17,7 @@ public class ScholarshipEligibility {
         else if (studentGpa > 3.5f && houseHoldIncome < 60000 && hasExtracurricular) {
             System.out.println("Vous êtes éligible à une bourse partielle");
         }
-        else if (studentGpa <= 3.5f && houseHoldIncome >= 60000 && !hasExtracurricular) {
+        else {
             System.out.println("Vous n'êtes pas éligible à la bourse");
         }
 

@@ -18,7 +18,7 @@ public class AgeCategorization {
         } else if (age < 65) {
             System.out.println("Vous êtes adulte");
         }
-        else if (age >= 65) {
+        else {
             System.out.println("Vous êtes senior");
         }
 

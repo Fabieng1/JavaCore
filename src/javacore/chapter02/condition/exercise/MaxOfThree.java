@@ -4,42 +4,33 @@ public class MaxOfThree {
 
     public static void main (String[] args) {
 
-        int a = 50;
-        int b = 50;
-        int c = 50;
+        int a = 10;
+        int b = 20;
+        int c = 30;
 
-        if (a < b) {
+
+        /*Le code doit déterminé quel chiffre/nombre est le plus grand
+          Les différents tests effectués ont tous
+         */
+
+        if (a < b && b > c) {
             System.out.println("Le nombre le plus grand est : " + b);
         }
-        else if (b < a) {
+        else if (b < a && a > c) {
 
             System.out.println("Le nombre le plus grand est : " + a);
 
         }
-        else if (b < c) {
+        else if (a < c && c > b) {
 
             System.out.println("Le nombre le plus grand est : " + c);
 
         }
-        else if (c < b) {
-
-            System.out.println("Le nombre le plus grand est : " + b);
-
-        }
-        else if (a < c) {
-
-            System.out.println("Le nombre le plus grand est : " + c);
-        }
-        else if (c < a) {
-
-            System.out.println("Le nombre le plus grand est : " + a);
-
-        }
-
         else {
 
-            System.err.println("Tous les nombres sont égaux");
+            System.out.println("Tous les nombres sont égaux");
         }
+
 
 
 

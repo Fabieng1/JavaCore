@@ -1,6 +1,6 @@
 package javacore.chapter02.condition.practice;
 
-public class PracticeOperatoLogical {
+public class PracticeOperatorLogical {
 
     public static void main (String[] args) {
 

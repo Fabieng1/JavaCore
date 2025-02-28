@@ -14,12 +14,12 @@ public class PracticeVariableScope {
             System.out.println("Vous avez droit à " + discountPourcentage + "% de réduction");
             if (true) {
                 discountPourcentage = 30;
-            }
-            if (true) {
-                discountPourcentage = 40;
+                if (true) {
+                    discountPourcentage = 40;
+                }
             }
         }
-
+        //System.out.println(discountPourcentage);
     }
 
 }

@@ -24,12 +24,12 @@ public class NumberSignVerifier {
             System.out.println("Le chiffre est positif");
         }
 
-        else if (number == 0) {
-            System.out.println("Le chiffre est neutre");
-        }
-
         else if (number < 0) {
             System.out.println("Le chiffre est négatif");
+        }
+
+        else {
+            System.out.println("Le chiffre est neutre");
         }
 
 

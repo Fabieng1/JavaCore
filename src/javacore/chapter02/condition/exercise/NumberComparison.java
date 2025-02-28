@@ -4,7 +4,7 @@ public class NumberComparison {
 
     public static void main (String[] args) {
 
-        int number1 = -30;
+        int number1 = 30;
         int number2 = 10;
 
         if (number1 > number2) {
