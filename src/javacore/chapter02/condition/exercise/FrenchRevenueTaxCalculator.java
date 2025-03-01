@@ -5,14 +5,14 @@ public class FrenchRevenueTaxCalculator {
     public static void main (String[] args) {
 
         //10.000 1000.0 1500.0 2000.0 2500.0
-        double salary = 29000;
+        double salary = 10000;
         double abattement = salary - (salary * 10.0 / 100.0);
 
         /* Les "if" n'étant plus imbriquée, ceux après celui concerné s'affiche*/
 
         if (salary < 11497) {
-            int somme = 0;
-            System.out.println("Vous touchez moins de 11497€ par an. Vous payer donc 0€");
+            int tranche1 = 0;
+            System.out.println("Vous touchez moins de 11497€ par an. Vous payer donc : " + tranche1 + "€");
         }
         if (salary < 29315) {
             double tranche2 = (29315 - 11497);
