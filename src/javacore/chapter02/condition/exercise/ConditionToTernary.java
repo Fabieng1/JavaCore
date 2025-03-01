@@ -8,7 +8,7 @@ public class ConditionToTernary {
         /**
          * Le code doit s'adapter aux différentes valeurs que vous mettrez à la variable age.
          */
-        Integer age = 19;
+        Integer age = 12;
 
         Integer pourcentageReduction = 0;
 
@@ -23,7 +23,7 @@ public class ConditionToTernary {
         }*/
 
         //pourcentageReduction semble restée à 0, et ne pas prendre la nouvelle valeur
-        age < 18 ? pourcentageReduction = 50 : pourcentageReduction = 10;
+        pourcentageReduction = age < 18 ?  50 :  10;
 
 
         System.out.println("La réduction appliquée est de " + pourcentageReduction + "% car l'utilisateur est agé de " + age + " ans");
