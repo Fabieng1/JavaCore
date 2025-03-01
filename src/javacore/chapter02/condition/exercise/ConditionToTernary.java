@@ -22,7 +22,6 @@ public class ConditionToTernary {
             pourcentageReduction = 10;
         }*/
 
-        //pourcentageReduction semble restée à 0, et ne pas prendre la nouvelle valeur
         pourcentageReduction = age < 18 ?  50 :  10;
 
 

@@ -26,25 +26,28 @@ public class FrenchRevenueTaxCalculator {
         }
         if (salary < 29315) {
             double tranche2 = (29315 - 11497);
-            double sommeDePourcentageTranche2 = 11 * tranche2 / 100;
-            System.out.println("Le montant de vos impôts sur le revenu s'élève à " + sommeDePourcentageTranche2);
+            System.out.println(tranche2);
+            double impotsAPayer2 = 11 * tranche2 / 100;
+            System.out.println("Montant impossable : " + impotsAPayer2);
+
+            System.out.println("Le montant de vos impôts sur le revenu s'élève à " + impotsAPayer2);
         }
         if (salary < 83823) {
             double tranche3 = (29315 - 11497) + (83825 - 29315);
-            double sommeDePourcentageTranche3 = 30 * tranche3 /100;
-            System.out.println("Le montant de vos impôts sur le revenu s'élève à " + sommeDePourcentageTranche3);
+            double impotsAPayer3= 30 * tranche3 /100;
+            System.out.println("Le montant de vos impôts sur le revenu s'élève à " + impotsAPayer3);
 
-            double  pourcentageDImposition3 = sommeDePourcentageTranche3 * 100 / salary;
+            double  pourcentageDImposition3 = impotsAPayer3 * 100 / salary;
             System.out.println("Votre pourcentage d'imposition est de " + pourcentageDImposition3);
         }
         if (salary < 180294) {
             double tranche4 = (29315 - 11497) + (83825 - 29315) + (180294);
-            double sommeDePourcentageTranche4 = 30 * tranche4 /100;
-            System.out.println("Le montant de vos impôts sur le revenu s'élève à " + sommeDePourcentageTranche4);
+            double impotsAPayer4 = 30 * tranche4 /100;
+            System.out.println("Le montant de vos impôts sur le revenu s'élève à " + impotsAPayer4);
 
-            double  pourcentageDImposition4 = sommeDePourcentageTranche4 * 100 / salary;
+            double  pourcentageDImposition4 = impotsAPayer4 * 100 / salary;
             System.out.println("Votre pourcentage d'imposition est de " + pourcentageDImposition4 + "%");
-            System.out.println(sommeDePourcentageTranche4);
+            System.out.println(impotsAPayer4);
 
 
         }
