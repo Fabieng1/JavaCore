@@ -4,7 +4,7 @@ public class FrenchRevenueTaxCalculator {
 
     public static void main (String[] args) {
 
-        //10.000 1000.0 1500.0 2000.0 2500.0.
+        //10.000 1000.0 1500.0 2000.0 2500.0
         double salary = 29000;
         double abattement = salary - (salary * 10.0 / 100.0);
 
