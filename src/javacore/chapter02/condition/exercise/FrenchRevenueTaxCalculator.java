@@ -13,11 +13,6 @@ public class FrenchRevenueTaxCalculator {
         double differenceTranche3 = 83823 - 29315;
         double differenceTranche4 = 180294 - 83823;
 
-        // Impôts à payer
-        double sommePourcentageTranche2 = differenceTranche2 * 11 / 100;
-        double sommePourcentageTranche3 = (differenceTranche3 * 30 / 100) + sommePourcentageTranche2;
-        double sommePourcentageTranche4 = (differenceTranche4 * 41 / 100) + (sommePourcentageTranche2 + sommePourcentageTranche3);
-        double sommePourcentageTranche5 = (differenceTranche4 * 45 / 100) + (sommePourcentageTranche2 + sommePourcentageTranche3 + sommePourcentageTranche4);
 
         /*Bonus
         Les "if" n'étant plus imbriquée, ceux après celui concerné s'affiche*/
