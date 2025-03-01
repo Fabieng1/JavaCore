@@ -8,14 +8,7 @@ public class FrenchRevenueTaxCalculator {
         double salary = 29000;
         double abattement = salary - (salary * 10.0 / 100.0);
 
-        //Montant servant de base de calcul pour savoir combien d'impôts payer
-        float differenceTranche2 = 29497 - 11497;
-        double differenceTranche3 = 83823 - 29315;
-        double differenceTranche4 = 180294 - 83823;
-
-
-        /*Bonus
-        Les "if" n'étant plus imbriquée, ceux après celui concerné s'affiche*/
+        /* Les "if" n'étant plus imbriquée, ceux après celui concerné s'affiche*/
 
         if (salary < 11497) {
             int somme = 0;
@@ -45,15 +38,10 @@ public class FrenchRevenueTaxCalculator {
             double  pourcentageDImposition4 = impotsAPayer4 * 100 / salary;
             System.out.println("Votre pourcentage d'imposition est de " + pourcentageDImposition4 + "%");
             System.out.println(impotsAPayer4);
-
-
         }
         if (salary > 180294){
             double test = 10000 * 100 / 50000;
             System.out.println(test);
         }
-
-
     }
-
 }
