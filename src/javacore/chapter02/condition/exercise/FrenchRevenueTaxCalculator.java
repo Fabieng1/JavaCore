@@ -19,7 +19,9 @@ public class FrenchRevenueTaxCalculator {
         double sommePourcentageTranche4 = (differenceTranche4 * 41 / 100) + (sommePourcentageTranche2 + sommePourcentageTranche3);
         double sommePourcentageTranche5 = (differenceTranche4 * 45 / 100) + (sommePourcentageTranche2 + sommePourcentageTranche3 + sommePourcentageTranche4);
 
-        //Bonus
+        /*Bonus
+        Les "if" n'étant plus imbriquée, ceux après celui concerné s'affiche*/
+
         if (salary < 11497) {
             int somme = 0;
             System.out.println("Vous touchez moins de 11497€ par an. Vous payer donc 0€");
@@ -52,7 +54,11 @@ public class FrenchRevenueTaxCalculator {
 
         }
         if (salary > 180294){
+            double test = 10000 * 100 / 50000;
+            System.out.println(test);
         }
+
+
     }
 
 }
