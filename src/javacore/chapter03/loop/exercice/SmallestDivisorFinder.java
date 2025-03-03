@@ -1,6 +1,6 @@
 package javacore.chapter03.loop.exercice;
 
-public class SmallesDivisorFinder {
+public class SmallestDivisorFinder {
 
     public static void main (String[] args) {
 

@@ -13,17 +13,13 @@ public class FactorialCalculator {
         long multiplicateur = 1;
         long result = 1;
 
-        while (multiplicateur != number) {
+        while (multiplicateur <= number) {
             System.out.println(result);
 
             // En mettant "result = number * multiplicateur;", "result est grisé. Bizarre
             result = result * multiplicateur;
-            number--;
-
-
-
-
-
+            multiplicateur++;
+            System.out.println(result);
         }
         System.out.println(result);
 
