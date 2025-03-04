@@ -16,11 +16,11 @@ public class ForLoopExample {
 
         for (char letter = 'A'; letter <= 90; letter++) {
 
-            System.out.println(letter);
-        }
+        System.out.println(letter);
+    }
 
-        int nbr = 20;
-        long result = 1;
+    int nbr = 100;
+    long result = 1;
 
         for (int multiplicateur = 1; multiplicateur <= nbr; multiplicateur++) {
 
