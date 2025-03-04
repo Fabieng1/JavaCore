@@ -9,7 +9,7 @@ public class FactorialCalculator {
 
          */
 
-        int number = 5;
+        int number = 100;
         long multiplicateur = 1;
         long result = 1;
 
