@@ -25,14 +25,13 @@ public class ForLoopExample {
         BigInteger result = new BigInteger("1");
 
 
-        for (BigInteger multiplicateur = new BigInteger("1"); multiplicateur.compareTo(nb) >= 100; multiplicateur.add(BigInteger.ONE)) {
+        for (BigInteger multiplicateur = new BigInteger("1"); multiplicateur.compareTo(nb) < 1 ; multiplicateur = multiplicateur.add(BigInteger.ONE)) {
 
-            result.multiply(multiplicateur);
+            result = result.multiply(multiplicateur);
             System.out.println(result);
 
         }
 
-        ;
 
     }
 
