@@ -1,5 +1,7 @@
 package javacore.chapter03.loop.exercice;
 
+import java.math.BigInteger;
+
 public class ForLoopExample {
 
     public static void main (String[] args) {
@@ -16,15 +18,16 @@ public class ForLoopExample {
 
         for (char letter = 'A'; letter <= 90; letter++) {
 
-        System.out.println(letter);
-    }
+            System.out.println(letter);
+        }
 
-    int nbr = 100;
-    long result = 1;
+        BigInteger nb = new BigInteger("100");
+        BigInteger result = new BigInteger("1");
 
-        for (int multiplicateur = 1; multiplicateur <= nbr; multiplicateur++) {
 
-            result *= multiplicateur;
+        for (BigInteger multiplicateur = new BigInteger("1"); multiplicateur.compareTo(nb) >= 100; multiplicateur.add(BigInteger.ONE)) {
+
+            result.multiply(multiplicateur);
             System.out.println(result);
 
         }
