@@ -12,6 +12,8 @@ public class PerfectNumberFinder {
 
             // Déterminé quels sont les diviseurs de "end"
              if (end % start == 0) {
+
+                 // Additionner les diviseur d'un nombre entre eux
                  for (int numberInferior = result; result == end; result--) {
                      result = result + start;
                  }
