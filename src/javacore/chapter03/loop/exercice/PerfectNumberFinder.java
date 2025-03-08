@@ -15,8 +15,9 @@ public class PerfectNumberFinder {
              if (end % start == 0) { // Alors c'est un diviseur
 
                  // Additionner les diviseurs d'un nombre entre eux
-                 for (int numberInferior = result; result != end; result--) {
+                 for (int numberInferior = result; result != end; result++) {
                      result = result + start;
+                     System.out.println("Boucle for : " + result);
                  }
 
                 System.out.println(start + " est un diviseur de " + end);
