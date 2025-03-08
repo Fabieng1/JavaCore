@@ -13,13 +13,17 @@ public class PerfectNumberFinder {
             // Déterminé quels sont les diviseurs de "end"
 
 
-            if (end % start == 0) {
+            // Déterminé les diviseurs d'un nombre
+             if (end % start == 0) {
+                 for (int numberInferior = result; result == end; result--) {
+                     result = result + start;
+                 }
 
-                result = result + start;
-                System.out.println(start + " sont les diviseurs");
-
-
+                System.out.println(start + " est un diviseur de " + end);
             }
+
+             // Si reslult est égale à la somme de ses diviseurs inférieurs, alors c'est un nomb parfait
+
 
              start++;
 
