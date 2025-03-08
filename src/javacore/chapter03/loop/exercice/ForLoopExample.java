@@ -8,15 +8,15 @@ public class ForLoopExample {
 
         // Affichez les nombres de 1 à 10 : Utilisez une boucle for pour afficher les nombres de 1 à 10 dans l'ordre croissant: 1 2 3 4 5 6 7
         // 8 9 10
-        for (int chiffresCroissants = 1; chiffresCroissants <= 10; chiffresCroissants++) {
+        for (int incrasingCount = 1; incrasingCount <= 10; incrasingCount++) {
 
-            System.out.println("Les nombres de 1 à 10 sont : " + chiffresCroissants);
+            System.out.println("Les nombres de 1 à 10 sont : " + incrasingCount);
         }
 
         // Affichez une séquence en ordre décroissant : Utilisez une boucle for pour afficher les nombres de 10 à 1 dans l'ordre décroissant: 10 9 8 7 6 5 4 3 2 1
-        for (int chiffresDecroissants = 10; chiffresDecroissants >= 1; chiffresDecroissants--) {
+        for (int decrasingCount = 10; decrasingCount >= 1; decrasingCount--) {
 
-            System.out.println("Les nombres décroissants sont : " + chiffresDecroissants);
+            System.out.println("Les nombres décroissants sont : " + decrasingCount);
         }
 
         // Affichez les nombres pairs : Utilisez une boucle for pour n'afficher que les nombres pairs entre 1 et 20, dans l'ordre croissant : 2 4 6 8 10 12 14 16 18 20 (et sans utiliser de condition !)
