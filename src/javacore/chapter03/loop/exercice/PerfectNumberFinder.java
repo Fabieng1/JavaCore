@@ -8,22 +8,18 @@ public class PerfectNumberFinder {
         int end = 100;
         int result = 0;
 
-         while (start < end) {
+         while (start <= end) {
 
             // Déterminé quels sont les diviseurs de "end"
 
              if (end % start == 0) { // Alors c'est un diviseur
 
-                 // Additionner les diviseurs d'un nombre entre eux
-                 for (int numberInferior = result; result != end; result++) {
-                     result = result + start;
-                     System.out.println("Boucle for : " + result);
-                 }
-
-                System.out.println(start + " est un diviseur de " + end);
+                 result = end % start;
+                 result = result + result;
+                 System.out.println(result);
             }
 
-             // Si reslult est égale à la somme de ses diviseurs inférieurs, alors c'est un nomb parfait
+             // Si result est égale à la somme de ses diviseurs inférieurs, alors c'est un nomb parfait
 
 
              start++;
