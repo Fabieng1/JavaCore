@@ -6,8 +6,8 @@ public class HalfPyramid {
 
         int numberOfRows = 10;
 
-        for (int nbrDeLignes = 1; nbrDeLignes <= numberOfRows; nbrDeLignes++) {
-            for (int nbrasterix = 1; nbrasterix <= nbrDeLignes; nbrasterix++) {
+        for (int currentIndex = 1; currentIndex <= numberOfRows; currentIndex++) {
+            for (int nbrAsterix = 1; nbrAsterix <= currentIndex; nbrAsterix++) {
                 System.out.print("*");
             }
             System.out.println();

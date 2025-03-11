@@ -8,14 +8,14 @@ public class PerfectNumberFinder {
         int end = 100;
         int result = 0;
 
-         while (start <= end) {
+         while (start < end) {
 
             // Déterminé quels sont les diviseurs de "end"
 
              if (end % start == 0) { // Alors c'est un diviseur
 
                  result = end % start;
-                 result = result + result;
+                 result = start + result;
                  System.out.println(result);
             }
 
