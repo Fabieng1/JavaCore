@@ -8,31 +8,27 @@ public class PerfectNumberFinder {
         int end = 7;
         int result = 0;
 
-         while (start <= end) {
+        while (start <= end) {
 
             // Déterminé quels sont les diviseurs de "end"
 
-             if (end % start == 0) { // Alors c'est un diviseur
+            if (end % start == 0) { // Alors c'est un diviseur
 
-                 result = end % start;
-                 result = start + result;
-                 System.out.println(result);
+                result = end % start;
+                System.out.println("Modulo : " + result);
+                result = result + start;
+                System.out.println("Résultat : " + result);
             }
 
-             // Si result est égale à la somme de ses diviseurs inférieurs, alors c'est un nomb parfait
-
-
-             start++;
-
-
+            start++;
 
         }
-        if (result == start) {
+        if (result == end) {
 
             System.out.println(end + " est un nombre parfait");
         }
         else {
-            System.out.println(end + " n'est pas parfait");
+            System.out.println(end + " n'est pas un nombre parfait parfait");
         }
     }
 }
