@@ -5,10 +5,10 @@ public class PerfectNumberFinder {
     public static void main (String[] args) {
 
         int start = 1;
-        int end = 100;
+        int end = 7;
         int result = 0;
 
-         while (start < end) {
+         while (start <= end) {
 
             // Déterminé quels sont les diviseurs de "end"
 
@@ -24,11 +24,17 @@ public class PerfectNumberFinder {
 
              start++;
 
+
+
         }
-        System.out.println(result + " est le resultat");
+        if (result == start) {
 
+            System.out.println(end + " est un nombre parfait");
+        }
+        else {
+            System.out.println(end + " n'est pas parfait");
+        }
     }
-
 }
 
 
