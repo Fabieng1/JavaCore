@@ -20,6 +20,7 @@ public class ObfucatedCodeV1 {
         // Variable primaire de type double, nom "c" initialisé à "0"
         double c = 0;
 
+        // Chaque if est indépendant. Donc, si plusieurs conditions sont remplis, plusieurs conditions seront exécutés
         // Si b est égale à 1
         if (b == 1) {
             // Alors le résulat de a * 0.10 est affecter à la variable C
