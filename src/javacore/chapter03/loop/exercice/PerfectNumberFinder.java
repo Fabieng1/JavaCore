@@ -5,7 +5,7 @@ public class PerfectNumberFinder {
     public static void main (String[] args) {
 
         int diviseur = 1;
-        int numberEnd = 6;
+        int numberEnd = 61;
         int resultAddDivisor = 0;
 
 
@@ -13,7 +13,8 @@ public class PerfectNumberFinder {
 
         while (diviseur < numberEnd) {
 
-            // Déterminé quels sont les diviseurs de "end"
+
+            // Déterminé quels sont les diviseurs de "numberEnd"
 
             if (numberEnd % diviseur == 0) { // Alors c'est un diviseur
 
@@ -24,8 +25,8 @@ public class PerfectNumberFinder {
             }
 
             diviseur++;
-
         }
+
         if (resultAddDivisor == numberEnd) {
 
             System.out.println(numberEnd + " est un nombre parfait");

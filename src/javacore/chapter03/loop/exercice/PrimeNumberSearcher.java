@@ -2,7 +2,7 @@ package javacore.chapter03.loop.exercice;
 
 public class PrimeNumberSearcher {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         int number = 5;
         int divisor = 2;
         int result = 0;
@@ -16,12 +16,11 @@ public class PrimeNumberSearcher {
 
             }
 
-            /*if (number % divisor == 0) {
+            if (number % divisor == 0) {
                 result = number;
-            }
-            else {
+            } else {
                 result = 0;
-            }*/
+            }
 
 
             divisor++;
@@ -29,17 +28,10 @@ public class PrimeNumberSearcher {
 
         if (result == 0) {
             System.out.println(number + " est premier");
-        }
-        else {
+        } else {
             System.out.println(number + " n'est pas premier");
         }
 
 
-
-
     }
-
-
 }
-
-
