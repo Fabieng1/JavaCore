@@ -3,26 +3,32 @@ package javacore.chapter03.loop.exercice;
 public class PrimeNumberSearcher {
 
     public static void main(String[] args) {
+
         int number = 100;
-        int divisor = 2;
-        int modulo = 0;
-        boolean resultDivisor = true;
 
+        boolean isPrime = true;
 
-        while (number % divisor != 0) {
+        for (int i = 2; i <= number; i++) {
 
+            for (int potentialDivisor = 2; i < number; potentialDivisor++) {
 
+                int reste = number % potentialDivisor;
 
-            while (resultDivisor) {
-                modulo = number % divisor;
-                if (modulo == 0) {
-                    resultDivisor = false;
-                    number--;
+                if (reste == 0) {
+                    isPrime = false;
+
                 }
+
             }
 
-            divisor++;
+            if (isPrime == true) {
+                System.out.println(number + " est premier");
+            }
+            else {
+                System.out.println(number + " n'est pas un nombre premier");
+            }
         }
-        System.out.println(" Les nombres premiers sont : " + number + " ");
+
+
     }
 }
