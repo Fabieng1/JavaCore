@@ -5,10 +5,13 @@ public class SmallestDivisorFinder {
     public static void main (String[] args) {
 
         // 10 / 2, 15 / 2, 20 / 2
-        int number = 10;
+        int number = 121;
         int divisor = 2;
+        int smallDivisor = 2;
 
         while (number % divisor != 0) {
+
+
 
             divisor++;
         }
