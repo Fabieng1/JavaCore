@@ -19,6 +19,7 @@ public class PrimeNumberSearcher {
             }
         }
         if (isPrime == true) {
+
             System.out.println (number + " est premier");
         }
         else {
