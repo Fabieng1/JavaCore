@@ -8,8 +8,7 @@ public class PrimeNumberSearcher {
 
         boolean isPrime = true;
 
-        for (int i = 2; i < number; i++) {
-            // Je veux aller de 2 à 9
+        for (int i = 2; i < number; i++) { // Je veux aller de 2 à 9
             for (int potentialDivisor = 2; potentialDivisor < i; potentialDivisor++) {
                 int resultDivision = i / potentialDivisor;
                 System.out.println("Résultats de la division " + i + " / " + potentialDivisor + " = " + resultDivision);
@@ -20,13 +19,11 @@ public class PrimeNumberSearcher {
                 if (reste == 0) {
                     isPrime = false;
                 }
-                if (isPrime == true) {
-
-                    System.out.println (i + " est premier");
-                }
-
             }
+            if (isPrime == true) {
 
+                System.out.println (i + " est premier");
+            }
         }
     }
 }
