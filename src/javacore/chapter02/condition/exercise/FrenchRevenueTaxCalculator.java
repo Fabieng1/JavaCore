@@ -5,45 +5,41 @@ public class FrenchRevenueTaxCalculator {
     public static void main (String[] args) {
 
         //10.000 1000.0 1500.0 2000.0 2500.0
-        double salary = 180000;
-        double abattement = salary - (salary * 10.0 / 100.0);
+        double salaireBrutAnuelle = 29000;
+        double salaireNetAnnuelImpossable = salaireBrutAnuelle - (salaireBrutAnuelle * 25.0f / 100.0f);
+        double abattement = salaireBrutAnuelle - (salaireBrutAnuelle * 10.0 / 100.0);
+
+        double impotsAPayer1 = 0;
+        double impotsAPayer2 = 0;
+        double impotsAPayer3 = 0;
+        double impotsAPayer4 = 0;
+        double impotsAPayer5 = 0;
 
         /* Les "if" n'étant plus imbriquée, ceux après celui concerné s'affiche*/
 
-        if (salary < 11497) {
-            int tranche1 = 0;
-            System.out.println("Vous touchez moins de 11497€ par an. Vous payer donc : " + tranche1 + "€");
+        if (salaireBrutAnuelle < 11497) {
+            impotsAPayer1 = 0;
+            System.out.println("Vous touchez moins de 11497€ par an. Vous payer donc : " + impotsAPayer1 + "€");
         }
         else {
-            if (salary < 29315) {
-                double tranche2 = (salary - 11497);
-                double impotsAPayer2 = 11 * tranche2 / 100;
-                System.out.println("Montant impossable : " + impotsAPayer2);
-
+            if (salaireBrutAnuelle < 29315.0) {
+                impotsAPayer2 = (29315.0 - 11497.0) * 11.0 / 100.0;
+                impotsAPayer2 = impotsAPayer2 * 11.0 / 100.0;
+                impotsAPayer2 = impotsAPayer1 + impotsAPayer2;
 
                 System.out.println("Le montant de vos impôts sur le revenu s'élève à " + impotsAPayer2);
             }
-            if (salary < 83823) {
-                double tranche3 = (abattement - 29315) + (abattement - 83825);
-                double impotsAPayer3 = 30 * tranche3 / 100;
-                System.out.println("Le montant de vos impôts sur le revenu s'élève à " + impotsAPayer3);
+            if (salaireBrutAnuelle < 83823) {
+                impotsAPayer3 = (83823 - 29315.0) * 30.0 / 100.0;
+                System.out.println(impotsAPayer3);
 
-                double pourcentageDImposition3 = impotsAPayer3 * 100 / salary;
-                System.out.println("Votre pourcentage d'imposition est de " + pourcentageDImposition3);
-            }
-            if (salary < 180294) {
-                double tranche4 = (abattement - 29315) + (abattement - 83825) + (abattement - 180294);
-                System.out.println("Tranche 4 : " + tranche4);
-                double impotsAPayer4 = 30 * tranche4 / 100;
-                System.out.println("Le montant de vos impôts sur le revenu s'élève à " + impotsAPayer4);
 
-                double pourcentageDImposition4 = impotsAPayer4 * 100 / salary;
-                System.out.println("Votre pourcentage d'imposition est de " + pourcentageDImposition4 + "%");
-                System.out.println(impotsAPayer4);
             }
-            if (salary > 180294) {
-                double test = 10000 * 100 / 50000;
-                System.out.println(test);
+            if (salaireBrutAnuelle < 180294) {
+
+            }
+            if (salaireBrutAnuelle > 180294) {
+
             }
         }
     }

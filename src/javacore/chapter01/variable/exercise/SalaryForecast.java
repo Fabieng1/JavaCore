@@ -6,7 +6,6 @@ public class SalaryForecast {
 
         float tauxHoraireBrut = 25.0f;
         float heuresjournalieres = 7.7f;
-        float heuresSemaines = 38.5f;
 
         float salaireBrutJournalier = tauxHoraireBrut * heuresjournalieres;
 
