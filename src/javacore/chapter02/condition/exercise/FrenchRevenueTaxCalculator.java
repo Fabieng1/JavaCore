@@ -14,7 +14,7 @@ public class FrenchRevenueTaxCalculator {
         double impotsAPayer4 = 0;
         double impotsAPayer5 = 0;
 
-    // Remplacement des if successif par des else if, sinon tous les if après la trancche concernée sont exécutés
+    // Remplacement des if successifs par des else if, sinon tous les if après la trancche concernée sont exécutés
 
         if (salaireNetImpossableAnnuelle < 11497) {
             impotsAPayer1 = 0;
