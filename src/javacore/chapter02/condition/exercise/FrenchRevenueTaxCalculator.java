@@ -24,18 +24,16 @@ public class FrenchRevenueTaxCalculator {
         else {
             if (salaireBrutAnuelle < 29315.0) {
                 impotsAPayer2 = (29315.0 - 11497.0) * 11.0 / 100.0;
-                impotsAPayer2 = impotsAPayer2 * 11.0 / 100.0;
                 impotsAPayer2 = impotsAPayer1 + impotsAPayer2;
 
                 System.out.println("Le montant de vos impôts sur le revenu s'élève à " + impotsAPayer2);
             }
             if (salaireBrutAnuelle < 83823) {
-                impotsAPayer3 = (83823 - 29315.0) * 30.0 / 100.0;
+                impotsAPayer3 = (83823. - 29315.0) * 30.0 / 100.0;
                 System.out.println(impotsAPayer3);
-
-
             }
             if (salaireBrutAnuelle < 180294) {
+                //impotsAPayer4 = ( 180294 - 83823) * 41.0 / 100.0;
 
             }
             if (salaireBrutAnuelle > 180294) {
