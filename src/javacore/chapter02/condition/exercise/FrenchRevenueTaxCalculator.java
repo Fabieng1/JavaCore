@@ -5,8 +5,11 @@ public class FrenchRevenueTaxCalculator {
     public static void main (String[] args) {
 
         //10.000 1000.0 1500.0 2000.0 2500.0
-        double salaireNetImpossableAnnuelle = 83000;
-        double abattement = salaireNetImpossableAnnuelle - (salaireNetImpossableAnnuelle * 10.0 / 100.0);
+        double salaireNetImpossableAnnuelle = 200000;
+        double abattement = salaireNetImpossableAnnuelle * 10.0 / 100.0;
+
+        salaireNetImpossableAnnuelle = salaireNetImpossableAnnuelle - abattement;
+        System.out.println("salaireNetImpossableAnnuelle : " + salaireNetImpossableAnnuelle);
 
         double impotsAPayer1 = 0;
         double impotsAPayer2 = 0;
