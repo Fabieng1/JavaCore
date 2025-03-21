@@ -5,48 +5,45 @@ public class FrenchRevenueTaxCalculator {
     public static void main (String[] args) {
 
         //10.000 1000.0 1500.0 2000.0 2500.0
-        double salaireNetImpossableAnnuelle = 200000;
-        double abattement = salaireNetImpossableAnnuelle * 10.0 / 100.0;
+        double salaryAnnualNetTaxable = 300000;
+        double reduction = salaryAnnualNetTaxable * 10.0 / 100.0;
 
-        double salaireNetImpossableAnnuelleApresAbattement = salaireNetImpossableAnnuelle - abattement;
-        System.out.println("salaireNetImpossableAnnuelle : " + salaireNetImpossableAnnuelle);
+        double salaryAnnualNetTaxableAfterReduction = salaryAnnualNetTaxable - reduction;
+        System.out.println("salaireNetImpossableAnnuelle : " + salaryAnnualNetTaxable);
 
-        double impotsAPayer1 = 0;
-        double impotsAPayer2 = 0;
-        double impotsAPayer3 = 0;
-        double impotsAPayer4 = 0;
-        double impotsAPayer5 = 0;
+        double taxBracket1 = 0;
+        double taxBracket2 = 0;
+        double taxBracket3 = 0;
+        double taxBracket4 = 0;
+        double taxBracket5 = 0;
 
-// Remplacement des if successif par des else if, sinon tous les if après la trancche concernée sont exécutés
-
-        if (salaireNetImpossableAnnuelleApresAbattement < 11497) {
-            impotsAPayer1 = 0;
-            System.out.println("Vous touchez moins de 11497€ par an. Vous payer donc : " + impotsAPayer1 + "€");
+        if (salaryAnnualNetTaxableAfterReduction < 11497) {
+            System.out.println("Vous touchez moins de 11497€ par an. Vous payer donc : " + taxBracket1 + "€");
         }
-        else if (salaireNetImpossableAnnuelleApresAbattement < 29315.0) {
+        if (salaryAnnualNetTaxableAfterReduction < 29315.0) {
 
-            impotsAPayer2 = (29315.0 - 11497.0) * 11.0 / 100.0;
-            impotsAPayer2 = impotsAPayer1 + impotsAPayer2;
+            taxBracket2 = (29315.0 - 11497.0) * 11.0 / 100.0;
+            taxBracket2 = taxBracket1 + taxBracket2;
 
-            System.out.println("Le montant de vos impôts est de " + impotsAPayer2);
+            System.out.println("Le montant de vos impôts est de " + taxBracket2);
         }
-        else if (salaireNetImpossableAnnuelleApresAbattement < 83823) {
-            impotsAPayer3 = (83823. - 29315.0) * 30.0 / 100.0;
-            impotsAPayer3 = impotsAPayer1 + impotsAPayer2 + impotsAPayer3;
+        if (salaryAnnualNetTaxableAfterReduction < 83823) {
+            taxBracket3 = (83823.0 - 29315.0) * 30.0 / 100.0;
+            taxBracket3 = taxBracket1 + taxBracket2 + taxBracket3;
 
-            System.out.println("Le montant de vos impôts est de " + impotsAPayer3);
+            System.out.println("Le montant de vos impôts est de " + taxBracket3);
         }
-        else if (salaireNetImpossableAnnuelleApresAbattement < 180294) {
-            impotsAPayer4 = (180294.0 - 83823.0) * 41.0 / 100.0;
-            impotsAPayer4 = impotsAPayer1 + impotsAPayer2 + impotsAPayer3 + impotsAPayer4;
+        if (salaryAnnualNetTaxableAfterReduction <= 180294) {
+            taxBracket4 = (180294.0 - 83823.0) * 41.0 / 100.0;
+            taxBracket4 = taxBracket1 + taxBracket2 + taxBracket3 + taxBracket4;
 
-            System.out.println("Le montant de vos impôts est de " + impotsAPayer4);
+            System.out.println("Le montant de vos impôts est de " + taxBracket4);
         }
-        else if (salaireNetImpossableAnnuelleApresAbattement > 180294) {
-            impotsAPayer5 = (salaireNetImpossableAnnuelle - 180294) * 45 / 100;
-            impotsAPayer5 = impotsAPayer1 + impotsAPayer2 + impotsAPayer3 + impotsAPayer4 + impotsAPayer5;
+        if (salaryAnnualNetTaxableAfterReduction > 180294) {
+            taxBracket5 = (salaryAnnualNetTaxableAfterReduction - 180294) * 45 / 100;
+            taxBracket5 = taxBracket1 + taxBracket2 + taxBracket3 + taxBracket4 + taxBracket5;
 
-            System.out.println("Le montant de vos impôts est de " + impotsAPayer5);
+            System.out.println("Le montant de vos impôts est de " + taxBracket5);
         }
     }
 }
