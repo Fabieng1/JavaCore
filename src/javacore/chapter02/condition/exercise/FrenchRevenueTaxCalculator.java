@@ -5,7 +5,7 @@ public class FrenchRevenueTaxCalculator {
     public static void main (String[] args) {
 
         //10.000 1000.0 1500.0 2000.0 2500.0
-        double salaryAnnualNetTaxable = 190000;
+        double salaryAnnualNetTaxable = 300000;
         double reduction = salaryAnnualNetTaxable * 10.0 / 100.0;
 
         double salaryAnnualNetTaxableAfterReduction = salaryAnnualNetTaxable - reduction;
@@ -25,22 +25,22 @@ public class FrenchRevenueTaxCalculator {
         if (salaryAnnualNetTaxableAfterReduction < 29315.0) {
             double accumulationOfInstallmentsToBePaid2 = taxBracket1 + taxBracket2;
 
-            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid2);
+            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid2 + "€");
         }
         if (salaryAnnualNetTaxableAfterReduction < 83823) {
             double accumulationOfInstallmentsToBePaid3 = taxBracket1 + taxBracket2 + taxBracket3;
 
-            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid3);
+            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid3 + "€");
         }
         if (salaryAnnualNetTaxableAfterReduction <= 180294) {
             double accumulationOfInstallmentsToBePaid4 = taxBracket1 + taxBracket2 + taxBracket3 + taxBracket4;
 
-            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid4);
+            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid4 + "€");
         }
         if (salaryAnnualNetTaxableAfterReduction > 180294) {
             double accumulationOfInstallmentsToBePaid5 = taxBracket1 + taxBracket2 + taxBracket3 + taxBracket4 + taxBracket5;
 
-            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid5);
+            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid5 + "€");
         }
     }
 }
