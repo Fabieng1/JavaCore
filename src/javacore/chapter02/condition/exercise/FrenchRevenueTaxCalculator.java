@@ -28,7 +28,7 @@ public class FrenchRevenueTaxCalculator {
         }
         if (salaryAnnualNetTaxableAfterReduction < 83823) {
             taxBracket3 = (83823.0 - 29315.0) * 30.0 / 100.0; // Résultats : 16334.40;
-            double accumulationOfInstallmentsToBePaid3 = taxableRemainder1 + taxableRemainder2 + taxableRemainder3;
+           double accumulationOfInstallmentsToBePaid3 = taxableRemainder1 + taxableRemainder2 + taxableRemainder3;
 
             System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid3 + "€");
         }
