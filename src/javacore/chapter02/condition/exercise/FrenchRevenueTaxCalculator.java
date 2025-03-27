@@ -5,7 +5,7 @@ public class FrenchRevenueTaxCalculator {
     public static void main (String[] args) {
 
         //10.000 1000.0 1500.0 2000.0 2500.0
-        double salaryAnnualNetTaxable = 30000;
+        double salaryAnnualNetTaxable = 200000;
         double reduction = salaryAnnualNetTaxable * 10.0 / 100.0;
 
         double salaryAnnualNetTaxableAfterReduction = salaryAnnualNetTaxable - reduction;
