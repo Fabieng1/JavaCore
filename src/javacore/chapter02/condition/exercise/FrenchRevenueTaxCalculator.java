@@ -10,7 +10,7 @@ public class FrenchRevenueTaxCalculator {
 
         double salaryAnnualNetTaxableAfterReduction = salaryAnnualNetTaxable - reduction;
 
-        double resteAPayer = 0;
+        double accumulationOfInstallmentsToBePaid = 0;
 
         System.out.println("Salaire Annuel après réduction : " + salaryAnnualNetTaxableAfterReduction);
 
@@ -22,42 +22,37 @@ public class FrenchRevenueTaxCalculator {
         double taxBracket5 = 0;
 
         if (salaryAnnualNetTaxableAfterReduction < 11497) {
-            double accumulationOfInstallmentsToBePaid1 = 0;
-            System.out.println("Vous touchez moins de 11497€ par an. Vous payer donc : " + accumulationOfInstallmentsToBePaid1 + "€");
+             accumulationOfInstallmentsToBePaid = 0;
+            System.out.println("Vous touchez moins de 11497€ par an. Vous payer donc : " + accumulationOfInstallmentsToBePaid + "€");
         }
         if (salaryAnnualNetTaxableAfterReduction < 29315.0) {
             // Résultats : 28435.33
             taxBracket2 = (salaryAnnualNetTaxableAfterReduction - 11497.0) * 11.0 / 100.0;
-            double accumulationOfInstallmentsToBePaid2 = taxBracket1 + taxBracket2;
-            resteAPayer = resteAPayer - salaryAnnualNetTaxableAfterReduction;
+            accumulationOfInstallmentsToBePaid = accumulationOfInstallmentsToBePaid + taxBracket2;
 
 
-            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid2 + "€");
+            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid + "€");
         }
         if (salaryAnnualNetTaxableAfterReduction < 83823) {
             // Résultat : 72205.50
             taxBracket3 = (salaryAnnualNetTaxableAfterReduction - 29315.0) * 30.0 / 100.0;
-            double accumulationOfInstallmentsToBePaid3 = taxBracket1 + taxBracket2 + taxBracket3;
-            resteAPayer = resteAPayer - salaryAnnualNetTaxableAfterReduction;
+            accumulationOfInstallmentsToBePaid = accumulationOfInstallmentsToBePaid + taxBracket3;
 
-            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid3 + "€");
+            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid + "€");
         }
         if (salaryAnnualNetTaxableAfterReduction <= 180294) {
             // Résultats : 36779.46
             taxBracket4 = (salaryAnnualNetTaxableAfterReduction - 83823.0) * 41.0 / 100.0;
-            double accumulationOfInstallmentsToBePaid4 = taxBracket1 + taxBracket2 + taxBracket3 + taxBracket4;
-            resteAPayer = resteAPayer - salaryAnnualNetTaxableAfterReduction;
+            accumulationOfInstallmentsToBePaid = accumulationOfInstallmentsToBePaid + taxBracket4;
 
-            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid4 + "€");
+            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid + "€");
         }
         if (salaryAnnualNetTaxableAfterReduction > 180294) {
             // Résultats avec 270000 après abattement de 10% fait à la calculatrice de mon portable : 40367.70
             taxBracket5 = (salaryAnnualNetTaxableAfterReduction - 180294) * 45 / 100;
-            double accumulationOfInstallmentsToBePaid5 = taxBracket1 + taxBracket2 + taxBracket3 + taxBracket4 + taxBracket5;
-            resteAPayer = resteAPayer - salaryAnnualNetTaxableAfterReduction;
+            accumulationOfInstallmentsToBePaid = accumulationOfInstallmentsToBePaid + taxBracket5;
 
-            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid5 + "€");
+            System.out.println("Le montant de vos impôts est de " + accumulationOfInstallmentsToBePaid + "€");
         }
-        System.out.println(resteAPayer);
     }
 }
