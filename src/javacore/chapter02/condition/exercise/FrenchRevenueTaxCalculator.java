@@ -47,4 +47,4 @@ public class FrenchRevenueTaxCalculator {
 
         System.out.println("Votre impôts s'élève à :  " + accumulationOfInstallmentsToBePaid);
     }
-}ee
+}
