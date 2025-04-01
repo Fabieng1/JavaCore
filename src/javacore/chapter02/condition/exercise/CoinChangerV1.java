@@ -11,7 +11,7 @@ public class CoinChangerV1 {
         final int COIN_OF_1 = 1;
 
 
-        // Nombres à tester pour totalBill : 100, 50, 30, 10
+        // Nombres à tester pour totalBill : 200, 100, 50, 30, 10
         // Total à payer
         int totalBill = 50;
         //Ce qu'à donner le client
@@ -41,9 +41,14 @@ public class CoinChangerV1 {
                 // Je met à jour le montant à rendre
                 amountToReturn = amountToReturn - COIN_OF_1;
             }
+            System.out.println("Il reste à rendre " + amountToReturn + "€");
         }
-        int result = amountToReturn % 50;
-        System.out.println("Résultat : " + result);
-        System.out.println("Il reste à rendre : " + amountToReturn);
+        else if (amountToReturn > 0)
+        System.out.println("Il reste à payer : " + amountToReturn + "€");
+        else {
+            System.out.println("Il ne reste rien à payer");
+    }
+
+
     }
 }
