@@ -44,11 +44,9 @@ public class CoinChangerV1 {
             System.out.println("Il reste à rendre " + amountToReturn + "€");
         }
         else if (amountToReturn > 0)
-        System.out.println("Il reste à payer : " + amountToReturn + "€");
+            System.out.println("Il reste à payer : " + amountToReturn + "€");
         else {
             System.out.println("Il ne reste rien à payer");
-    }
-
-
+        }
     }
 }
