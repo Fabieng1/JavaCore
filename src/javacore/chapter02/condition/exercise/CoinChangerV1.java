@@ -41,11 +41,91 @@ public class CoinChangerV1 {
                 // Je met à jour le montant à rendre
                 amountToReturn = amountToReturn + COIN_OF_1;
             }
+            if (amountToReturn + NOTE_OF_50 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_50;
+            }
+            if (amountToReturn + NOTE_OF_20 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_20;
+            }
+            if (amountToReturn + NOTE_OF_10 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_10;
+            }
+            if (amountToReturn + COIN_OF_2 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + COIN_OF_2;
+            }
+            if (amountToReturn + COIN_OF_1 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + COIN_OF_1;
+            }
+            if (amountToReturn + NOTE_OF_50 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_50;
+            }
+            if (amountToReturn + NOTE_OF_20 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_20;
+            }
+            if (amountToReturn + NOTE_OF_10 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_10;
+            }
+            if (amountToReturn + COIN_OF_2 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + COIN_OF_2;
+            }
+            if (amountToReturn + COIN_OF_1 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + COIN_OF_1;
+            }
+            if (amountToReturn + NOTE_OF_50 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_50;
+            }
+            if (amountToReturn + NOTE_OF_20 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_20;
+            }
+            if (amountToReturn + NOTE_OF_10 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_10;
+            }
+            if (amountToReturn + COIN_OF_2 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + COIN_OF_2;
+            }
+            if (amountToReturn + COIN_OF_1 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + COIN_OF_1;
+            }
+            if (amountToReturn + NOTE_OF_50 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_50;
+            }
+            if (amountToReturn + NOTE_OF_20 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_20;
+            }
+            if (amountToReturn + NOTE_OF_10 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + NOTE_OF_10;
+            }
+            if (amountToReturn + COIN_OF_2 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + COIN_OF_2;
+            }
+            if (amountToReturn + COIN_OF_1 < 0) {
+                // Je met à jour le montant à rendre
+                amountToReturn = amountToReturn + COIN_OF_1;
+            }
             System.out.println("Il reste à rendre " + amountToReturn + "€");
         }
-        else if (amountToReturn > 0)
+        if (amountToReturn > 0)
             System.out.println("Il reste à payer : " + amountToReturn + "€");
-        else {
+        if (amountToReturn == 0) {
             System.out.println("Il ne reste rien à payer");
         }
     }
