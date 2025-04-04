@@ -13,41 +13,44 @@ public class CoinChangerV1 {
 
         // Nombres à tester pour totalBill : 200, 100, 50, 30, 10
         // Total à payer
-        int totalBill = 1255;
+        int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 2000;
+        int amountPaid = 2;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est négatif
         int amountToReturn = totalBill - amountPaid;
 
         // Si le nombre d'amountToReturn est négatif, on fait un rendu monnaie. Sinon, aucun rendu monnaie n'est fait
-        if (amountToReturn <= 0) {
-            if (amountToReturn + NOTE_OF_50 < 0) {
+        if (amountToReturn < 0) {
+            int requiredAmountNote50 = amountToReturn / NOTE_OF_50;
+            if (requiredAmountNote50 < 0) {
 
-                int nbNote50 = amountToReturn / NOTE_OF_50;
-                amountToReturn = amountToReturn - (nbNote50 * NOTE_OF_50);
+                amountToReturn = amountToReturn - (requiredAmountNote50 * NOTE_OF_50);
             }
-            if (amountToReturn + NOTE_OF_20 <= 0) {
-                int nbNote20 = amountToReturn / NOTE_OF_20;
-                amountToReturn = amountToReturn - (nbNote20 * NOTE_OF_20);
+            int requiredAmountNote20 = amountToReturn / NOTE_OF_20;
+            if (requiredAmountNote20 < 0) {
+
+                amountToReturn = amountToReturn - (requiredAmountNote20 * NOTE_OF_20);
             }
-            if (amountToReturn + NOTE_OF_10 <= 0) {
-                int nbNote10 = amountToReturn / NOTE_OF_10;
-                amountToReturn = amountToReturn - (nbNote10 * NOTE_OF_10);
+            int requiredAmountNote10 = amountToReturn / NOTE_OF_10;
+            if (requiredAmountNote10 < 0) {
+                amountToReturn = amountToReturn - (requiredAmountNote10 * NOTE_OF_10);
             }
-            if (amountToReturn + COIN_OF_2 <= 0) {
-                int nbCoins2 = amountToReturn / COIN_OF_2;
-                amountToReturn = amountToReturn - (nbCoins2 * COIN_OF_2);
+            int requiredAmountCoins2 = amountToReturn / COIN_OF_2;
+            if (requiredAmountCoins2 < 0) {
+                amountToReturn = amountToReturn - (requiredAmountCoins2 * COIN_OF_2);
             }
-            if (amountToReturn + COIN_OF_1 <= 0) {
-                int nbCoins1 = amountToReturn / COIN_OF_1;
-                amountToReturn = amountToReturn - (nbCoins1 * COIN_OF_1);
+            int requiredAmountCoins1 = amountToReturn / COIN_OF_1;
+            if (requiredAmountCoins1 < 0) {
+                amountToReturn = amountToReturn - (requiredAmountCoins1 * COIN_OF_1);
             }
             System.out.println("Il reste à rendre " + amountToReturn + "€");
         }
-        if (amountToReturn > 0)
+
+        else if (amountToReturn > 0)
             System.out.println("Il reste à payer : " + amountToReturn + "€");
-        if (amountToReturn == 0) {
+        else {
             System.out.println("Il ne reste rien à payer");
         }
+
     }
 }
