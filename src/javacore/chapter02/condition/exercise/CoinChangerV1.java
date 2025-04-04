@@ -10,8 +10,6 @@ public class CoinChangerV1 {
         final int COIN_OF_2 = 2;
         final int COIN_OF_1 = 1;
 
-
-        // Nombres à tester pour totalBill : 200, 100, 50, 30, 10
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
