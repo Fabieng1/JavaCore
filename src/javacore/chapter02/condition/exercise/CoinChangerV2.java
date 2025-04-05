@@ -4,76 +4,68 @@ public class CoinChangerV2 {
 
     public static void main (String[] args) {
 
-        // Valeurs des coupures
         final int NOTE_OF_50 = 50;
         final int NOTE_OF_20 = 20;
         final int NOTE_OF_10 = 10;
         final int COIN_OF_2 = 2;
         final int COIN_OF_1 = 1;
 
-        // Stock disponible des valeurs
-        int stockBanknoteOf50 = 0;
-        int stockBanknoteOf20 = 4;
-        int stockBanknoteOf10 = 8;
-        int stockPiecesOf2    = 15;
-        int stockPiecesOf1    = 30;
+        int stockOfNoteOf50 = 2;
+        int stockOfNoteOf20 = 4;
+        int stockOfNoteOf10 = 5;
+        int stockOfCoinsOf2 = 15;
+        int stockOfCoinsOf1 = 30;
 
-        // Nombres à tester pour totalBill : 200, 100, 50, 30, 10
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 205;
+        int amountPaid = 252;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est négatif
         int amountToReturn = totalBill - amountPaid;
 
         // Si le nombre d'amountToReturn est négatif, on fait un rendu monnaie. Sinon, aucun rendu monnaie n'est fait
         if (amountToReturn < 0) {
-            if (stockBanknoteOf50 >= 1 && amountToReturn + NOTE_OF_50 <= 0) {
+            int requiredAmountNote50 = amountToReturn / NOTE_OF_50;
+            if (stockOfNoteOf50 >= 1 && requiredAmountNote50 < 0) {
 
-                int nbNote50 = amountToReturn / NOTE_OF_50;
-                amountToReturn = amountToReturn - (nbNote50 * NOTE_OF_50);
-
-                stockBanknoteOf50 = stockBanknoteOf50 + nbNote50;
-
-
+                amountToReturn = amountToReturn - (requiredAmountNote50 * NOTE_OF_50);
+                stockOfNoteOf50 = stockOfNoteOf50 + requiredAmountNote50;
             }
-            if (stockBanknoteOf20 >= 1 && amountToReturn + NOTE_OF_20 <= 0) {
-                int nbNote20 = amountToReturn / NOTE_OF_20;
-                amountToReturn = amountToReturn - (nbNote20 * NOTE_OF_20);
+            int requiredAmountNote20 = amountToReturn / NOTE_OF_20;
+            if (stockOfNoteOf50 >= 1 && requiredAmountNote20 < 0) {
 
-                stockBanknoteOf20 = stockBanknoteOf20 + nbNote20;
+                amountToReturn = amountToReturn - (requiredAmountNote20 * NOTE_OF_20);
+                stockOfNoteOf20 = stockOfNoteOf20 + requiredAmountNote20;
             }
-            if (stockBanknoteOf10 >= 1 && amountToReturn + NOTE_OF_10 <= 0) {
-                int nbNote10 = amountToReturn / NOTE_OF_10;
-                amountToReturn = amountToReturn + (nbNote10 * NOTE_OF_10);
-
-                stockBanknoteOf10 = stockBanknoteOf10 + nbNote10;
+            int requiredAmountNote10 = amountToReturn / NOTE_OF_10;
+            if (stockOfNoteOf10 >= 1 && requiredAmountNote10 < 0) {
+                amountToReturn = amountToReturn - (requiredAmountNote10 * NOTE_OF_10);
+                stockOfNoteOf10 = stockOfNoteOf10 + requiredAmountNote10;
             }
-            if (stockPiecesOf2 >= 1 && amountToReturn + COIN_OF_2 <= 0) {
-                int nbCoins2 = amountToReturn / COIN_OF_2;
-                amountToReturn = amountToReturn - (nbCoins2 * COIN_OF_2);
-
-                stockPiecesOf2 = stockPiecesOf2 + nbCoins2;
+            int requiredAmountCoins2 = amountToReturn / COIN_OF_2;
+            if (stockOfCoinsOf2 >= 1 && requiredAmountCoins2 < 0) {
+                amountToReturn = amountToReturn - (requiredAmountCoins2 * COIN_OF_2);
+                stockOfCoinsOf2 = stockOfCoinsOf2 + requiredAmountCoins2;
             }
-            if (stockPiecesOf1 >= 1 && amountToReturn + COIN_OF_1 <= 0) {
-                int nbCoins1 = amountToReturn / COIN_OF_1;
-                amountToReturn = amountToReturn - (nbCoins1 * COIN_OF_1);
-
-                stockPiecesOf1 = stockPiecesOf1 + nbCoins1;
+            int requiredAmountCoins1 = amountToReturn / COIN_OF_1;
+            if (stockOfCoinsOf1 >= 1 && requiredAmountCoins1 < 0) {
+                amountToReturn = amountToReturn - (requiredAmountCoins1 * COIN_OF_1);
+                stockOfCoinsOf1 = stockOfCoinsOf1 + requiredAmountCoins1;
             }
             System.out.println("Il reste à rendre " + amountToReturn + "€");
         }
+
         else if (amountToReturn > 0)
             System.out.println("Il reste à payer : " + amountToReturn + "€");
         else {
             System.out.println("Il ne reste rien à payer");
         }
-        System.out.println("50 : " + stockBanknoteOf50);
-        System.out.println("20 : " + stockBanknoteOf20);
-        System.out.println("10 : " + stockBanknoteOf10);
-        System.out.println("2 : " + stockPiecesOf2);
-        System.out.println("1 : " + stockPiecesOf1);
 
+        System.out.println("Billets de 50 : " + stockOfNoteOf50);
+        System.out.println("Billets de 20 : " + stockOfNoteOf20);
+        System.out.println("Billets de 10 : " + stockOfNoteOf10);
+        System.out.println("Pièces de 2 : " + stockOfCoinsOf2);
+        System.out.println("Pièces de 1 : " + stockOfCoinsOf1);
 
 
     }
