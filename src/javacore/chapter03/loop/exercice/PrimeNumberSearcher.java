@@ -8,9 +8,9 @@ public class PrimeNumberSearcher {
 
         boolean isPrime = true;
 
-        for (int i = 4; i < number; i++) { // Je veux aller de 2 à 9
+        for (int i = 2; i < number; i++) { // Je veux aller de 2 à 9
             isPrime = true;
-            for (int potentialDivisor = 4; potentialDivisor < i; potentialDivisor++) {
+            for (int potentialDivisor = 2; potentialDivisor < i; potentialDivisor++) {
 
                 /* int resultDivision = i / potentialDivisor;
                 System.out.println("Résultats de la division " + i + " / " + potentialDivisor + " = " + resultDivision);*/
