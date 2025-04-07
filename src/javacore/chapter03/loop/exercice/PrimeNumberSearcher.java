@@ -4,17 +4,18 @@ public class PrimeNumberSearcher {
 
     public static void main(String[] args) {
 
-        int number = 100;
+        int number = 249;
+        int nbPrimeNumber = 0;
 
         boolean isPrime = true;
 
-        for (int i = 2; i < number; i++) { // Je veux aller de 2 à 9
+        for (int potentialPrimeNumber = 4; potentialPrimeNumber < number; potentialPrimeNumber++) { // Je veux aller de 2 à 9
             isPrime = true;
-            for (int potentialDivisor = 2; potentialDivisor < i; potentialDivisor++) {
+            for (int potentialDivisor = 2; potentialDivisor < potentialPrimeNumber; potentialDivisor++) {
 
                 /* int resultDivision = i / potentialDivisor;
                 System.out.println("Résultats de la division " + i + " / " + potentialDivisor + " = " + resultDivision);*/
-                int reste = i % potentialDivisor;
+                int reste = potentialPrimeNumber % potentialDivisor;
              /* System.out.println("Reste de la division " + reste);
                 System.out.println();*/
 
@@ -24,9 +25,11 @@ public class PrimeNumberSearcher {
 
             }
             if (isPrime == true) {
-
-                System.out.println (i + " est premier");
+                    System.out.println(potentialPrimeNumber + " est premier");
+                    nbPrimeNumber++;
             }
         }
+        System.out.println("Il y a " + nbPrimeNumber + " nombre premier");
+        System.out.println("Pour le savoir il aura fallu analyser " + (number - 1) + " nombres");
     }
 }
