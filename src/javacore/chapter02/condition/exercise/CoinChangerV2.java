@@ -19,11 +19,17 @@ public class CoinChangerV2 {
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 252;
+        int amountPaid = 1000;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est négatif
         int amountToReturn = amountPaid - totalBill;
+        int bottomOfCash = (NOTE_OF_50 * stockOfNoteOf50) + (NOTE_OF_20 * stockOfNoteOf20) + (NOTE_OF_10 * stockOfNoteOf10) + (COIN_OF_2 * stockOfCoinsOf2) + (COIN_OF_1 * stockOfCoinsOf1);
+        System.out.println("Stock caisse : " + bottomOfCash);
 
-        if (amountToReturn < 0) {
+        if (amountToReturn > bottomOfCash) {
+            System.out.println("Rendu monnaie complet impossible");
+            System.out.println("Montant à rendre possible : " + bottomOfCash);
+        }
+        else if (amountToReturn < 0) {
             System.out.println("Il reste à payer : " + amountToReturn + "€");
         }
         else if (amountToReturn == 0) {
