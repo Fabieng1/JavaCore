@@ -19,7 +19,7 @@ public class CoinChangerV2 {
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 1000;
+        int amountPaid = 252;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est négatif
         int amountToReturn = amountPaid - totalBill;
         int bottomOfCash = (NOTE_OF_50 * stockOfNoteOf50) + (NOTE_OF_20 * stockOfNoteOf20) + (NOTE_OF_10 * stockOfNoteOf10) + (COIN_OF_2 * stockOfCoinsOf2) + (COIN_OF_1 * stockOfCoinsOf1);
@@ -27,7 +27,7 @@ public class CoinChangerV2 {
 
         if (amountToReturn > bottomOfCash) {
             System.out.println("Rendu monnaie complet impossible");
-            System.out.println("Montant à rendre possible : " + bottomOfCash);
+            System.out.println("Montant maximal à rendre possible : " + bottomOfCash);
         }
         else if (amountToReturn < 0) {
             System.out.println("Il reste à payer : " + amountToReturn + "€");
@@ -40,7 +40,11 @@ public class CoinChangerV2 {
             int requiredAmountNote50 = amountToReturn / NOTE_OF_50;
             if (stockOfNoteOf50 >= 1 && requiredAmountNote50 > 0) {
 
-                if (requiredAmountNote50 >= stockOfNoteOf50) {
+                if (requiredAmountNote50 > stockOfNoteOf50) {
+                    amountToReturn = amountToReturn - (stockOfNoteOf50 * NOTE_OF_50);
+                    stockOfNoteOf50 = 0;
+                }
+                else {
                     amountToReturn = amountToReturn - (requiredAmountNote50 * NOTE_OF_50);
                     stockOfNoteOf50 = stockOfNoteOf50 - requiredAmountNote50;
                 }
@@ -48,27 +52,47 @@ public class CoinChangerV2 {
             int requiredAmountNote20 = amountToReturn / NOTE_OF_20;
             if (stockOfNoteOf50 >= 1 && requiredAmountNote20 > 0) {
 
-                if (requiredAmountNote20 <= stockOfNoteOf20) {
+                if (requiredAmountNote20 > stockOfNoteOf20) {
+                    amountToReturn = amountToReturn - (stockOfNoteOf20 * NOTE_OF_20);
+                    stockOfNoteOf20 = 0;
+                }
+                else {
                     amountToReturn = amountToReturn - (requiredAmountNote20 * NOTE_OF_20);
                     stockOfNoteOf20 = stockOfNoteOf20 - requiredAmountNote20;
                 }
-
-
             }
             int requiredAmountNote10 = amountToReturn / NOTE_OF_10;
             if (stockOfNoteOf10 >= 1 && requiredAmountNote10 > 0) {
-                amountToReturn = amountToReturn - (requiredAmountNote10 * NOTE_OF_10);
-                stockOfNoteOf10 = stockOfNoteOf10 - requiredAmountNote10;
+                if (requiredAmountNote10 > stockOfNoteOf10) {
+                    amountToReturn = amountToReturn - (stockOfNoteOf10 * NOTE_OF_10);
+                    stockOfNoteOf10 = 0;
+                }
+                else {
+                    amountToReturn = amountToReturn - (requiredAmountNote10 * NOTE_OF_10);
+                    stockOfNoteOf10 = stockOfNoteOf10 - requiredAmountNote10;
+                }
             }
             int requiredAmountCoins2 = amountToReturn / COIN_OF_2;
             if (stockOfCoinsOf2 >= 1 && requiredAmountCoins2 > 0) {
-                amountToReturn = amountToReturn - (requiredAmountCoins2 * COIN_OF_2);
-                stockOfCoinsOf2 = stockOfCoinsOf2 - requiredAmountCoins2;
+                if (requiredAmountCoins2 > stockOfCoinsOf2) {
+                    amountToReturn = amountToReturn - (stockOfCoinsOf2 * COIN_OF_2);
+                    stockOfCoinsOf2 = 0;
+                }
+                else {
+                    amountToReturn = amountToReturn - (requiredAmountCoins2 * COIN_OF_2);
+                    stockOfCoinsOf2 = stockOfCoinsOf2 - requiredAmountCoins2;
+                }
             }
             int requiredAmountCoins1 = amountToReturn / COIN_OF_1;
             if (stockOfCoinsOf1 >= 1 && requiredAmountCoins1 > 0) {
-                amountToReturn = amountToReturn - (requiredAmountCoins1 * COIN_OF_1);
-                stockOfCoinsOf1 = stockOfCoinsOf1 - requiredAmountCoins1;
+                if (requiredAmountCoins1 > stockOfCoinsOf1) {
+                    amountToReturn = amountToReturn - (stockOfCoinsOf1 * COIN_OF_1);
+                    stockOfCoinsOf1 = 0;
+                }
+                else {
+                    amountToReturn = amountToReturn - (requiredAmountCoins1 * COIN_OF_1);
+                    stockOfCoinsOf1 = stockOfCoinsOf1 - requiredAmountCoins1;
+                }
             }
             System.out.println("Il reste à rendre " + amountToReturn + "€");
         }
