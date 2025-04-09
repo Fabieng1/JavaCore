@@ -9,7 +9,7 @@ public class PrimeNumberSearcher {
 
         boolean isPrime = true;
 
-        for (int potentialPrimeNumber = 4; potentialPrimeNumber < number; potentialPrimeNumber++) { // Je veux aller de 2 à 9
+        for (int potentialPrimeNumber = 4; potentialPrimeNumber < number; potentialPrimeNumber++) {
             isPrime = true;
             for (int potentialDivisor = 2; potentialDivisor < potentialPrimeNumber; potentialDivisor++) {
 

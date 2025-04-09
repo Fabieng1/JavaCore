@@ -4,36 +4,16 @@ public class PerfectNumberFinder {
 
     public static void main (String[] args) {
 
-        int diviseur = 1;
-        int numberEnd = 61;
-        int resultAddDivisor = 0;
+        int nbEnd = 100;
+
+        for (int nbStart = 2; nbStart > nbEnd; nbStart++) {
+            for (int potentialDivisor = 2; potentialDivisor < nbEnd; potentialDivisor++) {
 
 
-        resultAddDivisor = numberEnd % diviseur;
-
-        while (diviseur < numberEnd) {
-
-
-            // Déterminé quels sont les diviseurs de "numberEnd"
-
-            if (numberEnd % diviseur == 0) { // Alors c'est un diviseur
-
-
-                System.out.println("Modulo : " + resultAddDivisor);
-                resultAddDivisor = resultAddDivisor + diviseur;
-                System.out.println("Résultat : " + resultAddDivisor);
             }
-
-            diviseur++;
         }
 
-        if (resultAddDivisor == numberEnd) {
 
-            System.out.println(numberEnd + " est un nombre parfait");
-        }
-        else {
-            System.out.println(numberEnd + " n'est pas un nombre parfait");
-        }
     }
 }
 
