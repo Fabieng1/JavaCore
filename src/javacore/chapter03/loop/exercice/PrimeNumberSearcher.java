@@ -28,6 +28,7 @@ public class PrimeNumberSearcher {
                     System.out.println(potentialPrimeNumber + " est premier");
                     nbPrimeNumber++;
             }
+
         }
         System.out.println("Il y a " + nbPrimeNumber + " nombre premier");
         System.out.println("Pour le savoir il aura fallu analyser " + (number - 1) + " nombres");
