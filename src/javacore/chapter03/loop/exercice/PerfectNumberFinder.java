@@ -4,10 +4,9 @@ public class PerfectNumberFinder {
 
     public static void main (String[] args) {
 
-        int nbEnd = 100;
+        int nbEnd = 90000;
 
-
-        for (int potentialNbPerfect = 2; potentialNbPerfect < nbEnd; potentialNbPerfect++) {
+        for (int potentialNbPerfect = 1; potentialNbPerfect < nbEnd; potentialNbPerfect++) {
             int additionDivisor = 0;
             for (int potentialDivisor = 1; potentialDivisor < potentialNbPerfect; potentialDivisor++) {
                 int remainderDivision = potentialNbPerfect % potentialDivisor;
