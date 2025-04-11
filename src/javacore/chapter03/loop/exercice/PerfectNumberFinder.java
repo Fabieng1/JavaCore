@@ -5,14 +5,15 @@ public class PerfectNumberFinder {
     public static void main (String[] args) {
 
         int nbEnd = 100;
-        int additionDivisor = 0;
+
 
         for (int potentialNbPerfect = 2; potentialNbPerfect < nbEnd; potentialNbPerfect++) {
+            int additionDivisor = 0;
             for (int potentialDivisor = 1; potentialDivisor < potentialNbPerfect; potentialDivisor++) {
-
                 int remainderDivision = potentialNbPerfect % potentialDivisor;
 
                 if (remainderDivision == 0) {
+
                     additionDivisor = additionDivisor + potentialDivisor;
                 }
             }
@@ -22,5 +23,3 @@ public class PerfectNumberFinder {
         }
     }
 }
-
-
