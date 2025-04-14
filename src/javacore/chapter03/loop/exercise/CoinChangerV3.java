@@ -37,10 +37,7 @@ public class CoinChangerV3 {
                                 amountToReturn = amountToReturn - NOTE_OF_50;
                             }
                         }
-
                     }
-
-
                 }
             }
            /* for (;amountToReturn >= NOTE_OF_50;) {
