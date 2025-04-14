@@ -1,4 +1,4 @@
-package javacore.chapter03.loop.exercice;
+package javacore.chapter03.loop.exercise;
 
 import java.math.BigInteger;
 

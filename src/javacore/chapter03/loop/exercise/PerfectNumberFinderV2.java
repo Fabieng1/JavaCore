@@ -1,4 +1,4 @@
-package javacore.chapter03.loop.exercice;
+package javacore.chapter03.loop.exercise;
 
 public class PerfectNumberFinderV2 {
 

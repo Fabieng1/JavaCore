@@ -41,7 +41,7 @@ public class CoinChangerV2 {
             int requiredAmountNote50 = amountToReturn / NOTE_OF_50;
             if (stockOfNoteOf50 >= 1 && requiredAmountNote50 > 0) {
 
-                if (requiredAmountNote50 > stockOfNoteOf50) {
+                if (requiredAmountNote50 >= stockOfNoteOf50) {
                     amountToReturn = amountToReturn - (stockOfNoteOf50 * NOTE_OF_50);
                     stockOfNoteOf50 = 0;
                 }
@@ -51,7 +51,7 @@ public class CoinChangerV2 {
                 }
             }
             int requiredAmountNote20 = amountToReturn / NOTE_OF_20;
-            if (stockOfNoteOf50 >= 1 && requiredAmountNote20 > 0) {
+            if (stockOfNoteOf20 >= 1 && requiredAmountNote20 > 0) {
 
                 if (requiredAmountNote20 > stockOfNoteOf20) {
                     amountToReturn = amountToReturn - (stockOfNoteOf20 * NOTE_OF_20);

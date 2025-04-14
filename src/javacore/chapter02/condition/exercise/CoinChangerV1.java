@@ -23,7 +23,6 @@ public class CoinChangerV1 {
             System.out.println("Il ne reste rien à payer");
         }
 
-        // Si le nombre d'amountToReturn est négatif, on fait un rendu monnaie. Sinon, aucun rendu monnaie n'est fait
         else {
             int requiredAmountNote50 = amountToReturn / NOTE_OF_50;
             if (requiredAmountNote50 > 0) {
