@@ -40,7 +40,9 @@ public class CoinChangerV3 {
                     }
                 }
             }
-           /* for (;amountToReturn >= NOTE_OF_50;) {
+           /* Version désimbriqué
+
+            for (;amountToReturn >= NOTE_OF_50;) {
                 amountToReturn = amountToReturn - NOTE_OF_50;
             }
 
