@@ -13,7 +13,7 @@ public class CoinChangerV3 {
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 200;
+        int amountPaid = 50;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est positif
         int amountToReturn = amountPaid - totalBill;
 
@@ -25,23 +25,9 @@ public class CoinChangerV3 {
 
         else {
 
-           for (;amountToReturn >= COIN_OF_1;) {
-                amountToReturn = amountToReturn - COIN_OF_1;
-                for (;amountToReturn >= COIN_OF_2;) {
-                    amountToReturn = amountToReturn - COIN_OF_2;
-                    for (;amountToReturn >= NOTE_OF_10;) {
-                        amountToReturn = amountToReturn - NOTE_OF_10;
-                        for (;amountToReturn >= NOTE_OF_20;) {
-                            amountToReturn = amountToReturn - NOTE_OF_20;
-                            for (;amountToReturn >= NOTE_OF_50;) {
-                                amountToReturn = amountToReturn - NOTE_OF_50;
-                            }
-                        }
-                    }
-                }
-            }
+               }
 
-            /* Version dé-imbriqué
+
             while (amountToReturn >= NOTE_OF_50) {
                 amountToReturn = amountToReturn - NOTE_OF_50;
             }
@@ -56,7 +42,7 @@ public class CoinChangerV3 {
 
             while (amountToReturn >= COIN_OF_2) {
                 amountToReturn = amountToReturn - COIN_OF_2;
-            }*/
+            }
 
             while (amountToReturn >= COIN_OF_1) {
                 amountToReturn = amountToReturn - COIN_OF_1;
@@ -64,4 +50,4 @@ public class CoinChangerV3 {
             System.out.println("Il reste à rendre " + amountToReturn + "€");
         }
     }
-}
+
