@@ -21,7 +21,8 @@ public class CoinChangerV3 {
             System.out.println("Il reste à payer : " + amountToReturn + "€");
         else if (amountToReturn == 0) {
             System.out.println("Il ne reste rien à payer");
-        } else {
+        }
+        else {
 
 
             while (amountToReturn >= NOTE_OF_50) {
