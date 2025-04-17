@@ -25,7 +25,7 @@ public class CoinChangerV3 {
 
         else {
 
-            for (;amountToReturn >= COIN_OF_1;) {
+           for (;amountToReturn >= COIN_OF_1;) {
                 amountToReturn = amountToReturn - COIN_OF_1;
                 for (;amountToReturn >= COIN_OF_2;) {
                     amountToReturn = amountToReturn - COIN_OF_2;
@@ -41,27 +41,26 @@ public class CoinChangerV3 {
                 }
             }
 
-           /* Version désimbriqué
-
-            for (;amountToReturn >= NOTE_OF_50;) {
+            /* Version dé-imbriqué
+            while (amountToReturn >= NOTE_OF_50) {
                 amountToReturn = amountToReturn - NOTE_OF_50;
             }
 
-            for (;amountToReturn >= NOTE_OF_20;) {
+            while (amountToReturn >= NOTE_OF_20) {
                 amountToReturn = amountToReturn - NOTE_OF_20;
             }
 
-            for (;amountToReturn >= NOTE_OF_10;) {
+            while (amountToReturn >= NOTE_OF_10) {
                 amountToReturn = amountToReturn - NOTE_OF_10;
             }
 
-            for (;amountToReturn >= COIN_OF_2;) {
+            while (amountToReturn >= COIN_OF_2) {
                 amountToReturn = amountToReturn - COIN_OF_2;
-            }
-
-            for (;amountToReturn >= COIN_OF_1;) {
-                amountToReturn = amountToReturn - COIN_OF_1;
             }*/
+
+            while (amountToReturn >= COIN_OF_1) {
+                amountToReturn = amountToReturn - COIN_OF_1;
+            }
             System.out.println("Il reste à rendre " + amountToReturn + "€");
         }
     }

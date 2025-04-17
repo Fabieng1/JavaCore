@@ -7,23 +7,23 @@ public class FibonacciCalculator {
         System.out.println("0");
         System.out.println("1");
 
-        long termeN1 = 0;
-        long termeN2 = 1;
+        long firstTerm = 0;
+        long secondTerm = 1;
 
-        long numberPair = 0;
+        long evenNumbers = 0;
 
-        for (long compteurTermes = 1; compteurTermes <= 1000; compteurTermes++) {
-            long result = termeN1 + termeN2;
-            termeN1 = termeN2;
-            termeN2 = result;
+        for (int compteurTermes = 1; compteurTermes <= 1000; compteurTermes++) {
+            long currentFibonacciTerm = firstTerm + secondTerm;
+            firstTerm = secondTerm;
+            secondTerm = currentFibonacciTerm;
 
-            System.out.println(result);
+            System.out.println(currentFibonacciTerm);
 
-            if (result % 2 == 0) {
+            if (currentFibonacciTerm % 2 == 0) {
 
-                numberPair++;
+                evenNumbers++;
             }
         }
-        System.out.println("Il y a " + numberPair + " nombres de Fibonacci pair");
+        System.out.println("Il y a " + evenNumbers + " nombres de Fibonacci paires");
     }
 }
