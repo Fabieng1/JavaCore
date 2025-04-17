@@ -4,10 +4,10 @@ public class Test {
 
     public static void main (String[] args) {
 
-        int a = 0;
-        int b = 0;
+        Integer a = 0;
+        Integer b = 0;
 
-        for (int d = 0; d == 500; d++) {
+        for (Integer d = 0; d < 500; d++) {
 
             a++;
             b++;

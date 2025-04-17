@@ -4,20 +4,18 @@ public class FibonacciCalculator {
 
     public static void main (String[] args) {
 
-        int sumResult = 0;
-        int sumResult2 = 0;
-        int sumResult3 = 0;
-        int numberEnd = 100;
+        System.out.println("0");
+        System.out.println("1");
 
-        for (int indexSum = 0; indexSum <= numberEnd; indexSum++) {
-            sumResult = 0 + 1;
-            sumResult2 = sumResult + 1;
-            for (int indexSum2 = 1; indexSum2 <= numberEnd; indexSum2++) {
+        long termeN1 = 0;
+        long termeN2 = 1;
 
+        for (long compteurTermes = 1; compteurTermes <= 50; compteurTermes++) {
+            long result = termeN1 + termeN2;
+            termeN1 = termeN2;
+            termeN2 = result;
 
-
-            }
-            System.out.println(sumResult2);
+            System.out.println(result);
 
         }
     }
