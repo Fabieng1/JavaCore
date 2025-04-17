@@ -12,7 +12,7 @@ public class FibonacciCalculator {
 
         long numberPair = 0;
 
-        for (long compteurTermes = 1; compteurTermes <= 50; compteurTermes++) {
+        for (long compteurTermes = 1; compteurTermes <= 1000; compteurTermes++) {
             long result = termeN1 + termeN2;
             termeN1 = termeN2;
             termeN2 = result;
@@ -22,11 +22,8 @@ public class FibonacciCalculator {
             if (result % 2 == 0) {
 
                 numberPair++;
-
-                System.out.println("Il y a " + numberPair + " nombres de Fibonacci pair");
-
             }
-
         }
+        System.out.println("Il y a " + numberPair + " nombres de Fibonacci pair");
     }
 }
