@@ -2,7 +2,7 @@ package javacore.chapter03.loop.exercise;
 
 public class CoinChangerV3 {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         final int NOTE_OF_50 = 50;
         final int NOTE_OF_20 = 20;
@@ -19,12 +19,9 @@ public class CoinChangerV3 {
 
         if (amountToReturn < 0)
             System.out.println("Il reste à payer : " + amountToReturn + "€");
-        else if (amountToReturn == 0){
+        else if (amountToReturn == 0) {
             System.out.println("Il ne reste rien à payer");
-        }
-        else {
-
-
+        } else {
 
 
             while (amountToReturn >= NOTE_OF_50) {
@@ -49,4 +46,5 @@ public class CoinChangerV3 {
             System.out.println("Il reste à rendre " + amountToReturn + "€");
         }
     }
+}
 
