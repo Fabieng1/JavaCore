@@ -30,7 +30,8 @@ public class CoinChangerV3 {
             System.out.println("Il reste à payer : " + amountToReturn + "€");
         else if (amountToReturn == 0) {
             System.out.println("Il ne reste rien à payer");
-        } else {
+        }
+        else {
             while (amountToReturn >= NOTE_OF_50) {
                 amountToReturn = amountToReturn - NOTE_OF_50;
                 countNote50++;
@@ -57,7 +58,7 @@ public class CoinChangerV3 {
             }
 
             System.out.println("Il reste à rendre " + amountToReturn + "€");
-
+            System.out.println();
             System.out.println(countNote50 + " billets de 50 ont été rendus");
             System.out.println(countNote20 + " billets de 20 ont été rendus");
             System.out.println(countNote10 + " billets de 10 ont été rendus");
