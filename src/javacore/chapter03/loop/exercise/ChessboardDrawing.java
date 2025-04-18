@@ -6,13 +6,13 @@ public class ChessboardDrawing {
 
         int chessboardSize = 5;
 
+        char sharp = '#';
+        char point = '.';
+
         for (int sizeColumnCheckboard = 0; sizeColumnCheckboard < chessboardSize; sizeColumnCheckboard++) {
             for (int sizeLineCheckboard = 0; sizeLineCheckboard < chessboardSize; sizeLineCheckboard++) {
-
-                System.out.print("# ");
-                System.out.print(".");
-
-
+                System.out.print(sharp);
+                System.out.print(point);
             }
             System.out.println();
         }
