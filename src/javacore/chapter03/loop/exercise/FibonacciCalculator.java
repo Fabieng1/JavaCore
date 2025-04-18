@@ -4,26 +4,29 @@ public class FibonacciCalculator {
 
     public static void main (String[] args) {
 
-        System.out.println("0");
-        System.out.println("1");
-
         long firstTerm = 0;
         long secondTerm = 1;
 
-        long evenNumbers = 0;
+        System.out.println(firstTerm);
+        System.out.println(secondTerm);
 
-        for (int compteurTermes = 1; compteurTermes <= 1000; compteurTermes++) {
+        long evenNumbersCountFind = 0;
+
+        for (int countTerm = 1; countTerm <= 50; countTerm++) {
             long currentFibonacciTerm = firstTerm + secondTerm;
             firstTerm = secondTerm;
             secondTerm = currentFibonacciTerm;
 
-            System.out.println(currentFibonacciTerm);
-
             if (currentFibonacciTerm % 2 == 0) {
 
-                evenNumbers++;
+                evenNumbersCountFind++;
+                System.out.println(currentFibonacciTerm + " (Even)");
+            }
+            else {
+
+                System.out.println(currentFibonacciTerm);
             }
         }
-        System.out.println("Il y a " + evenNumbers + " nombres de Fibonacci paires");
+        System.out.println("Il y a " + evenNumbersCountFind + " nombres de Fibonacci paires");
     }
 }
