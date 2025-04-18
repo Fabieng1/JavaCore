@@ -27,9 +27,6 @@ public class FibonacciCalculator {
 
                 System.out.println(currentFibonacciTerm);
             }
-            if (currentFibonacciTerm < 0) {
-                break;
-            }
         }
         System.out.println("Il y a " + evenNumbersCountFind + " nombres de Fibonacci paires");
     }
