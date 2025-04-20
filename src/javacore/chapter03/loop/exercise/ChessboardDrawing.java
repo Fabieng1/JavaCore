@@ -6,14 +6,12 @@ public class ChessboardDrawing {
 
         int chessboardSize = 5;
 
-        for (int currentColumnsize = 1; currentColumnsize != chessboardSize; currentColumnsize++) {
-            for (int currentLinesize = 1; currentLinesize != chessboardSize; currentLinesize++) {
+        for (int currentColumnsize = 1; currentColumnsize < chessboardSize; currentColumnsize++) {
+            for (int currentLinesize = 1; currentLinesize < currentColumnsize; currentLinesize++) {
                 System.out.print("#");
                 System.out.print(" . ");
             }
             System.out.println();
-            System.out.print(". ");
-            System.out.print("#");
         }
 
     }
