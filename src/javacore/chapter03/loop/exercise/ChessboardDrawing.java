@@ -9,8 +9,8 @@ public class ChessboardDrawing {
         int countSharp = 0;
         int countPoint = 0;
 
-        for (int currentColumnsize = 1; currentColumnsize < chessboardSize; currentColumnsize++) {
-            for (int currentLinesize = 1; currentLinesize < chessboardSize; currentLinesize++) {
+        for (int currentColumnsize = 0; currentColumnsize < chessboardSize; currentColumnsize++) {
+            for (int currentLinesize = 0; currentLinesize < chessboardSize; currentLinesize++) {
 
                 if (currentLinesize % 2 != 0) {
                     System.out.print("#");
