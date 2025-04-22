@@ -6,19 +6,15 @@ public class ChessboardDrawing {
 
         int chessboardSize = 5;
 
-        int countSharp = 0;
-        int countPoint = 0;
-
         for (int currentColumnsize = 0; currentColumnsize < chessboardSize; currentColumnsize++) {
             for (int currentLinesize = 0; currentLinesize < chessboardSize; currentLinesize++) {
 
-                if (currentLinesize % 2 != 0) {
+                if (currentLinesize % 2 == 0) {
                     System.out.print("#");
-                    System.out.print(" . ");
+
                 }
-                else if (currentLinesize % 2 == 0) {
+                else {
                     System.out.print(" . ");
-                    System.out.print("#");
 
                 }
             }
@@ -26,4 +22,3 @@ public class ChessboardDrawing {
         }
     }
 }
-
