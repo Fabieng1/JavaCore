@@ -9,7 +9,7 @@ public class ChessboardDrawing {
         for (int currentColumnsize = 0; currentColumnsize < chessboardSize; currentColumnsize++) {
             for (int currentLinesize = 0; currentLinesize < chessboardSize; currentLinesize++) {
 
-                if (currentLinesize % 2 == 0) {
+                if (currentLinesize % 2 == 0 && currentColumnsize % 2 == 0) {
                     System.out.print("#");
                 }
                 else {
