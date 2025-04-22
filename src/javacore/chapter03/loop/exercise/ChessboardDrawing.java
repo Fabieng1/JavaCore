@@ -11,7 +11,6 @@ public class ChessboardDrawing {
 
                 if (currentLinesize % 2 == 0) {
                     System.out.print("#");
-
                 }
                 else {
                     System.out.print(" . ");
