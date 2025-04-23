@@ -15,10 +15,12 @@ public class ChessboardDrawing {
                 else if (currentLinesize % 2 != 0 && currentColumnsize % 2 == 0) {
                     System.out.print(" . ");
                 }
-                else if (currentLinesize % 2 != 0 && currentColumnsize % 2 != 0) {
+
+                if (currentLinesize % 2 != 0 && currentColumnsize % 2 != 0) {
                     System.out.print(" . ");
-                } else if () {
-                    
+                }
+                else if (currentLinesize % 2 == 0 && currentColumnsize != 0) {
+                    System.out.print("#");
                 }
             }
             System.out.println();
