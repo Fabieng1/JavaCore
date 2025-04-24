@@ -15,7 +15,7 @@ public class FibonacciCalculator {
 
         int evenNumbersCounttFind = 0;
 
-        for (int countTerm = 3; countTerm <= 50; countTerm++) {
+        for (int countTerm = 3; countTerm <= 1000; countTerm++) {
 
             long currentFibonacciTerm = firstTerm + secondTerm;
             firstTerm = secondTerm;
