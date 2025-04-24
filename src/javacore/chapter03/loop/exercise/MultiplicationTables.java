@@ -1,4 +1,4 @@
-package javacore.chapter02.condition.exercise;
+package javacore.chapter03.loop.exercise;
 
 public class MultiplicationTables {
 
