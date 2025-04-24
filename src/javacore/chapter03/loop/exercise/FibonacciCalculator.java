@@ -4,9 +4,7 @@ public class FibonacciCalculator {
 
     public static void main (String[] args) {
 
-        long countNumbersFibonacci = 2;
-
-
+        StringBuilder displayNumberFibonacci = new StringBuilder("Terme Fibonacci n°" + " = ");
 
         long firstTerm = 0;
         long secondTerm = 1;
@@ -17,17 +15,14 @@ public class FibonacciCalculator {
 
         int evenNumbersCounttFind = 0;
 
-        for (int countTerm = 3; countTerm <= 1000; countTerm++) {
-
-            countNumbersFibonacci++;
+        for (int countTerm = 3; countTerm <= 50; countTerm++) {
 
             long currentFibonacciTerm = firstTerm + secondTerm;
             firstTerm = secondTerm;
             secondTerm = currentFibonacciTerm;
 
             //Counter exceeding a thousand
-            System.out.print("Term n°" + countTerm + " = " + currentFibonacciTerm);
-
+            displayNumberFibonacci.insert(19, + countTerm);
 
             if (currentFibonacciTerm % 2 == 0) {
                 evenNumbersCounttFind++;
