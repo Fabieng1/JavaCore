@@ -8,7 +8,7 @@ public class FibonacciCalculator {
 
 
 
-        long firstTerm = 1;
+        long firstTerm = 0;
         long secondTerm = 1;
 
         // terms of departure. Not included in the counting loop
@@ -17,7 +17,7 @@ public class FibonacciCalculator {
 
         int evenNumbersCounttFind = 0;
 
-        for (int countTerm = 1; countTerm <= 1000; countTerm++) {
+        for (int countTerm = 3; countTerm <= 1000; countTerm++) {
 
             countNumbersFibonacci++;
 
@@ -26,7 +26,7 @@ public class FibonacciCalculator {
             secondTerm = currentFibonacciTerm;
 
             //Counter exceeding a thousand
-            System.out.print("Term n°" + countNumbersFibonacci + " = " + currentFibonacciTerm);
+            System.out.print("Term n°" + countTerm + " = " + currentFibonacciTerm);
 
 
             if (currentFibonacciTerm % 2 == 0) {

@@ -9,18 +9,17 @@ public class ChessboardDrawing {
         for (int currentColumnsize = 0; currentColumnsize < chessboardSize; currentColumnsize++) {
             for (int currentLinesize = 0; currentLinesize < chessboardSize; currentLinesize++) {
 
-                if (currentLinesize % 2 == 0 && currentColumnsize % 2 == 0) {
-                    System.out.print("#");
+                if (currentColumnsize % 2 == 0 && currentLinesize % 2 == 0) {
+                    System.out.print(" #");
                 }
-                else if (currentLinesize % 2 != 0 && currentColumnsize % 2 == 0) {
+                else if (currentColumnsize % 2 == 0 && currentLinesize % 2 != 0) {
                     System.out.print(" . ");
                 }
-
-                if (currentLinesize % 2 != 0 && currentColumnsize % 2 != 0) {
+                else if (currentColumnsize % 2 != 0 && currentLinesize % 2 == 0) {
                     System.out.print(" . ");
                 }
-                else if (currentLinesize % 2 == 0 && currentColumnsize != 0) {
-                    System.out.print("#");
+                else if (currentColumnsize % 2 != 0 && currentLinesize % 2 != 0) {
+                    System.out.print("# ");
                 }
             }
             System.out.println();
