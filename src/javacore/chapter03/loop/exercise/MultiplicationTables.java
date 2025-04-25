@@ -5,11 +5,16 @@ public class MultiplicationTables {
     public static void main (String[] args) {
 
         for (int tableMultiplication = 1;  tableMultiplication <= 9; tableMultiplication++) {
+            System.out.print("Table de multiplication " + tableMultiplication + " : ");
             for (int multiplier = 1; multiplier <= 10; multiplier++) {
 
-                int resultMltiplication = multiplier * tableMultiplication;
+                int resultMultiplication = multiplier * tableMultiplication;
 
-                System.out.println(tableMultiplication + " X " + multiplier + " = " + resultMltiplication);
+
+
+                System.out.print(" " + resultMultiplication);
+
+               // System.out.println(tableMultiplication + " X " + multiplier + " = " + resultMltiplication);
             }
             System.out.println();
         }
