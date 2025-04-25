@@ -13,7 +13,7 @@ public class BasicStopwatch {
 
         // Une boucle while qui itèrera 100x grâce à l'incrémentation de la variable i (à la fin de la boucle)
 
-        while(i < 100) {
+        while(i < 10000) {
 
             secondes++;
 
@@ -30,11 +30,16 @@ public class BasicStopwatch {
             if (hours > 23) {
                 hours = 0;
             }
-            System.out.println(hours + ":" + minutes + ":" + secondes );
+
+            String displayHours = hours < 10  ? "0" + hours  : "" + hours;
+            String displayMinutes = minutes < 10  ? "0" + minutes  : "" + minutes;
+            String displaySecondes = secondes < 10  ? "0" + secondes  : "" + secondes;
+            System.out.println(displayHours + ":" + displayMinutes  + ":" +  displaySecondes);
+            //System.out.println(hours + ":" + minutes + ":" + secondes );
 
             //  Effectue une "pause" de 1000 millisecondes / 1 seconde
 
-            Thread.sleep(1000);
+            Thread.sleep(1);
             //System.out.println("1 seconde s'est écoulée");
 
 
