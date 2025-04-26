@@ -6,17 +6,15 @@ public class FullPyramid {
 
         int numbersOfRows = 5;
 
-        for (int currentColumn = 1; currentColumn < numbersOfRows; currentColumn++) {
-            int totalSpace = numbersOfRows - currentColumn;
-            for (int currentSpace = 1; currentSpace != totalSpace; currentSpace++) {
-
+        for (int currentColumn = 0; currentColumn < numbersOfRows; currentColumn++) {
+            for (int currentSpaceLine = 0; currentSpaceLine < currentColumn; currentSpaceLine++) {
                 System.out.print(" ");
-
-                for (int currentLine = 0; currentLine < currentColumn; currentLine++) {
+                for (int currentAsterixLine = 0; currentAsterixLine < currentColumn; currentAsterixLine++) {
                     System.out.print("*");
                 }
+                System.out.println();
             }
-            System.out.println();
+
         }
 
     }
