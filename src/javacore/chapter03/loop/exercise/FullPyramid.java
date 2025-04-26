@@ -7,12 +7,14 @@ public class FullPyramid {
         int numbersOfRows = 5;
 
         for (int currentColumn = 1; currentColumn < numbersOfRows; currentColumn++) {
-            for (int currentLine = 1; currentLine < currentColumn; currentLine++) {
-
-                int totalSpace = numbersOfRows - currentColumn;
+            int totalSpace = numbersOfRows - currentColumn;
+            for (int currentSpace = 1; currentSpace != totalSpace; currentSpace++) {
 
                 System.out.print(" ");
-                System.out.print("*");
+
+                for (int currentLine = 0; currentLine < currentColumn; currentLine++) {
+                    System.out.print("*");
+                }
             }
             System.out.println();
         }
