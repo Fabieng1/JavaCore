@@ -6,16 +6,18 @@ public class FullPyramid {
 
         int numbersOfRows = 5;
 
-        for (int currentColumn = 0; currentColumn < numbersOfRows; currentColumn++) {
-            for (int currentSpaceLine = 0; currentSpaceLine < currentColumn; currentSpaceLine++) {
-                System.out.print(" ");
-                for (int currentAsterixLine = 0; currentAsterixLine < currentColumn; currentAsterixLine++) {
-                    System.out.print("*");
-                }
-                System.out.println();
-            }
+        // Je me suis aidé de ChatGPT, mais imposible de faire quoique soit
 
-        }
+       for (int currentColumn = 1; currentColumn != numbersOfRows; currentColumn++) {
+           for (int currentNumberSpace = 1; currentNumberSpace != currentColumn; currentNumberSpace++) {
+               System.out.print(" ");
+           }
+
+           for (int currentNumberAsterix = 1; currentNumberAsterix != numbersOfRows; currentNumberAsterix++) {
+               System.out.print("*");
+           }
+           System.out.println();
+       }
 
     }
 
