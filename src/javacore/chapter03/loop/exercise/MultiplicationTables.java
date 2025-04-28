@@ -10,11 +10,9 @@ public class MultiplicationTables {
 
                 int resultMultiplication = multiplier * tableMultiplication;
 
-
-
                 System.out.print(" " + resultMultiplication);
 
-               // System.out.println(tableMultiplication + " X " + multiplier + " = " + resultMltiplication);
+               System.out.println(tableMultiplication + " X " + multiplier + " = " + resultMultiplication);
             }
             System.out.println();
         }
