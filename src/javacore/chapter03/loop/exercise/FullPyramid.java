@@ -6,6 +6,7 @@ public class FullPyramid {
 
         int numbersOfRows = 5;
 
+        // Je me suis aidé de ChatGPT, mais imposible de faire quoique soit
 
        for (int currentColumn = 1; currentColumn <= numbersOfRows; currentColumn++) {
 
