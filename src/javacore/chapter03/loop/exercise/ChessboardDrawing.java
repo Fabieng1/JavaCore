@@ -32,7 +32,8 @@ public class ChessboardDrawing {
             currentColumnsize++;
         }
 
-        /*int chessboardSize = 5;
+        /*
+        int chessboardSize = 5;
 
         for (int currentColumnsize = 0; currentColumnsize < chessboardSize; currentColumnsize++) {
             for (int currentLinesize = 0; currentLinesize < chessboardSize; currentLinesize++) {

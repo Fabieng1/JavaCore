@@ -12,15 +12,17 @@ public class FibonacciCalculator {
 
 
         // terms of departure. Not included in the counting loop
-        System.out.println("Term n°1 = " + firstTerm);
-        System.out.println("Term n°2 = " + secondTerm);
+        System.out.println("Term Fibonacci n°1 = " + firstTerm);
+        System.out.println("Term Fibonacci n°2 = " + secondTerm);
 
         int evenTermCountFound = 0;
 
         for (int countTerm = 3; countTerm <= 1000; countTerm++) {
 
 
-        BigInteger currentFibonacciTerm = firstTerm.add(secondTerm);
+            BigInteger currentFibonacciTerm = firstTerm.add(secondTerm);
+            firstTerm = secondTerm;
+            secondTerm = currentFibonacciTerm;
 
 
             StringBuilder displayNumberFibonacci = new StringBuilder("Terme Fibonacci n°" + " = ");
