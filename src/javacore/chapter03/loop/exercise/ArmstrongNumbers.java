@@ -6,16 +6,29 @@ public class ArmstrongNumbers {
 
         int endNumber = 200;
 
-        int digitNumber = 1;
+        int digitNumber = 0;
+        int raisingToThePower = 0;
+
 
         for (int currentNumber = 1; currentNumber < endNumber; currentNumber++) {
 
-                if (currentNumber > 9) {
-                    digitNumber = 2;
-                }
-                if (currentNumber > 99) {
-                    digitNumber = 3;
-                }
+            /*
+             Division to determine the number of digits in a number
+             int digitNumber = currentNumber /        ;
+
+             Multiplication of the digits with their powers
+             long resultMultiplication =    *   ;
+
+             Summing the results of the multiplications
+             long resultAdd =    +   ;
+
+             if (resultAdd == currentNumber) {
+
+             System.out.println(currentNumber + " est un nombre Armstrong");
+
+             }
+
+             */
         }
     }
 }
