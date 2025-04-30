@@ -5,12 +5,25 @@ public class ArmstrongNumbers {
     public static void main (String[] args) {
 
         int endNumber = 200;
-
         int digitNumber = 0;
         int raisingToThePower = 0;
 
 
-        for (int currentNumber = 1; currentNumber < endNumber; currentNumber++) {
+        for (int potentialNumberArmstrong = 1; potentialNumberArmstrong <= endNumber; potentialNumberArmstrong++) {
+            int resultDivision = potentialNumberArmstrong / 10;
+
+            if (resultDivision > 0) {
+                digitNumber++;
+            }
+            int resultmultiplication = potentialNumberArmstrong * digitNumber;
+            System.out.println(resultmultiplication + " Résultat multiplication");
+        }
+        System.out.println(digitNumber + " Quantité de chiffres par nombres");
+
+    }
+
+
+
 
             /*
              Division to determine the number of digits in a number
@@ -29,6 +42,6 @@ public class ArmstrongNumbers {
              }
 
              */
-        }
-    }
 }
+
+
