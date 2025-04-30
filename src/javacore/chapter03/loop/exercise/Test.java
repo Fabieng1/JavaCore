@@ -4,19 +4,19 @@ public class Test {
 
     public static void main (String[] args) {
 
-        Integer a = 0;
-        Integer b = 0;
+        for (int a = 0; a < 10; a++) {
+            System.out.println(a + " a");
+            for (int b = 0; b < 10; b++) {
+                System.out.println(b + " b");
 
-        for (Integer d = 0; d < 500; d++) {
+            }
 
-            a++;
-            b++;
+            for (int c = 0; c < 10; c++) {
 
-            System.out.println(a);
-            System.out.println(b);
+                System.out.println(c + " c");
 
+            }
         }
-
     }
-
 }
+
