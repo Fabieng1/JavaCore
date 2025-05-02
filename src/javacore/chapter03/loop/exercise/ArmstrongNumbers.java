@@ -1,47 +1,33 @@
 package javacore.chapter03.loop.exercise;
 
+import java.util.WeakHashMap;
+
 public class ArmstrongNumbers {
 
     public static void main (String[] args) {
 
-        int endNumber = 200;
-        int digitNumber = 0;
-        int raisingToThePower = 0;
+        float endNumber = 10.0f;
 
 
-        for (int potentialNumberArmstrong = 1; potentialNumberArmstrong <= endNumber; potentialNumberArmstrong++) {
-            int resultDivision = potentialNumberArmstrong / 10;
 
-            if (resultDivision > 0) {
+        for (float potentialNumberArmstrong = 1.0f; potentialNumberArmstrong <= endNumber; potentialNumberArmstrong++) {
+            float resultDivision = 1.0f;
+
+            float digitNumber = 0.0f;
+
+            float resultdivision = 0.0f;
+
+            while (resultdivision < 0.0f) {
+                resultdivision = potentialNumberArmstrong / 10;
                 digitNumber++;
             }
-            int resultmultiplication = potentialNumberArmstrong * digitNumber;
-            System.out.println(resultmultiplication + " Résultat multiplication");
+            System.out.println("Potentiel nombre Armstrong : " + potentialNumberArmstrong);
+            System.out.println("Résultat de la division : " + resultdivision);
+            System.out.println("Quantité de chiffre par nombres : " + digitNumber);
+            System.out.println();
+
         }
-        System.out.println(digitNumber + " Quantité de chiffres par nombres");
-
     }
-
-
-
-
-            /*
-             Division to determine the number of digits in a number
-             int digitNumber = currentNumber /        ;
-
-             Multiplication of the digits with their powers
-             long resultMultiplication =    *   ;
-
-             Summing the results of the multiplications
-             long resultAdd =    +   ;
-
-             if (resultAdd == currentNumber) {
-
-             System.out.println(currentNumber + " est un nombre Armstrong");
-
-             }
-
-             */
 }
 
 
