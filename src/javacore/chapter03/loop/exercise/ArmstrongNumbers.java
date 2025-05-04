@@ -6,26 +6,25 @@ public class ArmstrongNumbers {
 
     public static void main (String[] args) {
 
-        float endNumber = 10.0f;
+        double endNumber = 1000.0;
 
 
 
-        for (float potentialNumberArmstrong = 1.0f; potentialNumberArmstrong <= endNumber; potentialNumberArmstrong++) {
-            float resultDivision = 1.0f;
+        for (double potentialNumberArmstrong = 0.0; potentialNumberArmstrong <= endNumber; potentialNumberArmstrong++) {
+            double resultDivision = potentialNumberArmstrong / 10.0;
+            double modulo = potentialNumberArmstrong % 10.0;
 
-            float digitNumber = 0.0f;
+            double digitNumber = 0.0;
 
-            float resultdivision = 0.0f;
-
-            while (resultdivision < 0.0f) {
-                resultdivision = potentialNumberArmstrong / 10;
-                digitNumber++;
+            while (resultDivision >= 0.1) {
+                    resultDivision = resultDivision / 10;
+                    digitNumber++;
             }
             System.out.println("Potentiel nombre Armstrong : " + potentialNumberArmstrong);
-            System.out.println("Résultat de la division : " + resultdivision);
+            System.out.println("Résultat de la division : " + resultDivision);
             System.out.println("Quantité de chiffre par nombres : " + digitNumber);
+            System.out.println("Modulo : " + modulo);
             System.out.println();
-
         }
     }
 }
