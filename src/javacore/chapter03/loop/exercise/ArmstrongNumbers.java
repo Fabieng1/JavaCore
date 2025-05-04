@@ -6,7 +6,7 @@ public class ArmstrongNumbers {
 
     public static void main (String[] args) {
 
-        double endNumber = 1000.0;
+        double endNumber = 10000.0;
 
 
 
