@@ -7,6 +7,8 @@ public class ArmstrongNumbers {
     public static void main (String[] args) {
 
         double endNumber = 153.0;
+        int sizeColumn = 7;
+        int sizeLine = 7;
 
         double resultMultiplication = 0.0;
         double resultAdd = 0.0;
@@ -25,6 +27,12 @@ public class ArmstrongNumbers {
                     resultMultiplication = resultMultiplication * (resultDivision);
                 }
                 resultDivision = resultDivision / 10;
+            }
+
+            for (int column = 0; column < sizeColumn; column++) {
+                for (int line = 0; line < column; line++) {
+
+                }
             }
 
 
