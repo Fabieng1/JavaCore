@@ -12,7 +12,7 @@ public class ArmstrongNumbers {
         int digitTwo = 0;
         int digitThree = 0;
 
-        int resultatMultiplication = 0;
+        int resultMultiplication = 0;
         int multiplicationFirst = 0;
         int multiplicationTwo = 0;
 
@@ -39,14 +39,19 @@ public class ArmstrongNumbers {
                 digitNumber++;
 
                 for (int digitPower = 0; digitPower < digitNumber; digitPower++) {
-                    resultatMultiplication = resultatMultiplication * digitThree;
-                    resultatMultiplication = resultatMultiplication * modulo;
+                    resultMultiplication = resultMultiplication * digitFirst;
+                    resultMultiplication = resultMultiplication * digitFirst;
+
+                    multiplicationFirst = resultMultiplication;
+                    digitFirst = digitTwo;
+
+                    System.out.println("Résultat MultiplicationFirst : " + multiplicationFirst);
                 }
 
                 System.out.println("Résultat de la division, boucle while : " + resultDivision);
                 System.out.println("Modulo de la boucle while : " + modulo);
                 System.out.println("DigitNumber de la boucle while : " + digitNumber);
-                System.out.println("Résultat Multiplication dans la boucle for interne: " + resultatMultiplication);
+                System.out.println("Résultat Multiplication dans la boucle for interne: " + resultMultiplication);
                 System.out.println("DigitFirst : " + digitFirst);
                 System.out.println("DigitTwo : " + digitTwo);
                 System.out.println();
