@@ -3,52 +3,38 @@ package javacore.chapter03.loop.exercise;
 public class ArmstrongNumbers {
 
     public static void main(String[] args) {
+        
+        int endNumber = 1000000;
 
-        int endNumber = 153;
-        int numberToCheck = endNumber;
+        for (int potentialNumberArmstrong = 0; potentialNumberArmstrong <= endNumber; potentialNumberArmstrong++) {
+            int numberToCheck = potentialNumberArmstrong;
+            int digitNumber = 1;
+            int resultAdd = 0;
 
+            int resultDivision = numberToCheck / 10;
 
-        int digitNumber = 1;
+            while (resultDivision > 0) {
+                resultDivision = resultDivision / 10;
+                digitNumber++;
 
-        int resultDivision = endNumber / 10;
-
-        while (resultDivision > 0) {
-            resultDivision = resultDivision / 10;
-            digitNumber++;
-
-        }
-        System.out.println("digitNumber : " + digitNumber);
-
-        int modulo = 153;
-        int resultAdd = 0;
-
-        while (modulo > 0) {
-            modulo = numberToCheck % 10;
-            numberToCheck = numberToCheck / 10;
-
-            int resultMultiplication = 1;
-
-            System.out.println("Modulo : " + modulo);
-
-
-
-            for (int digitPower = 0; digitPower < digitNumber; digitPower++) {
-                resultMultiplication = resultMultiplication * modulo;
-                System.out.println("Résultat multiplication : " + resultMultiplication);
             }
 
+            while (numberToCheck > 0) {
+                int modulo = numberToCheck % 10;
+                numberToCheck = numberToCheck / 10;
 
-            resultAdd = resultAdd + resultMultiplication;
+                int resultMultiplication = 1;
 
+                for (int digitPower = 0; digitPower < digitNumber; digitPower++) {
+                    resultMultiplication = resultMultiplication * modulo;
+                }
 
-            //System.out.println("Résultat Multiplication : " + resultMultiplication);
+                resultAdd = resultAdd + resultMultiplication;
+            }
 
-            System.out.println("Addition : " + resultAdd);
+            if (resultAdd == potentialNumberArmstrong) {
+                System.out.println(potentialNumberArmstrong);
+            }
         }
-
-        if (resultAdd == endNumber) {
-            System.out.println(endNumber + " est un nombre Armstrong !");
-        }
-
     }
 }
