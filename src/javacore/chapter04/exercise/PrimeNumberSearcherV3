@@ -19,20 +19,15 @@ public class PrimeNumberSearcherV3 {
                     break;
                 }
             }
-            if (primeNumber == true) {
-                System.out.println(potentialPrimeNumber);
-            }
+            isPrimeNumber(potentialPrimeNumber, primeNumber);
         }
     }
+    
     public static boolean isPrimeNumber (int number, boolean primeNumber) {
 
-        if (number == 0) {
-            primeNumber = false;
-        }
-        else {
-            primeNumber = true;
+        if (primeNumber == true) {
+            System.out.println(number);
         }
         return primeNumber;
     }
-
 }
