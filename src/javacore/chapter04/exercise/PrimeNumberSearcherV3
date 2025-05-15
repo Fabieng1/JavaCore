@@ -1,0 +1,38 @@
+package javacore.chapter04.function.exercise;
+
+public class PrimeNumberSearcherV3 {
+
+    public static void main (String[] args) {
+
+        int endNumber = 5000;
+
+        boolean primeNumber = true;
+
+        for (int potentialPrimeNumber = 2; potentialPrimeNumber < endNumber; potentialPrimeNumber++) {
+            primeNumber = true;
+            for (int potentialDivisor = 2; potentialDivisor < potentialPrimeNumber; potentialDivisor++) {
+
+                int stay = potentialPrimeNumber % potentialDivisor;
+
+                if (stay == 0) {
+                    primeNumber = false;
+                    break;
+                }
+            }
+            if (primeNumber == true) {
+                System.out.println(potentialPrimeNumber);
+            }
+        }
+    }
+    public static boolean isPrimeNumber (int number, boolean primeNumber) {
+
+        if (number == 0) {
+            primeNumber = false;
+        }
+        else {
+            primeNumber = true;
+        }
+        return primeNumber;
+    }
+
+}
