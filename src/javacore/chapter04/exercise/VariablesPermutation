@@ -4,11 +4,11 @@ public class VariablesPermutation {
 
     public static void main (String[] args) {
 
-        int result = sum(10, 20, 30);
+        int result = sum(10, 15);
 
-        System.out.println(result);
-
+        sum2(result,20);
     }
+    
     public static int sum(int number1, int number2) {
 
         int result1 = number1 + number2;
@@ -16,9 +16,11 @@ public class VariablesPermutation {
         return result1;
     }
 
-    public static int sum(int number1, int number2, int number3) {
+    public static int sum2(int resut, int number3) {
 
-        int result2 = sum(number1, number2) + number3;
+        int result2 = sum(resut, number3);
+
+        System.out.println(result2);
 
         return result2;
     }
