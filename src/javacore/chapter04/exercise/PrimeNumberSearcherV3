@@ -2,32 +2,45 @@ package javacore.chapter04.function.exercise;
 
 public class PrimeNumberSearcherV3 {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         int endNumber = 5000;
-
         boolean primeNumber = true;
 
         for (int potentialPrimeNumber = 2; potentialPrimeNumber < endNumber; potentialPrimeNumber++) {
-            primeNumber = true;
-            for (int potentialDivisor = 2; potentialDivisor < potentialPrimeNumber; potentialDivisor++) {
+
+
+            primeNumber = isPrimeNumber(potentialPrimeNumber, primeNumber);
+            
+            /*for (int potentialDivisor = 2; potentialDivisor < potentialPrimeNumber; potentialDivisor++) {
 
                 int stay = potentialPrimeNumber % potentialDivisor;
 
                 if (stay == 0) {
+
                     primeNumber = false;
-                    break;
                 }
+            }*/
+
+            if (primeNumber == true) {
+                System.out.println(potentialPrimeNumber);
             }
-            isPrimeNumber(potentialPrimeNumber, primeNumber);
         }
     }
-    
-    public static boolean isPrimeNumber (int number, boolean primeNumber) {
 
-        if (primeNumber == true) {
-            System.out.println(number);
+    public static boolean isPrimeNumber(int number, boolean primeNumber) {
+
+        for (int potentialDivisor = 2; potentialDivisor < number; potentialDivisor++) {
+            int stay = number % potentialDivisor;
+
+            if (stay == 0) {
+
+                primeNumber = false;
+                break;
+            }
         }
         return primeNumber;
+
+
     }
 }
