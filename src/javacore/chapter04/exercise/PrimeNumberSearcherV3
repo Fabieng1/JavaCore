@@ -5,13 +5,13 @@ public class PrimeNumberSearcherV3 {
     public static void main(String[] args) {
 
         int endNumber = 5000;
-        boolean primeNumber = true;
 
         for (int potentialPrimeNumber = 2; potentialPrimeNumber < endNumber; potentialPrimeNumber++) {
+            boolean primeNumber = true;
 
 
             primeNumber = isPrimeNumber(potentialPrimeNumber, primeNumber);
-            
+
             /*for (int potentialDivisor = 2; potentialDivisor < potentialPrimeNumber; potentialDivisor++) {
 
                 int stay = potentialPrimeNumber % potentialDivisor;
