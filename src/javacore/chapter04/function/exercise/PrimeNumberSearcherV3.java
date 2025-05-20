@@ -4,13 +4,13 @@ public class PrimeNumberSearcherV3 {
 
     public static void main(String[] args) {
 
-        int endNumber = 50;
+        int endNumber = 5000;
 
         for (int potentialPrimeNumber = 2; potentialPrimeNumber < endNumber; potentialPrimeNumber++) {
 
             if (isPrimeNumber(potentialPrimeNumber));
 
-            if (isPrimeNumber(potentialPrimeNumber) == true) {
+            if (isPrimeNumber(potentialPrimeNumber)) {
                 System.out.println(potentialPrimeNumber);
             }
         }
