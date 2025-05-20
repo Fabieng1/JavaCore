@@ -25,22 +25,20 @@ public class FunctionRefactorCoinChangerV1 {
 
         else {
 
-            if (changeCalculation(amountToReturn, NOTE_OF_50) > 0) {
-
-                amountToReturn = amountToReturn - (changeCalculation(amountToReturn, NOTE_OF_50) * NOTE_OF_50);
+            if (changeGiven(amountToReturn, NOTE_OF_50) > 0) {
+                changeGiven2(amountToReturn, NOTE_OF_50);
             }
-            if (changeCalculation(amountToReturn, NOTE_OF_20) > 0) {
-
-                amountToReturn = amountToReturn - (changeCalculation(amountToReturn, NOTE_OF_20) * NOTE_OF_20);
+            if (changeGiven(amountToReturn, NOTE_OF_20) > 0) {
+                changeGiven2(amountToReturn, NOTE_OF_20);
             }
-            if (changeCalculation(amountToReturn, NOTE_OF_10) > 0) {
-                amountToReturn = amountToReturn - (changeCalculation(amountToReturn, NOTE_OF_10) * NOTE_OF_10);
+            if (changeGiven(amountToReturn, NOTE_OF_10) > 0) {
+                changeGiven2(amountToReturn, NOTE_OF_10);
             }
-            if (changeCalculation(amountToReturn, COIN_OF_2) > 0) {
-                amountToReturn = amountToReturn - (changeCalculation(amountToReturn, COIN_OF_2) * COIN_OF_2);
+            if (changeGiven(amountToReturn, COIN_OF_2) > 0) {
+                changeGiven2(amountToReturn, COIN_OF_2);
             }
-            if (changeCalculation(amountToReturn, COIN_OF_1) > 0) {
-                amountToReturn = amountToReturn - (changeCalculation(amountToReturn, COIN_OF_1) * COIN_OF_1);
+            if (changeGiven(amountToReturn, COIN_OF_1) > 0) {
+                amountToReturn = amountToReturn - (changeGiven(amountToReturn, COIN_OF_1) * COIN_OF_1);
             }
             afficher("Il reste à rendre " + amountToReturn + "€");
         }
@@ -49,13 +47,11 @@ public class FunctionRefactorCoinChangerV1 {
         System.out.println(message);
     }
 
-    public static int changeCalculation (int amountToReturn, int denominations) {
+    public static int changeGiven (int amountToReturn, int denominations) {
         return amountToReturn / denominations;
     }
 
-    public static void changeGiven() {
-
+    public static int changeGiven2(int amountToReturn, int denominations) {
+        return amountToReturn - (changeGiven2(amountToReturn, denominations) * denominations);
     }
-
-
 }
