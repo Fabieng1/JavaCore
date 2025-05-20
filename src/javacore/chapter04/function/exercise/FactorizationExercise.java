@@ -9,8 +9,6 @@ public class FactorizationExercise {
             System.out.println("Nombre: " + i);
         }
 
-
-
         // Afficher la table de multiplication de 2
         multiplication(2);
 
@@ -21,7 +19,7 @@ public class FactorizationExercise {
         multiplication(6);
 
         // Afficher les carrés
-        square(1, 6);
+        square(1, 5);
     }
 
     public static void afficher(String message) {
@@ -37,7 +35,7 @@ public class FactorizationExercise {
     }
 
     public static void square(int squareNumberStart, int squareNumberEnd) {
-        afficher("Carrés des nombres de 1 à 5 :");
+        afficher("Carrés des nombres :");
         for (int i = squareNumberStart; i <= squareNumberEnd; i++) {
             afficher(i + " au carré = " + (i * i));
         }
