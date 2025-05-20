@@ -1,6 +1,6 @@
 package javacore.chapter04.function.exercise;
 
-public class VariablesPermutation {
+public class FonctionOverLoad {
 
     public static void main (String[] args) {
 
