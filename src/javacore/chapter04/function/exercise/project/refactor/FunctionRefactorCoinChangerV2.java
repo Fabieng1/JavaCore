@@ -42,8 +42,10 @@ public class FunctionRefactorCoinChangerV2 {
             if (stockOfNoteOf50 >= 1 && changeGiven(amountToReturn, NOTE_OF_50) > 0) {
 
                 if (changeGiven(amountToReturn, NOTE_OF_50) >= stockOfNoteOf50) {
-                    amountToReturn = amountToReturn - (stockOfNoteOf50 * NOTE_OF_50);
-                    stockOfNoteOf50 = 0;
+                amountToReturn = changeMoney(amountToReturn, stockOfNoteOf50, NOTE_OF_50);
+
+                 /*   amountToReturn = amountToReturn - (stockOfNoteOf50 * NOTE_OF_50);
+                    stockOfNoteOf50 = 0;*/
                 }
                 else {
                     amountToReturn = amountToReturn - (changeGiven(amountToReturn, NOTE_OF_50) * NOTE_OF_50);
@@ -113,5 +115,12 @@ public class FunctionRefactorCoinChangerV2 {
     public static int changeGiven2(int amountToReturn, int denominations) {
 
         return amountToReturn - (changeGiven(amountToReturn, denominations) * denominations);
+    }
+
+    public static int changeMoney (int amountToReturn, int stockMoney, int denominations) {
+
+        stockMoney = 0;
+
+        return amountToReturn - (stockMoney * denominations);
     }
 }
