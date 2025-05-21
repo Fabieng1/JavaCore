@@ -13,7 +13,7 @@ public class FunctionRefactorCoinChangerV1 {
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 150;
+        int amountPaid = 260;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est négatif
         int amountToReturn = amountPaid - totalBill;
 
@@ -26,32 +26,35 @@ public class FunctionRefactorCoinChangerV1 {
         else {
 
             if (changeGiven(amountToReturn, NOTE_OF_50) > 0) {
-                changeGiven2(amountToReturn, NOTE_OF_50);
+                amountToReturn = changeGiven2(amountToReturn, NOTE_OF_50);
             }
             if (changeGiven(amountToReturn, NOTE_OF_20) > 0) {
-                changeGiven2(amountToReturn, NOTE_OF_20);
+                amountToReturn = changeGiven2(amountToReturn, NOTE_OF_20);
             }
             if (changeGiven(amountToReturn, NOTE_OF_10) > 0) {
-                changeGiven2(amountToReturn, NOTE_OF_10);
+                amountToReturn = changeGiven2(amountToReturn, NOTE_OF_50);
             }
             if (changeGiven(amountToReturn, COIN_OF_2) > 0) {
-                changeGiven2(amountToReturn, COIN_OF_2);
+                amountToReturn = changeGiven2(amountToReturn, COIN_OF_2);
             }
             if (changeGiven(amountToReturn, COIN_OF_1) > 0) {
-                amountToReturn = amountToReturn - (changeGiven(amountToReturn, COIN_OF_1) * COIN_OF_1);
+                amountToReturn = changeGiven2(amountToReturn, COIN_OF_1);
             }
             afficher("Il reste à rendre " + amountToReturn + "€");
         }
     }
     public static void afficher (String message) {
+
         System.out.println(message);
     }
 
     public static int changeGiven (int amountToReturn, int denominations) {
+
         return amountToReturn / denominations;
     }
 
     public static int changeGiven2(int amountToReturn, int denominations) {
-        return amountToReturn - (changeGiven2(amountToReturn, denominations) * denominations);
+
+        return amountToReturn - (changeGiven(amountToReturn, denominations) * denominations);
     }
 }

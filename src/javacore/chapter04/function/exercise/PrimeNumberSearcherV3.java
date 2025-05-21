@@ -8,7 +8,6 @@ public class PrimeNumberSearcherV3 {
 
         for (int potentialPrimeNumber = 2; potentialPrimeNumber < endNumber; potentialPrimeNumber++) {
 
-            if (isPrimeNumber(potentialPrimeNumber));
 
             if (isPrimeNumber(potentialPrimeNumber)) {
                 System.out.println(potentialPrimeNumber);
