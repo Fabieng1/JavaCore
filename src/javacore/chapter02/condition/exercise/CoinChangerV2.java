@@ -104,7 +104,5 @@ public class CoinChangerV2 {
         System.out.println("Billets de 10 : " + stockOfNoteOf10);
         System.out.println("Pièces de 2 : " + stockOfCoinsOf2);
         System.out.println("Pièces de 1 : " + stockOfCoinsOf1);
-
-
     }
 }
