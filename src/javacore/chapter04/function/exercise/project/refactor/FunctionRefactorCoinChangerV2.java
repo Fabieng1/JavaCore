@@ -20,11 +20,11 @@ public class FunctionRefactorCoinChangerV2 {
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 250;
+        int amountPaid = 180;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est négatif
         int amountToReturn = amountPaid - totalBill;
         int bottomOfCash = (NOTE_OF_50 * stockOfNoteOf50) + (NOTE_OF_20 * stockOfNoteOf20) + (NOTE_OF_10 * stockOfNoteOf10) + (COIN_OF_2 * stockOfCoinsOf2) + (COIN_OF_1 * stockOfCoinsOf1);
-        System.out.println("Stock caisse : " + bottomOfCash);
+        System.out.println("Stock caisse : " + bottomOfCash + "€");
 
         if (amountToReturn > bottomOfCash) {
             afficher("Rendu monnaie complet impossible");
@@ -41,11 +41,10 @@ public class FunctionRefactorCoinChangerV2 {
         else {
             if (stockOfNoteOf50 >= 1 && changeGiven(amountToReturn, NOTE_OF_50) > 0) {
 
-                if (changeGiven(amountToReturn, NOTE_OF_50) >= stockOfNoteOf50) {
-                amountToReturn = changeMoney(amountToReturn, stockOfNoteOf50, NOTE_OF_50);
+                if (changeGiven(amountToReturn, NOTE_OF_50) > stockOfNoteOf50) {
 
-                 /*   amountToReturn = amountToReturn - (stockOfNoteOf50 * NOTE_OF_50);
-                    stockOfNoteOf50 = 0;*/
+                    amountToReturn = amountToReturn - (stockOfNoteOf50 * NOTE_OF_50);
+                    stockOfNoteOf50 = 0;
                 }
                 else {
                     amountToReturn = amountToReturn - (changeGiven(amountToReturn, NOTE_OF_50) * NOTE_OF_50);
@@ -59,18 +58,18 @@ public class FunctionRefactorCoinChangerV2 {
                     stockOfNoteOf20 = 0;
                 }
                 else {
-                    amountToReturn = amountToReturn - (changeGiven(amountToReturn, NOTE_OF_20) * NOTE_OF_20);
                     stockOfNoteOf20 = stockOfNoteOf20 - changeGiven(amountToReturn, NOTE_OF_20);
+                    amountToReturn = amountToReturn - (changeGiven(amountToReturn, NOTE_OF_20) * NOTE_OF_20);
                 }
             }
             if (stockOfNoteOf10 >= 1 && changeGiven(amountToReturn, NOTE_OF_10) > 0) {
-                if (changeGiven(amountToReturn, NOTE_OF_50) > stockOfNoteOf10) {
+                if (changeGiven(amountToReturn, NOTE_OF_10) > stockOfNoteOf10) {
                     amountToReturn = amountToReturn - (stockOfNoteOf10 * NOTE_OF_10);
                     stockOfNoteOf10 = 0;
                 }
                 else {
-                    amountToReturn = amountToReturn - (changeGiven(amountToReturn, NOTE_OF_10) * NOTE_OF_10);
                     stockOfNoteOf10 = stockOfNoteOf10 - changeGiven(amountToReturn, NOTE_OF_10);
+                    amountToReturn = amountToReturn - (changeGiven(amountToReturn, NOTE_OF_10) * NOTE_OF_10);
                 }
             }
             if (stockOfCoinsOf2 >= 1 && changeGiven(amountToReturn, COIN_OF_2) > 0) {
@@ -79,8 +78,8 @@ public class FunctionRefactorCoinChangerV2 {
                     stockOfCoinsOf2 = 0;
                 }
                 else {
-                    amountToReturn = amountToReturn - (changeGiven(amountToReturn, COIN_OF_2) * COIN_OF_2);
                     stockOfCoinsOf2 = stockOfCoinsOf2 - changeGiven(amountToReturn, COIN_OF_2);
+                    amountToReturn = amountToReturn - (changeGiven(amountToReturn, COIN_OF_2) * COIN_OF_2);
                 }
             }
             if (stockOfCoinsOf1 >= 1 && changeGiven(amountToReturn, COIN_OF_1) > 0) {
@@ -89,11 +88,13 @@ public class FunctionRefactorCoinChangerV2 {
                     stockOfCoinsOf1 = 0;
                 }
                 else {
-                    amountToReturn = amountToReturn - (changeGiven(amountToReturn, COIN_OF_1) * COIN_OF_1);
                     stockOfCoinsOf1 = stockOfCoinsOf1 - changeGiven(amountToReturn, COIN_OF_1);
+                    amountToReturn = amountToReturn - (changeGiven(amountToReturn, COIN_OF_1) * COIN_OF_1);
                 }
             }
             System.out.println("Il reste à rendre " + amountToReturn + "€");
+            bottomOfCash = (NOTE_OF_50 * stockOfNoteOf50) + (NOTE_OF_20 * stockOfNoteOf20) + (NOTE_OF_10 * stockOfNoteOf10) + (COIN_OF_2 * stockOfCoinsOf2) + (COIN_OF_1 * stockOfCoinsOf1);
+            System.out.println("Stock caisse restant après rendu : " + bottomOfCash + "€");
         }
 
         // Tests. Sert à tester si les stocks de coupures ne sont pas dépassé

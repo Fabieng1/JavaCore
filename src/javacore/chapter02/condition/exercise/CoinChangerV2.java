@@ -19,7 +19,7 @@ public class CoinChangerV2 {
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 250;
+        int amountPaid = 180;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est négatif
         int amountToReturn = amountPaid - totalBill;
         int bottomOfCash = (NOTE_OF_50 * stockOfNoteOf50) + (NOTE_OF_20 * stockOfNoteOf20) + (NOTE_OF_10 * stockOfNoteOf10) + (COIN_OF_2 * stockOfCoinsOf2) + (COIN_OF_1 * stockOfCoinsOf1);
