@@ -18,7 +18,7 @@ public class FunctionRecfactorCoinChangerV3 {
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 150;
+        int amountPaid = 102;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est positif
         int amountToReturn = amountPaid - totalBill;
 
@@ -29,11 +29,11 @@ public class FunctionRecfactorCoinChangerV3 {
             System.out.println("Il ne reste rien à payer");
         }
         else {
-            loopChanger(amountToReturn, NOTE_OF_50, countNote50);
-            loopChanger(amountToReturn, NOTE_OF_20, countNote20);
-            loopChanger(amountToReturn, NOTE_OF_10, countNote10);
-            loopChanger(amountToReturn, COIN_OF_2, countCoin2);
-            loopChanger(amountToReturn, COIN_OF_1, countCoin1);
+            amountToReturn = loopChanger(amountToReturn, NOTE_OF_50, countNote50);
+            amountToReturn = loopChanger(amountToReturn, NOTE_OF_20, countNote20);
+            amountToReturn = loopChanger(amountToReturn, NOTE_OF_10, countNote10);
+            amountToReturn = loopChanger(amountToReturn, COIN_OF_2, countCoin2);
+            amountToReturn = loopChanger(amountToReturn, COIN_OF_1, countCoin1);
 
            /*  while (amountToReturn >= NOTE_OF_50) {
                 amountToReturn = amountToReturn - NOTE_OF_50;
@@ -70,11 +70,11 @@ public class FunctionRecfactorCoinChangerV3 {
         }
     }
 
-    public static int loopChanger (int amountToReturn, int denominations, int count) {
+    public static int loopChanger (int amountToReturn, int bankValue, int count) {
 
-        while (amountToReturn >= denominations) {
-            amountToReturn = amountToReturn - denominations;
-            count++;
+        while (amountToReturn >= bankValue) {
+
+            amountToReturn = amountToReturn - bankValue;
         }
         return amountToReturn;
     }
