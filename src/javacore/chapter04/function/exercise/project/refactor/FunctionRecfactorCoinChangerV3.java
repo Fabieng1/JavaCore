@@ -70,10 +70,12 @@ public class FunctionRecfactorCoinChangerV3 {
         }
     }
 
-    public static void loopChanger (int amountToReturn, int denominations, int count) {
+    public static int loopChanger (int amountToReturn, int denominations, int count) {
 
         while (amountToReturn >= denominations) {
             amountToReturn = amountToReturn - denominations;
+            count++;
         }
+        return amountToReturn;
     }
 }
