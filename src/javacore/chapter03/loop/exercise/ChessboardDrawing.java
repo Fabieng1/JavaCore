@@ -6,10 +6,9 @@ public class ChessboardDrawing {
 
         int chessboardSize = 5;
         int currentColumnsize = 0;
-        int currentLinesize = 0;
 
         while (currentColumnsize < chessboardSize) {
-            currentLinesize = 0;
+            int currentLinesize = 0;
             while (currentLinesize < chessboardSize) {
                 if (currentColumnsize % 2 == currentLinesize % 2) {
                     System.out.print("#");
