@@ -74,9 +74,9 @@ public class FunctionRecfactorCoinChangerV3 {
 
         while (amountToReturn >= bankValue) {
 
+            amountToReturn = amountToReturn - bankValue;
             count++;
-            return amountToReturn - bankValue;
         }
-
+        return count;
     }
 }
