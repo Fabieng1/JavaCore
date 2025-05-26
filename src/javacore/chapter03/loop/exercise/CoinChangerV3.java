@@ -65,10 +65,6 @@ public class CoinChangerV3 {
             System.out.println(countCoin2 + " pièces de 2 ont été rendues");
             System.out.println(countCoin1 + " Pièces de 1 ont été rendues");
         }
-
-
-
-
     }
 }
 
