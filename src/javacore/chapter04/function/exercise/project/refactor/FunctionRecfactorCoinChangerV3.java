@@ -18,7 +18,7 @@ public class FunctionRecfactorCoinChangerV3 {
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 102;
+        int amountPaid = 105;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est positif
         int amountToReturn = amountPaid - totalBill;
 
@@ -74,8 +74,9 @@ public class FunctionRecfactorCoinChangerV3 {
 
         while (amountToReturn >= bankValue) {
 
-            amountToReturn = amountToReturn - bankValue;
+            count++;
+            return amountToReturn - bankValue;
         }
-        return amountToReturn;
+
     }
 }
