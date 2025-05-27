@@ -8,10 +8,9 @@ public class PrimeNumberSearcher {
         int nbPrimeNumber = 0;
         int positionPrimeNumber = 1;
 
-        boolean isPrime = true;
 
         for (int potentialPrimeNumber = 2; potentialPrimeNumber < number; potentialPrimeNumber++) {
-            isPrime = true;
+            boolean isPrime = true;
             for (int potentialDivisor = 2; potentialDivisor < potentialPrimeNumber; potentialDivisor++) {
 
                 int reste = potentialPrimeNumber % potentialDivisor;
