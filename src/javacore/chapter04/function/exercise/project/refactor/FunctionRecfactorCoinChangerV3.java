@@ -16,11 +16,10 @@ public class FunctionRecfactorCoinChangerV3 {
         int countCoin2 = 0;
         int countCoin1 = 0;
 
-
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 1242;
+        int amountPaid = 150;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est positif
         int amountToReturn = amountPaid - totalBill;
 
@@ -45,34 +44,6 @@ public class FunctionRecfactorCoinChangerV3 {
             countCoin1 = count(amountToReturn, COIN_OF_1, countCoin1);
             amountToReturn = loopChanger(amountToReturn, COIN_OF_1);
 
-
-           /*  while (amountToReturn >= NOTE_OF_50) {
-                amountToReturn = amountToReturn - NOTE_OF_50;
-                countNote50++;
-            }
-
-            while (amountToReturn >= NOTE_OF_20) {
-                amountToReturn = amountToReturn - NOTE_OF_20;
-                countNote20++;
-            }
-
-            while (amountToReturn >= NOTE_OF_10) {
-                amountToReturn = amountToReturn - NOTE_OF_10;
-                countNote10++;
-            }
-
-            while (amountToReturn >= COIN_OF_2) {
-                amountToReturn = amountToReturn - COIN_OF_2;
-                countCoin2++;
-            }
-
-            while (amountToReturn >= COIN_OF_1) {
-                amountToReturn = amountToReturn - COIN_OF_1;
-                countCoin1++;
-            }*/
-
-
-            System.out.println(countNote50);
             System.out.println("Il reste à rendre " + amountToReturn + "€");
             System.out.println();
             System.out.println(countNote50 + " billets de 50 ont été rendus");
@@ -99,5 +70,4 @@ public class FunctionRecfactorCoinChangerV3 {
 
         return count;
     }
-
 }
