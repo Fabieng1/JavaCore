@@ -19,7 +19,7 @@ public class FunctionRecfactorCoinChangerV3 {
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 150;
+        int amountPaid = 101;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est positif
         int amountToReturn = amountPaid - totalBill;
 
@@ -29,20 +29,16 @@ public class FunctionRecfactorCoinChangerV3 {
             System.out.println("Il ne reste rien à payer");
         }
         else {
-            countNote50 = count(amountToReturn, NOTE_OF_50, countNote50);
-            amountToReturn = loopChanger(amountToReturn, NOTE_OF_50);
+            countNote50 = change(amountToReturn, NOTE_OF_50, countNote50);
 
-            countNote20 = count(amountToReturn, NOTE_OF_20, countNote20);
-            amountToReturn = loopChanger(amountToReturn, NOTE_OF_20);
+            countNote20 = change(amountToReturn, NOTE_OF_20, countNote20);
 
-            countNote10 = count(amountToReturn, NOTE_OF_10, countNote10);
-            amountToReturn = loopChanger(amountToReturn, NOTE_OF_10);
+            countNote10 = change(amountToReturn, NOTE_OF_10, countNote10);
 
-            countCoin2 = count(amountToReturn, COIN_OF_2, countCoin2);
-            amountToReturn = loopChanger(amountToReturn, COIN_OF_2);
+            countCoin2 = change(amountToReturn, COIN_OF_2, countCoin2);
 
-            countCoin1 = count(amountToReturn, COIN_OF_1, countCoin1);
-            amountToReturn = loopChanger(amountToReturn, COIN_OF_1);
+            countCoin1 = change(amountToReturn , COIN_OF_1, countCoin1);
+
 
             System.out.println("Il reste à rendre " + amountToReturn + "€");
             System.out.println();
@@ -54,20 +50,16 @@ public class FunctionRecfactorCoinChangerV3 {
         }
     }
 
-    public static int loopChanger (int amountToReturn, int bankValue) {
+    public static int change (int amountToReturn, int bankValue, int countBankOfValue) {
 
-        while (amountToReturn >= bankValue) {
+        countBankOfValue = 0;
 
-            amountToReturn =  amountToReturn - bankValue;
+        while (amountToReturn >= countBankOfValue) {
+
+            countBankOfValue = amountToReturn / bankValue;
+            amountToReturn = amountToReturn - bankValue;
 
         }
-        return amountToReturn;
-    }
-
-    public static int count (int amountToReturn, int bankValue, int count) {
-
-        count = amountToReturn / bankValue;
-
-        return count;
+        return countBankOfValue;
     }
 }
