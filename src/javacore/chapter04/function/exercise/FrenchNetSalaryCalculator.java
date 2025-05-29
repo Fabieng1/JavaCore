@@ -48,7 +48,7 @@ public class FrenchNetSalaryCalculator {
         return annualNetSalary * taxAlloancePercentage / 100;
     }
 
-    // applyRevenueTax = Appliquer l'impôt sur le revenu, annualNetSalary = Salaire annuel net
+    /*// applyRevenueTax = Appliquer l'impôt sur le revenu, annualNetSalary = Salaire annuel net
     public static double applyRevenueTax (double annualNetSalary) {
 
         final int VALUE_MAX_TAX_BRACKET_5 = 180294;
@@ -96,7 +96,5 @@ public class FrenchNetSalaryCalculator {
             taxBracket3 = (remainsNetTaxable - VALUE_MAX_TAX_BRACKET_3) * VALUE_POUR_TAX_BRACKET_3 / 100.0;
             remainsNetTaxable = 29314;
         }
-
-    }
-
+    }*/
 }
