@@ -27,8 +27,6 @@ public class FrenchNetSalaryCalculator {
         double salaryAnnuelNetAfterAlloance = salaryAnnualNetTaxableIncome - (applyTaxAllowance(salaryAnnualNetTaxableIncome, taxAlloancePercentage));
 
         System.out.println("En France, la salaire annuel net après abattement est de : " + salaryAnnuelNetAfterAlloance + "€");
-
-
     }
 
     // hourlyGrossSalary = Salaire horaire brut
