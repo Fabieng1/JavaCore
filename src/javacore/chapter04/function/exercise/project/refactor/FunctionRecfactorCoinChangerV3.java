@@ -19,7 +19,7 @@ public class FunctionRecfactorCoinChangerV3 {
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 101;
+        int amountPaid = 1210;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est positif
         int amountToReturn = amountPaid - totalBill;
 
@@ -29,37 +29,52 @@ public class FunctionRecfactorCoinChangerV3 {
             System.out.println("Il ne reste rien à payer");
         }
         else {
-            countNote50 = change(amountToReturn, NOTE_OF_50, countNote50);
 
-            countNote20 = change(amountToReturn, NOTE_OF_20, countNote20);
-
-            countNote10 = change(amountToReturn, NOTE_OF_10, countNote10);
-
-            countCoin2 = change(amountToReturn, COIN_OF_2, countCoin2);
-
-            countCoin1 = change(amountToReturn , COIN_OF_1, countCoin1);
-
-
-            System.out.println("Il reste à rendre " + amountToReturn + "€");
-            System.out.println();
-            System.out.println(countNote50 + " billets de 50 ont été rendus");
-            System.out.println(countNote20 + " billets de 20 ont été rendus");
-            System.out.println(countNote10 + " billets de 10 ont été rendus");
-            System.out.println(countCoin2 + " pièces de 2 ont été rendues");
-            System.out.println(countCoin1 + " Pièces de 1 ont été rendues");
+            change(amountToReturn);
         }
     }
 
-    public static int change (int amountToReturn, int bankValue, int countBankOfValue) {
+    public static void change (int amountToReturn) {
+        final int NOTE_OF_50 = 50;
+        final int NOTE_OF_20 = 20;
+        final int NOTE_OF_10 = 10;
+        final int COIN_OF_2 = 2;
+        final int COIN_OF_1 = 1;
 
-        countBankOfValue = 0;
+        int countNote50 = 0;
+        int countNote20 = 0;
+        int countNote10 = 0;
+        int countCoin2 = 0;
+        int countCoin1 = 0;
 
-        while (amountToReturn >= countBankOfValue) {
-
-            countBankOfValue = amountToReturn / bankValue;
-            amountToReturn = amountToReturn - bankValue;
-
+        while (amountToReturn >= NOTE_OF_50) {
+            amountToReturn -= NOTE_OF_50;
+            countNote50++;
         }
-        return countBankOfValue;
+        while (amountToReturn >= NOTE_OF_20) {
+            amountToReturn -= NOTE_OF_20;
+            countNote20++;
+        }
+        while (amountToReturn >= NOTE_OF_10) {
+            amountToReturn -= NOTE_OF_10;
+            countNote10++;
+        }
+        while (amountToReturn >= COIN_OF_2) {
+            amountToReturn -= COIN_OF_2;
+            countCoin2++;
+        }
+        while (amountToReturn >= COIN_OF_1) {
+            amountToReturn -= COIN_OF_1;
+            countCoin1++;
+        }
+
+        // Affichage des résultats
+        System.out.println("Il reste à rendre " + (amountToReturn) + "€");
+        System.out.println();
+        System.out.println(countNote50 + " billets de 50 ont été rendus");
+        System.out.println(countNote20 + " billets de 20 ont été rendus");
+        System.out.println(countNote10 + " billets de 10 ont été rendus");
+        System.out.println(countCoin2 + " pièces de 2 ont été rendues");
+        System.out.println(countCoin1 + " pièces de 1 ont été rendues");
     }
 }
