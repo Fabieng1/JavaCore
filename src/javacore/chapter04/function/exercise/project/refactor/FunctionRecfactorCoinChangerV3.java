@@ -4,18 +4,6 @@ public class FunctionRecfactorCoinChangerV3 {
 
     public static void main(String[] args) {
 
-        final int NOTE_OF_50 = 50;
-        final int NOTE_OF_20 = 20;
-        final int NOTE_OF_10 = 10;
-        final int COIN_OF_2 = 2;
-        final int COIN_OF_1 = 1;
-
-        int countNote50 = 0;
-        int countNote20 = 0;
-        int countNote10 = 0;
-        int countCoin2 = 0;
-        int countCoin1 = 0;
-
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
