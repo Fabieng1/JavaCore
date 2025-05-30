@@ -23,11 +23,6 @@ public class FunctionRecfactorCoinChangerV3 {
     }
 
     public static void change (int amountToReturn) {
-        final int NOTE_OF_50 = 50;
-        final int NOTE_OF_20 = 20;
-        final int NOTE_OF_10 = 10;
-        final int COIN_OF_2 = 2;
-        final int COIN_OF_1 = 1;
 
         int countNote50 = 0;
         int countNote20 = 0;
@@ -35,30 +30,36 @@ public class FunctionRecfactorCoinChangerV3 {
         int countCoin2 = 0;
         int countCoin1 = 0;
 
-        while (amountToReturn >= NOTE_OF_50) {
-            amountToReturn -= NOTE_OF_50;
-            countNote50++;
-        }
-        while (amountToReturn >= NOTE_OF_20) {
-            amountToReturn -= NOTE_OF_20;
-            countNote20++;
-        }
-        while (amountToReturn >= NOTE_OF_10) {
-            amountToReturn -= NOTE_OF_10;
-            countNote10++;
-        }
-        while (amountToReturn >= COIN_OF_2) {
-            amountToReturn -= COIN_OF_2;
-            countCoin2++;
-        }
-        while (amountToReturn >= COIN_OF_1) {
-            amountToReturn -= COIN_OF_1;
-            countCoin1++;
+        while (amountToReturn > 0) {
+
+            if (amountToReturn >= 50) {
+                amountToReturn -= 50;
+                countNote50++;
+            }
+
+            else if (amountToReturn >= 20) {
+                amountToReturn -= 20;
+                countNote20++;
+            }
+
+            else if (amountToReturn >= 10) {
+                amountToReturn -= 10;
+                countNote10++;
+            }
+
+            else if (amountToReturn >= 2) {
+                amountToReturn -= 2;
+                countCoin2++;
+            }
+
+            else if (amountToReturn >= 1) {
+                amountToReturn -= 1;
+                countCoin1++;
+            }
         }
 
         // Affichage des résultats
         System.out.println("Il reste à rendre " + (amountToReturn) + "€");
-        System.out.println();
         System.out.println(countNote50 + " billets de 50 ont été rendus");
         System.out.println(countNote20 + " billets de 20 ont été rendus");
         System.out.println(countNote10 + " billets de 10 ont été rendus");
