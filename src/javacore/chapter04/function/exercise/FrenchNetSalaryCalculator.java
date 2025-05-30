@@ -61,11 +61,8 @@ public class FrenchNetSalaryCalculator {
         final int VALUE_MAX_TAX_BRACKET_2 = 11498;
         final int VALUE_POUR_TAX_BRACKET_2 = 11;
 
-        //10.000 1000.0 1500.0 2000.0 2500.0
-        double salaryAnnualNetTaxable = 200000;
-        double reduction = salaryAnnualNetTaxable * 10.0 / 100.0;
 
-        double salaryAnnualNetTaxableAfterReduction = salaryAnnualNetTaxable - reduction;
+         double salaryAnnualNetTaxableAfterReduction = applyTaxAllowance(sal)
 
         double accumulationOfInstallmentsToBePaid = 0;
 
@@ -94,5 +91,7 @@ public class FrenchNetSalaryCalculator {
             taxBracket3 = (remainsNetTaxable - VALUE_MAX_TAX_BRACKET_3) * VALUE_POUR_TAX_BRACKET_3 / 100.0;
             remainsNetTaxable = 29314;
         }
+
+        return annualNetSalary;
     }*/
 }
