@@ -97,6 +97,6 @@ public class FrenchNetSalaryCalculator {
 
         accumulationOfInstallmentsToBePaid = taxBracket1 + taxBracket2 + taxBracket3 + taxBracket4 + taxBracket5;
 
-        return annualNetSalary - (remainsNetTaxable - accumulationOfInstallmentsToBePaid) ;
+        return annualNetSalary - (remainsNetTaxable - accumulationOfInstallmentsToBePaid);
     }
 }
