@@ -49,17 +49,17 @@ public class FrenchNetSalaryCalculator {
     // applyRevenueTax = Appliquer l'impôt sur le revenu, annualNetSalary = Salaire annuel net
     public static double applyRevenueTax (double annualNetSalary, double taxAllowancePercentage) {
 
-        final int VALUE_MAX_TAX_BRACKET_5 = 180294;
-        final int VALUE_POUR_TAX_BRACKET_5 = 45;
+        final int VALUE_TAX_BRACKET_5_MAX = 180294;
+        final int VALUE_TAX_BRACKET_5_POURCENTAGE = 45;
 
-        final int VALUE_MAX_TAX_BRACKET_4 = 83823;
-        final int VALUE_POUR_TAX_BRACKET_4 = 41;
+        final int VALUE_TAX_BRACKET_4_MAX = 83823;
+        final int VALUE_TAX_BRACKET_4_POURCENTAGE = 41;
 
-        final int VALUE_MAX_TAX_BRACKET_3 = 29315;
-        final int VALUE_POUR_TAX_BRACKET_3 = 30;
+        final int VALUE_TAX_BRACKET_3_MAX = 29315;
+        final int VALUE_TAX_BRACKET_3_POURCENTAGE = 30;
 
-        final int VALUE_MAX_TAX_BRACKET_2 = 11498;
-        final int VALUE_POUR_TAX_BRACKET_2 = 11;
+        final int VALUE_TAX_BRACKET_2_MAX = 11498;
+        final int VALUE_TAX_BRACKET_2_POURCENTAGE = 11;
 
         double accumulationOfInstallmentsToBePaid = 0;
 
@@ -71,24 +71,24 @@ public class FrenchNetSalaryCalculator {
 
         double remainsNetTaxable = applyTaxAllowance(annualNetSalary, taxAllowancePercentage);
 
-        if (remainsNetTaxable > VALUE_MAX_TAX_BRACKET_5) {
-            taxBracket5 = (remainsNetTaxable - VALUE_MAX_TAX_BRACKET_5) * VALUE_POUR_TAX_BRACKET_5 / 100.0;
+        if (remainsNetTaxable > VALUE_TAX_BRACKET_5_MAX) {
+            taxBracket5 = (remainsNetTaxable - VALUE_TAX_BRACKET_5_MAX) * VALUE_TAX_BRACKET_5_POURCENTAGE / 100.0;
             remainsNetTaxable = 180293;
         }
 
-        if (remainsNetTaxable > VALUE_MAX_TAX_BRACKET_4) {
-            taxBracket4 = (remainsNetTaxable - VALUE_MAX_TAX_BRACKET_4) * VALUE_POUR_TAX_BRACKET_4 / 100.0;
+        if (remainsNetTaxable > VALUE_TAX_BRACKET_4_MAX) {
+            taxBracket4 = (remainsNetTaxable - VALUE_TAX_BRACKET_4_MAX) * VALUE_TAX_BRACKET_4_POURCENTAGE / 100.0;
             remainsNetTaxable = 83822;
         }
 
-        if (remainsNetTaxable > VALUE_MAX_TAX_BRACKET_3) {
-            taxBracket3 = (remainsNetTaxable - VALUE_MAX_TAX_BRACKET_3) * VALUE_POUR_TAX_BRACKET_3 / 100.0;
+        if (remainsNetTaxable > VALUE_TAX_BRACKET_3_MAX) {
+            taxBracket3 = (remainsNetTaxable - VALUE_TAX_BRACKET_3_MAX) * VALUE_TAX_BRACKET_3_POURCENTAGE / 100.0;
             remainsNetTaxable = 29314;
         }
 
         // De 11 498 € à 29 315 € : 11 %
-        if (remainsNetTaxable > VALUE_MAX_TAX_BRACKET_2) {
-            taxBracket2 = (remainsNetTaxable - VALUE_MAX_TAX_BRACKET_2) * VALUE_POUR_TAX_BRACKET_2 / 100;
+        if (remainsNetTaxable > VALUE_TAX_BRACKET_2_MAX) {
+            taxBracket2 = (remainsNetTaxable - VALUE_TAX_BRACKET_2_MAX) * VALUE_TAX_BRACKET_2_POURCENTAGE / 100;
         }
 
         accumulationOfInstallmentsToBePaid = taxBracket1 + taxBracket2 + taxBracket3 + taxBracket4 + taxBracket5;
