@@ -9,27 +9,23 @@ public class FrenchNetSalaryCalculator {
         double smicFrenchMiddleHours = 22.50;
         double frenchWealthThresholdHours = 35.0;
 
-        double numberWorkingHours = 1820.04;
+        double numberWorkingHoursAnnual = 1607;
 
         double socialChargePercentage = 25.0;
         double taxAllowancePercentage = 10.0;
 
         double calculateAnnualGrossSalary = 0;
 
-        calculateAnnualGrossSalary = calculateAnnualGrossSalary(frenchWealthThresholdHours, numberWorkingHours);
-
+        calculateAnnualGrossSalary = calculateAnnualGrossSalary(frenchWealthThresholdHours, numberWorkingHoursAnnual);
         System.out.println("En France, le salaire annuel brut est de : " + calculateAnnualGrossSalary + "€");
 
         double salaryAnnualNetTaxableIncome = calculateAnnualGrossSalary - (applySocialCharges(calculateAnnualGrossSalary, socialChargePercentage));
-
         System.out.println("En France, le salaire annuel net impossable est de : " + salaryAnnualNetTaxableIncome + "€");
 
         double salaryAnnuelNetAfterAllowance = salaryAnnualNetTaxableIncome - (applyTaxAllowance(salaryAnnualNetTaxableIncome, taxAllowancePercentage));
-
         System.out.println("En France, la salaire annuel net après abattement est de : " + salaryAnnuelNetAfterAllowance + "€");
 
         double salaryNetAnnual = applyRevenueTax(salaryAnnuelNetAfterAllowance, taxAllowancePercentage);
-
         System.out.println("En France, le salaire net après impôts est de : " + salaryNetAnnual + "€");
     }
 
