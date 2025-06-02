@@ -3,6 +3,7 @@ package javacore.chapter04.function.exercise;
 public class RecursiveFunction {
 
     public static void main (String[] args) {
+
         int numberCount = 0;
 
         recursiveCount(numberCount);
