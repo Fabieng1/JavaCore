@@ -12,11 +12,11 @@ public class FrenchNetSalaryCalculator {
         double numberWorkingHours = 1820.04;
 
         double socialChargePercentage = 25.0;
-        double taxAlloancePercentage = 10.0;
+        double taxAllowancePercentage = 10.0;
 
         double calculateAnnualGrossSalary = 0;
 
-        calculateAnnualGrossSalary = calculateAnnualGrossSalary(smicFrenchHours, numberWorkingHours);
+        calculateAnnualGrossSalary = calculateAnnualGrossSalary(frenchWealthThresholdHours, numberWorkingHours);
 
         System.out.println("En France, le salaire annuel brut est de : " + calculateAnnualGrossSalary + "€");
 
@@ -24,9 +24,13 @@ public class FrenchNetSalaryCalculator {
 
         System.out.println("En France, le salaire annuel net impossable est de : " + salaryAnnualNetTaxableIncome + "€");
 
-        double salaryAnnuelNetAfterAlloance = salaryAnnualNetTaxableIncome - (applyTaxAllowance(salaryAnnualNetTaxableIncome, taxAlloancePercentage));
+        double salaryAnnuelNetAfterAllowance = salaryAnnualNetTaxableIncome - (applyTaxAllowance(salaryAnnualNetTaxableIncome, taxAllowancePercentage));
 
-        System.out.println("En France, la salaire annuel net après abattement est de : " + salaryAnnuelNetAfterAlloance + "€");
+        System.out.println("En France, la salaire annuel net après abattement est de : " + salaryAnnuelNetAfterAllowance + "€");
+
+        double salaryNetAnnual = applyRevenueTax(salaryAnnuelNetAfterAllowance, taxAllowancePercentage);
+
+        System.out.println("En France, le salaire net après impôts est de : " + salaryNetAnnual + "€");
     }
 
     // hourlyGrossSalary = Salaire horaire brut
@@ -46,8 +50,8 @@ public class FrenchNetSalaryCalculator {
         return annualNetSalary * taxAlloancePercentage / 100;
     }
 
-    /*// applyRevenueTax = Appliquer l'impôt sur le revenu, annualNetSalary = Salaire annuel net
-    public static double applyRevenueTax (double annualNetSalary) {
+    // applyRevenueTax = Appliquer l'impôt sur le revenu, annualNetSalary = Salaire annuel net
+    public static double applyRevenueTax (double annualNetSalary, double taxAllowancePercentage) {
 
         final int VALUE_MAX_TAX_BRACKET_5 = 180294;
         final int VALUE_POUR_TAX_BRACKET_5 = 45;
@@ -62,11 +66,8 @@ public class FrenchNetSalaryCalculator {
         final int VALUE_POUR_TAX_BRACKET_2 = 11;
 
 
-         double salaryAnnualNetTaxableAfterReduction = applyTaxAllowance(sal)
 
         double accumulationOfInstallmentsToBePaid = 0;
-
-        System.out.println("Salaire Annuel après réduction : " + salaryAnnualNetTaxableAfterReduction);
 
 
         double taxBracket1 = 0;
@@ -75,10 +76,11 @@ public class FrenchNetSalaryCalculator {
         double taxBracket4 = 0;
         double taxBracket5 = 0;
 
-        double remainsNetTaxable = salaryAnnualNetTaxableAfterReduction;
+        double remainsNetTaxable = applyTaxAllowance(annualNetSalary, taxAllowancePercentage);
+
 
         if (remainsNetTaxable > VALUE_MAX_TAX_BRACKET_5) {
-            taxBracket5 = (remainsNetTaxable - VALUE_MAX_TAX_BRACKET_5) * VALUE_POUR_TAX_BRACKET_5 / 100;
+            taxBracket5 = (remainsNetTaxable - VALUE_MAX_TAX_BRACKET_5) * VALUE_POUR_TAX_BRACKET_5 / 100.0;
             remainsNetTaxable = 180293;
         }
 
@@ -92,6 +94,13 @@ public class FrenchNetSalaryCalculator {
             remainsNetTaxable = 29314;
         }
 
-        return annualNetSalary;
-    }*/
+        // De 11 498 € à 29 315 € : 11 %
+        if (remainsNetTaxable > VALUE_MAX_TAX_BRACKET_2) {
+            taxBracket2 = (remainsNetTaxable - VALUE_MAX_TAX_BRACKET_2) * VALUE_POUR_TAX_BRACKET_2 / 100;
+        }
+
+        accumulationOfInstallmentsToBePaid = taxBracket1 + taxBracket2 + taxBracket3 + taxBracket4 + taxBracket5;
+
+        return annualNetSalary - (remainsNetTaxable - accumulationOfInstallmentsToBePaid) ;
+    }
 }
