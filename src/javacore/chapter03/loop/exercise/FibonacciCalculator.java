@@ -24,12 +24,10 @@ public class FibonacciCalculator {
             firstTerm = secondTerm;
             secondTerm = currentFibonacciTerm;
 
-
             StringBuilder displayNumberFibonacci = new StringBuilder("Terme Fibonacci n°" + " = ");
 
             displayNumberFibonacci.insert(18, countTerm);
             displayNumberFibonacci.append(currentFibonacciTerm);
-
 
             //Counter exceeding a thousand
             System.out.print(displayNumberFibonacci);
