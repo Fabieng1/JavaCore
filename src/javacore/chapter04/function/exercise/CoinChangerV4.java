@@ -29,17 +29,15 @@ public class CoinChangerV4 {
         if (amountToReturn > bottomOfCash) {
             display("Rendu monnaie complet impossible");
             display("Montant maximal à rendre possible : " + bottomOfCash);
-        } else if (amountToReturn < 0) {
+        }
+        else if (amountToReturn < 0) {
             display("Il reste à payer : " + amountToReturn + "€");
-        } else if (amountToReturn == 0) {
+        }
+        else if (amountToReturn == 0) {
             display("Il ne reste rien à payer");
         } else {
 
-
             changeDue(amountToReturn);
-
-
-
         }
     }
 
@@ -67,9 +65,7 @@ public class CoinChangerV4 {
         int stockOfCoinsOf2 = 15;
         int stockOfCoinsOf1 = 30;
 
-
         int requiredNoteOf50 = numberChangeGiven(amountToReturn, NOTE_OF_50);
-
 
         if (stockOfNoteOf50 > 0 && requiredNoteOf50 > 0) {
 
