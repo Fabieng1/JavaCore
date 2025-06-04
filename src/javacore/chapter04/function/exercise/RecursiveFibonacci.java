@@ -6,17 +6,19 @@ public class RecursiveFibonacci {
 
     public static void main(String[] args) {
 
+        final int MAX_FIBONACCI_TERM = 10000;
+
         int countTerm = 3;
         BigInteger firstTerm = BigInteger.ZERO;
         BigInteger secondTerm = BigInteger.ONE;
         BigInteger currentFibonacciTerm = firstTerm.add(secondTerm);
 
-        numberFibonacci(currentFibonacciTerm, countTerm);
+        numberFibonacci(currentFibonacciTerm, countTerm, MAX_FIBONACCI_TERM);
 
 
     }
 
-    public static void numberFibonacci(BigInteger currentFibonacciTerm, int countTerm) {
+    public static void numberFibonacci(BigInteger currentFibonacciTerm, int countTerm, final int MAX_FIBONACCI_TERM) {
         countTerm = countTerm + 1;
 
         BigInteger firstTerm = BigInteger.ZERO;
