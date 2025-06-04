@@ -4,21 +4,20 @@ public class RecursiveFunction {
 
     public static void main (String[] args) {
 
-        int numberCount = 0;
 
-        recursiveCount(numberCount);
+
+        recursiveCount(1, 10000);
     }
 
-    public static void recursiveCount(int numberCount) {
-        numberCount = numberCount + 1;
+    public static void recursiveCount(int numberCount, int maxValue) {
 
-        if (numberCount < 10001) {
-            System.out.println(numberCount);
-        }
-        else {
+        if (numberCount > maxValue) {
             return;
         }
 
-        recursiveCount(numberCount);
+        System.out.println(numberCount);
+
+
+        recursiveCount(numberCount + 1, maxValue);
     }
 }
