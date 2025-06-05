@@ -20,7 +20,7 @@ public class CoinChangerV4 {
         // Total à payer
         int totalBill = 100;
         //Ce qu'à donner le client
-        int amountPaid = 124;
+        int amountPaid = 101;
         // Ce qu'il doit être rendu pour pas. Rendre seulement si le résultat est négatif
         int amountToReturn = amountPaid - totalBill;
         int bottomOfCash = (NOTE_OF_50 * stockOfNoteOf50) + (NOTE_OF_20 * stockOfNoteOf20) + (NOTE_OF_10 * stockOfNoteOf10) + (COIN_OF_2 * stockOfCoinsOf2) + (COIN_OF_1 * stockOfCoinsOf1);
@@ -39,6 +39,9 @@ public class CoinChangerV4 {
 
             changeDue(amountToReturn);
         }
+
+        bottomOfCash -= amountToReturn;
+        display("Fond de caisse restant : " + bottomOfCash);
     }
 
 
@@ -52,6 +55,7 @@ public class CoinChangerV4 {
     }
 
     public static int changeDue(int amountToReturn) {
+
 
         final int NOTE_OF_50 = 50;
         final int NOTE_OF_20 = 20;
@@ -70,15 +74,12 @@ public class CoinChangerV4 {
         if (stockOfNoteOf50 > 0 && requiredNoteOf50 > 0) {
 
             if (requiredNoteOf50 > stockOfNoteOf50) {
-
-                amountToReturn = amountToReturn - (stockOfNoteOf50 * NOTE_OF_50);
-                stockOfNoteOf50 = 0;
+                requiredNoteOf50 = stockOfNoteOf50;
             }
-            else {
 
-                amountToReturn = amountToReturn - requiredNoteOf50 * NOTE_OF_50;
+                amountToReturn = amountToReturn - (requiredNoteOf50 * NOTE_OF_50);
                 stockOfNoteOf50 = stockOfNoteOf50 - requiredNoteOf50;
-            }
+
         }
 
         int requiredNoteOf20 = numberChangeGiven(amountToReturn, NOTE_OF_20);
@@ -88,49 +89,56 @@ public class CoinChangerV4 {
                 amountToReturn = amountToReturn - (stockOfNoteOf20 * NOTE_OF_20);
                 stockOfNoteOf20 = 0;
             }
-            else {
 
                 amountToReturn = amountToReturn - (requiredNoteOf20 * NOTE_OF_20);
                 stockOfNoteOf20 = stockOfNoteOf20 - requiredNoteOf20;
-            }
+
         }
 
         int requiredNoteOf10 = numberChangeGiven(amountToReturn, NOTE_OF_10);
 
         if (stockOfNoteOf10 > 0 && requiredNoteOf10 > 0) {
             if (requiredNoteOf10 > stockOfNoteOf10) {
-                amountToReturn = amountToReturn - (stockOfNoteOf10 * NOTE_OF_10);
-                stockOfNoteOf10 = 0;
+               requiredNoteOf10 = stockOfNoteOf10;
             }
-            else {
-                amountToReturn = amountToReturn - requiredNoteOf10 * NOTE_OF_10;
+                amountToReturn = amountToReturn - (requiredNoteOf10 * NOTE_OF_10);
                 stockOfNoteOf10 = stockOfNoteOf10 - requiredNoteOf10;
-            }
+
         }
 
         int requiredCoin2 = numberChangeGiven(amountToReturn, COIN_OF_2);
 
         if (stockOfCoinsOf2 > 0 && requiredCoin2 > 0) {
             if (requiredCoin2 > stockOfCoinsOf2) {
-                amountToReturn = amountToReturn - (stockOfCoinsOf2 * COIN_OF_2);
-                stockOfNoteOf10 = 0;
+               requiredCoin2 = stockOfCoinsOf2;
             }
-            else {
-                amountToReturn = amountToReturn - requiredCoin2 * COIN_OF_2;
+                amountToReturn = amountToReturn - (requiredCoin2 * COIN_OF_2);
                 stockOfCoinsOf2 = stockOfCoinsOf2 - requiredCoin2;
-            }
+
 
             int requiredCoin1 = numberChangeGiven(amountToReturn, COIN_OF_1);
-            if (stockOfCoinsOf2 > 0 && requiredCoin1 > 0) {
+            if (stockOfCoinsOf1 > 0 && requiredCoin1 > 0) {
                 if (requiredCoin1 > stockOfCoinsOf1) {
-                    amountToReturn = amountToReturn - (stockOfCoinsOf1 * COIN_OF_1);
-                    stockOfNoteOf10 = 0;
+                    requiredCoin1 = stockOfCoinsOf1;
                 }
-                else {
-                    amountToReturn = amountToReturn - requiredCoin2 * requiredCoin1;
+                    amountToReturn = amountToReturn - (requiredCoin1 * COIN_OF_1);
                     stockOfCoinsOf1 = stockOfCoinsOf1 - requiredCoin1;
-                }
+
             }
+
+            /*
+             int requiredNoteOf50 = numberChangeGiven(amountToReturn, NOTE_OF_50);
+            if (stockOfNoteOf50 > 0 && requiredNoteOf50 > 0) {
+
+                if (requiredNoteOf50 > stockOfNoteOf50) {
+
+                    amountToReturn = amountToReturn - (stockOfNoteOf50 * NOTE_OF_50);
+                    stockOfNoteOf50 = 0;
+                } else {
+
+                    amountToReturn = amountToReturn - requiredNoteOf50 * NOTE_OF_50;
+                    stockOfNoteOf50 = stockOfNoteOf50 - requiredNoteOf50;
+                }*/
 
         }
 
