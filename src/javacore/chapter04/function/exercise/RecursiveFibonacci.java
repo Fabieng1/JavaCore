@@ -6,35 +6,27 @@ public class RecursiveFibonacci {
 
     public static void main(String[] args) {
 
-        final int MAX_FIBONACCI_TERM = 10000;
+        final int MAX_FIBONACCI_TERM = 50;
 
         int countTerm = 3;
+        int evenTermCountFound = 0;
+
         BigInteger firstTerm = BigInteger.ZERO;
         BigInteger secondTerm = BigInteger.ONE;
         BigInteger currentFibonacciTerm = firstTerm.add(secondTerm);
-
-        numberFibonacci(currentFibonacciTerm, countTerm, MAX_FIBONACCI_TERM);
-
-
-    }
-
-    public static void numberFibonacci(BigInteger currentFibonacciTerm, int countTerm, final int MAX_FIBONACCI_TERM) {
-        countTerm = countTerm + 1;
-
-        BigInteger firstTerm = BigInteger.ZERO;
-        BigInteger secondTerm = BigInteger.ONE;
-
 
         // terms of departure. Not included in the counting loop
         System.out.println("Term Fibonacci n°1 = " + firstTerm);
         System.out.println("Term Fibonacci n°2 = " + secondTerm);
 
-        int evenTermCountFound = 0;
 
+        evenTermCountFound = numberFibonacci(firstTerm, secondTerm, currentFibonacciTerm, countTerm, evenTermCountFound + 1, MAX_FIBONACCI_TERM);
+        System.out.println("Il y a " + evenTermCountFound + " nombres pairs");
 
-        firstTerm = secondTerm;
-        secondTerm = currentFibonacciTerm;
-        currentFibonacciTerm = firstTerm.add(secondTerm);
+    }
+
+    public static int numberFibonacci(BigInteger firstTerm, BigInteger secondTerm, BigInteger currentFibonacciTerm, int countTerm, int evenTermCountFound, final int MAX_FIBONACCI_TERM) {
+
 
 
         StringBuilder displayNumberFibonacci = new StringBuilder("Terme Fibonacci n°" + " = ");
@@ -49,15 +41,18 @@ public class RecursiveFibonacci {
             evenTermCountFound++;
             System.out.print(" (Even)");
         }
-        System.out.println();
+
+        firstTerm = secondTerm;
+        secondTerm = currentFibonacciTerm;
+        currentFibonacciTerm = firstTerm.add(secondTerm);
+
 
         System.out.println();
-        System.out.println("Il y a " + evenTermCountFound + " nombres de Fibonacci paires");
 
-        if (countTerm < 50) {
+        if (countTerm < MAX_FIBONACCI_TERM) {
             countTerm++;
-            numberFibonacci(currentFibonacciTerm, countTerm);
+            return numberFibonacci(firstTerm, secondTerm, currentFibonacciTerm, countTerm, evenTermCountFound, MAX_FIBONACCI_TERM);
         }
-
+        return evenTermCountFound;
     }
 }
