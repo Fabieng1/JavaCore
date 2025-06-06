@@ -19,15 +19,11 @@ public class RecursiveFibonacci {
         System.out.println("Term Fibonacci n°1 = " + firstTerm);
         System.out.println("Term Fibonacci n°2 = " + secondTerm);
 
-
         evenTermCountFound = numberFibonacci(firstTerm, secondTerm, currentFibonacciTerm, countTerm, evenTermCountFound + 1, MAX_FIBONACCI_TERM);
         System.out.println("Il y a " + evenTermCountFound + " nombres pairs");
-
     }
 
     public static int numberFibonacci(BigInteger firstTerm, BigInteger secondTerm, BigInteger currentFibonacciTerm, int countTerm, int evenTermCountFound, final int MAX_FIBONACCI_TERM) {
-
-
 
         StringBuilder displayNumberFibonacci = new StringBuilder("Terme Fibonacci n°" + " = ");
 
@@ -45,7 +41,6 @@ public class RecursiveFibonacci {
         firstTerm = secondTerm;
         secondTerm = currentFibonacciTerm;
         currentFibonacciTerm = firstTerm.add(secondTerm);
-
 
         System.out.println();
 
