@@ -23,7 +23,5 @@ public class FactorialCalculator {
 
             System.out.println(result);
         }
-        }
-
-
+    }
 }
