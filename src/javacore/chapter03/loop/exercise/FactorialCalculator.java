@@ -4,16 +4,26 @@ public class FactorialCalculator {
 
     public static void main (String[] args) {
 
-        int number = 10;
+        int number = 20;
         long result = 1;
 
-        while (number > 0) {
+        if (number < 0) {
+            System.out.println("Le nombre ne peut pas être négatif");
+        }
+        else if (number == 0) {
+            System.out.println(result = 1);
+        }
+        else {
 
-            result = result * number;
-            number--;
+            while (number > 0) {
+
+                result = result * number;
+                number--;
+            }
+
+            System.out.println(result);
+        }
         }
 
-        System.out.println(result);
 
-    }
 }
