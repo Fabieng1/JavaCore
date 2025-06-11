@@ -9,7 +9,6 @@ public class Pen {
     float price;
     int quantity;
 
-
     public static void main(String[] args) {
 
         String name = "Stylo";
