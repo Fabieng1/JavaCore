@@ -1,7 +1,13 @@
 package javacore.chapter05.object.exercises;
 
 public class Pen {
+    String name;
+    String color;
+    String manufacturing;
+    String weight;
 
+    float price;
+    int quantity;
 
 
     public static void main(String[] args) {
@@ -16,7 +22,7 @@ public class Pen {
 
         System.out.println("Nom : " + name + " | Couleur : " + color + " | Prix : " + price + " | Quantité : " + quantity + " | Fabricant : " + manufacturing + " | Poids : " + weight);
 
-        ExerciceObjectPen pen1 = new ExerciceObjectPen();
+        Pen pen1 = new Pen();
 
         pen1.name = "Stylo";
         pen1.color = "Bleu";
@@ -26,5 +32,10 @@ public class Pen {
         pen1.weight = "15g";
 
         pen1.displayInformation();
+    }
+
+    public void displayInformation() {
+
+        System.out.println("Nom : " + name + " | Couleur : " + color + " | Prix : " + price + "€ | Quantité : " + quantity + " | Fabriquant : " + manufacturing + " | Poids : " + weight);
     }
 }
