@@ -1,4 +1,4 @@
-package javacore.chapter05.object.exercises;
+package javacore.chapter05.object.exercise;
 
 public class ExerciceObjectPen {
 

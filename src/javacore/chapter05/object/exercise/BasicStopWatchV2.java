@@ -1,4 +1,4 @@
-package javacore.chapter05.exercise;
+package javacore.chapter05.object.exercise;
 
 public class BasicStopWatchV2 {
 
