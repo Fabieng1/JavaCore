@@ -4,7 +4,6 @@ public class BasicStopwatch {
 
     public static void main (String[] args) throws InterruptedException {
 
-
         int start = 0;
 
         int hours = 0;
@@ -25,7 +24,7 @@ public class BasicStopwatch {
                 if (minutes == 60) {
                     hours++;
                     minutes = 0;
-                    
+
                     if (hours > 23) {
                         hours = 0;
                     }

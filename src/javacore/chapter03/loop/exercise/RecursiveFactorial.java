@@ -1,10 +1,10 @@
-package javacore.chapter04.function.exercise;
+package javacore.chapter03.loop.exercise;
 
 public class RecursiveFactorial {
 
     public static void main (String[] args) {
 
-        int number = 0;
+        int number = 5;
         long result = 1;
 
         if (number == 0) {
