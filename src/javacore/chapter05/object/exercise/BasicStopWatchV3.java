@@ -13,14 +13,13 @@ public class BasicStopWatchV3 {
     public BasicStopWatchV3 () {
     }
 
-
     public static void main (String[] args) throws InterruptedException {
         BasicStopWatchV3 chronometer = new BasicStopWatchV3();
 
-        chronometer.launch("Fabien");
+        chronometer.launch();
     }
 
-    public void launch(String name) throws InterruptedException{
+    public void launch() throws InterruptedException{
 
 
         int start = 0;
