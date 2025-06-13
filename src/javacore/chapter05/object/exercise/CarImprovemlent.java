@@ -1,7 +1,6 @@
-package javacore.chapter05.object.practice;
+package javacore.chapter05.object.exercise;
 
-public class PracticeObjectCar {
-
+public class CarImprovemlent {
     String serialNumber;
     String brand;
     String model;
@@ -11,7 +10,9 @@ public class PracticeObjectCar {
     double price;
     double odometer;
 
-    public PracticeObjectCar(String serialNumber, String brand, String model, String color, double price) {
+    boolean isEngineStarted;
+
+    public CarImprovemlent(String serialNumber, String brand, String model, String color, double price) {
 
         this.serialNumber = serialNumber;
         this.brand = brand;
@@ -19,6 +20,7 @@ public class PracticeObjectCar {
         this.color = color;
         this.price = price;
         this.odometer = 0;
+        this.isEngineStarted = true;
 
         System.out.println("Created");
 
@@ -36,5 +38,19 @@ public class PracticeObjectCar {
     public void displayInformations() {
 
         System.out.println("N° de série " + this.serialNumber + " | Marque : " + this.brand + " | Modèle : " + this.model + " | Couleur : " + this.color + " | Prix : " + this.price + " | Kilométrages : " + this.odometer);
+
+        toGo(isEngineStarted);
+        System.out.printf("La voiture avance-t-elle ? " + isEngineStarted);
+    }
+
+    public boolean toGo(boolean isEngineStarted) {
+
+        if (this.isEngineStarted) {
+            this.isEngineStarted = true;
+        }
+        else {
+            this.isEngineStarted = false;
+        }
+        return isEngineStarted;
     }
 }

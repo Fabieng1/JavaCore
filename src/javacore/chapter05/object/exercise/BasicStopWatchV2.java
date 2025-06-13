@@ -26,9 +26,6 @@ public class BasicStopWatchV2 {
         int minutes = 0;
         int seconds = 0;
 
-
-
-
         while(start < 10000) {
 
             Thread.sleep(1);
