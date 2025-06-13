@@ -1,21 +1,55 @@
 package javacore.chapter05.object.exercise;
 
-
 public class CarImprovementObject {
+    String serialNumber;
+    String brand;
+    String model;
+    String color;
 
-    public static void main (String[] args) {
+    double price;
+    double odometer;
 
-        CarImprovemlent car1 = new CarImprovemlent("FRKV51566GGBVGMB455", "Ferrari", "F458", "Rouge", 260000);
+    boolean isEngineStarted;
 
-        car1.run(2000);
-        car1.displayInformations();
-        car1.toGo(car1.isEngineStarted);
+    public CarImprovementObject(String serialNumber, String brand, String model, String color, double price) {
 
-        CarImprovemlent car2 = new CarImprovemlent("FRKV515651515NKNK5541GMB455", "Ford", "Mustang", "Jaune", 120000);
+        this.serialNumber = serialNumber;
+        this.brand = brand;
+        this.model = model;
+        this.color = color;
+        this.price = price;
+        this.odometer = 0;
+        this.isEngineStarted = true;
 
-        car2.run(4000);
-        car2.displayInformations();
-        car2.toGo(car2.isEngineStarted);
+        System.out.println("Created");
 
+        this.displayInformations();
+
+    }
+
+    public double run (double distance) {
+        System.out.println("La voiture roule pendant " + distance + "Kms.");
+        odometer += distance;
+
+        return distance;
+    }
+
+    public void displayInformations() {
+
+        System.out.println("N° de série " + this.serialNumber + " | Marque : " + this.brand + " | Modèle : " + this.model + " | Couleur : " + this.color + " | Prix : " + this.price + " | Kilométrages : " + this.odometer);
+
+        toGo(isEngineStarted);
+        System.out.println("La voiture avance-t-elle ? " + isEngineStarted);
+    }
+
+    public boolean toGo(boolean isEngineStarted) {
+
+        if (this.isEngineStarted) {
+            this.isEngineStarted = true;
+        }
+        else {
+            this.isEngineStarted = false;
+        }
+        return isEngineStarted;
     }
 }
