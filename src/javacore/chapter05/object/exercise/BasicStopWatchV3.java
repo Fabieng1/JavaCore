@@ -1,6 +1,8 @@
 package javacore.chapter05.object.exercise;
 
-public class BasicStopWatchV2 {
+public class BasicStopWatchV3 {
+
+    String name = "Fabien";
 
     int start = 0;
 
@@ -8,13 +10,18 @@ public class BasicStopWatchV2 {
     int minutes = 0;
     int seconds = 0;
 
-    public static void main (String[] args) throws InterruptedException {
-
-
-        launch();
+    public BasicStopWatchV3 () {
     }
 
-    public static void launch() throws InterruptedException{
+
+    public static void main (String[] args) throws InterruptedException {
+        BasicStopWatchV3 chronometer = new BasicStopWatchV3();
+
+        chronometer.launch("Fabien");
+    }
+
+    public void launch(String name) throws InterruptedException{
+
 
         int start = 0;
 
@@ -41,18 +48,20 @@ public class BasicStopWatchV2 {
                     }
                 }
             }
-
-            displayTime(hours, minutes, seconds);
+            displayTime(name, hours, minutes, seconds);
 
             start++;
         }
     }
 
-        public static void displayTime(int hours, int minutes, int seconds) {
+    public void displayTime(String name, int hours, int minutes, int seconds) {
 
         String displayHours = hours < 10  ? "0" + hours  : "" + hours;
         String displayMinutes = minutes < 10  ? "0" + minutes  : "" + minutes;
         String displaySecondes = seconds < 10  ? "0" + seconds  : "" + seconds;
-        System.out.println(displayHours + ":" + displayMinutes  + ":" +  displaySecondes);
+        System.out.println(name + " : " + displayHours + ":" + displayMinutes  + ":" +  displaySecondes);
     }
 }
+
+
+
