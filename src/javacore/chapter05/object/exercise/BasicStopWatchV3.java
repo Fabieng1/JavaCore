@@ -2,7 +2,7 @@ package javacore.chapter05.object.exercise;
 
 public class BasicStopWatchV3 {
 
-    String name = "Fabien";
+    String name;
 
     int start = 0;
 
@@ -10,11 +10,13 @@ public class BasicStopWatchV3 {
     int minutes = 0;
     int seconds = 0;
 
-    public BasicStopWatchV3 () {
+    public BasicStopWatchV3 (String name) {
+
+        this.name = name;
     }
 
     public static void main (String[] args) throws InterruptedException {
-        BasicStopWatchV3 chronometer = new BasicStopWatchV3();
+        BasicStopWatchV3 chronometer = new BasicStopWatchV3("Fabien");
 
         chronometer.launch();
     }
@@ -58,7 +60,7 @@ public class BasicStopWatchV3 {
         String displayHours = hours < 10  ? "0" + hours  : "" + hours;
         String displayMinutes = minutes < 10  ? "0" + minutes  : "" + minutes;
         String displaySecondes = seconds < 10  ? "0" + seconds  : "" + seconds;
-        System.out.println(name + " : " + displayHours + ":" + displayMinutes  + ":" +  displaySecondes);
+        System.out.println(this.name + " : " + displayHours + ":" + displayMinutes  + ":" +  displaySecondes);
     }
 }
 
