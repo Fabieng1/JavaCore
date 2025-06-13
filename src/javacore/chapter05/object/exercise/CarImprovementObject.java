@@ -19,7 +19,7 @@ public class CarImprovementObject {
         this.color = color;
         this.price = price;
         this.odometer = 0;
-        this.isEngineStarted = true;
+        this.isEngineStarted = false;
 
         System.out.println("Created");
 
@@ -38,11 +38,11 @@ public class CarImprovementObject {
 
         System.out.println("N° de série " + this.serialNumber + " | Marque : " + this.brand + " | Modèle : " + this.model + " | Couleur : " + this.color + " | Prix : " + this.price + " | Kilométrages : " + this.odometer);
 
-        toGo(isEngineStarted);
+        isEngineStarted(isEngineStarted);
         System.out.println("La voiture avance-t-elle ? " + isEngineStarted);
     }
 
-    public boolean toGo(boolean isEngineStarted) {
+    public boolean isEngineStarted(boolean isEngineStarted) {
 
         if (this.isEngineStarted) {
             this.isEngineStarted = true;

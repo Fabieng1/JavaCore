@@ -11,33 +11,31 @@ public class BasicStopWatchV2 {
     public static void main (String[] args) throws InterruptedException {
 
 
-        launch();
+        BasicStopWatchV2 chronometre = new BasicStopWatchV2();
+
+        chronometre.launch();
     }
 
-    public static void launch() throws InterruptedException{
+    public void launch() throws InterruptedException{
 
-        int start = 0;
-
-        int hours = 0;
-        int minutes = 0;
-        int seconds = 0;
+        BasicStopWatchV2 chronometre = new BasicStopWatchV2();
 
         while(start < 10000) {
 
             Thread.sleep(1);
 
-            seconds++;
+            this.seconds++;
 
-            if (seconds == 60) {
-                seconds = 0;
-                minutes++;
+            if (this.seconds == 60) {
+                this.seconds = 0;
+                this.minutes++;
 
-                if (minutes == 60) {
-                    hours++;
-                    minutes = 0;
+                if (this.minutes == 60) {
+                    this.hours++;
+                    this.minutes = 0;
 
-                    if (hours > 23) {
-                        hours = 0;
+                    if (this.hours > 23) {
+                        this.hours = 0;
                     }
                 }
             }
@@ -48,7 +46,7 @@ public class BasicStopWatchV2 {
         }
     }
 
-        public static void displayTime(int hours, int minutes, int seconds) {
+    public static void displayTime(int hours, int minutes, int seconds) {
 
         String displayHours = hours < 10  ? "0" + hours  : "" + hours;
         String displayMinutes = minutes < 10  ? "0" + minutes  : "" + minutes;

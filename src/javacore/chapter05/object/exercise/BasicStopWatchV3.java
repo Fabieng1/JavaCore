@@ -18,38 +18,32 @@ public class BasicStopWatchV3 {
     public static void main (String[] args) throws InterruptedException {
         BasicStopWatchV3 chronometer = new BasicStopWatchV3("Fabien");
 
-        chronometer.launch();
+        chronometer.launch(10000);
     }
 
-    public void launch() throws InterruptedException{
+    public void launch(int end) throws InterruptedException{
 
 
-        int start = 0;
-
-        int hours = 0;
-        int minutes = 0;
-        int seconds = 0;
-
-        while(start < 10000) {
+        while(start < end) {
 
             Thread.sleep(1);
 
-            seconds++;
+            this.seconds++;
 
-            if (seconds == 60) {
-                seconds = 0;
-                minutes++;
+            if (this.seconds == 60) {
+                this.seconds = 0;
+                this.minutes++;
 
-                if (minutes == 60) {
-                    hours++;
-                    minutes = 0;
+                if (this.minutes == 60) {
+                    this.hours++;
+                    this.minutes = 0;
 
-                    if (hours > 23) {
-                        hours = 0;
+                    if (this.hours > 23) {
+                        this.hours = 0;
                     }
                 }
             }
-            displayTime(name, hours, minutes, seconds);
+            displayTime(name, this.hours, this.minutes, this.seconds);
 
             start++;
         }
