@@ -10,7 +10,6 @@ public class BasicStopWatchV2 {
 
     public static void main (String[] args) throws InterruptedException {
 
-
         BasicStopWatchV2 chronometre = new BasicStopWatchV2();
 
         chronometre.launch();
