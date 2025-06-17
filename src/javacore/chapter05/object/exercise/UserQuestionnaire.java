@@ -60,14 +60,12 @@ public class UserQuestionnaire {
 
             System.out.print("Souhaitez-vous continuer ? Oui/Non");
             response = scanner.nextLine();
-            scanner.nextLine();
 
-            if (response.toLowerCase().equals("Non")) {
+            if (response.toLowerCase().equals("non")) {
                 continuer = false;
                 userQuestionnaire.displayInformation(userQuestionnaire);
             }
         }
-
     }
 
 

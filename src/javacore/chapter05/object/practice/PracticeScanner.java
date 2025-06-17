@@ -1,4 +1,4 @@
-package javacore.chapter05.object.exercise;
+package javacore.chapter05.object.practice;
 
 import java.util.Scanner;
 
