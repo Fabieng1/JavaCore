@@ -20,14 +20,24 @@ public class PaperOrderPriceCalculator {
         float resultPrice3 = 0.0f;
 
         int numberPaper = 200;
-        int numberofAttempts = 0;
+        int numberOfAttempts = 0;
 
         float resultPrice = 0.0f;
 
         Scanner sc = new Scanner(System.in);
 
+        numberPaper = userQuestionnaire(numberOfAttempts,numberPaper, sc);
+
+        numberPaper = priceCalculator(numberPaper, resultPrice3, resultPrice2, resultPrice1, resultPrice, deliveryFees, BRACKET_MORE_30000,BRACKET1,PRICE_MORE_30000,PRICE_30000, PRICE_10000);
+
+
+
+
+    }
+
+    public static int userQuestionnaire(int numberOfAttempts, int numberPaper, Scanner sc) {
         do {
-            numberofAttempts++;
+            numberOfAttempts++;
             if (numberPaper < 200 || numberPaper > 200000) {
                 System.out.println("Quantitée invalide");
             }
@@ -36,11 +46,18 @@ public class PaperOrderPriceCalculator {
             System.out.print("Combien de feuilles souhaitez-vous commander ?");
             numberPaper = sc.nextInt();
 
-            if (numberofAttempts == 5) {
+            if (numberOfAttempts == 5) {
                 System.out.println("Vous avez fait trop de tentatives infructueuses ! Réessayez plus tard.");
                 break;
             }
         } while(numberPaper < 200 || numberPaper > 200000);
+
+
+
+        return numberPaper;
+    }
+
+    public static int priceCalculator(int numberPaper, float resultPrice3, float resultPrice2, float resultPrice1, float resultPrice, float deliveryFees, final int BRACKET_MORE_30000, final int BRACKET1, final float PRICE_MORE_30000, final float PRICE_30000, final float PRICE_10000) {
 
         if (numberPaper > 199 && numberPaper <= 200000) {
             if (numberPaper > 30000) {
@@ -48,26 +65,19 @@ public class PaperOrderPriceCalculator {
                 numberPaper = numberPaper - BRACKET_MORE_30000;
                 resultPrice3 = numberPaper * PRICE_MORE_30000;
                 numberPaper = 30000;
-
-                System.out.println("ResultPrice3 : " + resultPrice3);
-                System.out.println("numberPaper3 : " + numberPaper);
             }
 
-            if (numberPaper <= 30000) {
+            if (numberPaper > 10000) {
 
                 numberPaper = numberPaper - BRACKET1;
                 resultPrice2 = numberPaper * PRICE_30000;
-
-                System.out.println("ResultPrice2 : " + resultPrice2);
-                System.out.println("numberPaper2 : " + numberPaper);
+                numberPaper = 10000;
             }
 
-            if (numberPaper <= 10000) {
-                System.out.println(numberPaper);
-                resultPrice3 = numberPaper * PRICE_10000;
+            if (numberPaper >= 200) {
+
+                resultPrice1 = numberPaper * PRICE_10000;
                 numberPaper -= numberPaper;
-                System.out.println("ResultPrice3 : " + resultPrice3);
-                System.out.println("numberPaper : " + numberPaper);
             }
 
             resultPrice = resultPrice1 + resultPrice2 + resultPrice3;
@@ -81,5 +91,9 @@ public class PaperOrderPriceCalculator {
 
             System.out.println("Prix TTC avec livraison : " + resultPrice);
         }
+
+        return numberPaper;
     }
+
+
 }
