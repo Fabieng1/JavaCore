@@ -29,10 +29,6 @@ public class PaperOrderPriceCalculator {
         numberPaper = userQuestionnaire(numberOfAttempts,numberPaper, sc);
 
         numberPaper = priceCalculator(numberPaper, resultPrice3, resultPrice2, resultPrice1, resultPrice, deliveryFees, BRACKET_MORE_30000,BRACKET1,PRICE_MORE_30000,PRICE_30000, PRICE_10000);
-
-
-
-
     }
 
     public static int userQuestionnaire(int numberOfAttempts, int numberPaper, Scanner sc) {
@@ -51,8 +47,6 @@ public class PaperOrderPriceCalculator {
                 break;
             }
         } while(numberPaper < 200 || numberPaper > 200000);
-
-
 
         return numberPaper;
     }
@@ -94,6 +88,4 @@ public class PaperOrderPriceCalculator {
 
         return numberPaper;
     }
-
-
 }
