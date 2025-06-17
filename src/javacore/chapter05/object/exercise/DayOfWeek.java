@@ -12,9 +12,11 @@ public class DayOfWeek {
 
         do {
             System.out.print("Quel jour de la semaine sommes-nous ?");
-            day = sc.nextLine();
+            day = sc.nextLine().trim();
         } while(!day.equalsIgnoreCase("Lundi") && !day.equalsIgnoreCase("Mardi") && !day.equalsIgnoreCase("Mercredi") && !day.equalsIgnoreCase("Jeudi") && !day.equalsIgnoreCase("Vendredi") && !day.equalsIgnoreCase("SamediS") && !day.equalsIgnoreCase("Dimanche"));
 
         System.out.println("Merci de m'avoir informer que nous étions " + day);
+
+        System.out.println("Fin de programme");
     }
 }
