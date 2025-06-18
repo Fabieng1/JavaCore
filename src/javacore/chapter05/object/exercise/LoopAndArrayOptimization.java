@@ -1,6 +1,6 @@
 package javacore.chapter05.object.exercise;
 
-public class LoopAndArrayOptimisation {
+public class LoopAndArrayOptimization {
 
     public static void main(String[] args) {
 
