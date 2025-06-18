@@ -4,34 +4,36 @@ public class Test {
 
     public static void main (String[] args) {
 
-       int number = 1;
+        int[] integerArray = new int[10];
 
-       int resultDivision = number / 10;
-       int modulo = number % 10;
+        int number = 1;
 
-        System.out.println("R1 : " + resultDivision);
-        System.out.println("M1 : " + modulo);
-        System.out.println();
 
-        modulo = resultDivision % 10;
-        resultDivision = resultDivision / 10;
+        for(int index = 0; index < integerArray.length; index++) {
 
-        System.out.println("R2 : " + resultDivision);
-        System.out.println("M2 : " + modulo);
-        System.out.println();
+            integerArray[index] += number++;
 
-        modulo = resultDivision % 10;
-        resultDivision = resultDivision / 10;
+            displayArray(integerArray, index);
+        }
 
-        System.out.println("R3 : " + resultDivision);
-        System.out.println("M3 : " + modulo);
-        System.out.println();
+        for(int index = 0; index < integerArray.length; index++) {
 
-        modulo = resultDivision % 10;
-        resultDivision = resultDivision / 10;
+            if (integerArray[index] % 3 == 0 && index > 0) {
+                integerArray[index-1] = 0;
+            }
 
-        System.out.println("R4 : " + resultDivision);
-        System.out.println("M4 : " + modulo);
+
+
+        }
+        for (int index = 0; index < integerArray.length; index++) {
+            System.out.println(integerArray[index]);
+        }
+
+    }
+
+    public static void displayArray(int[] array, int index) {
+
+        System.out.println(array[index]);
     }
 }
 
