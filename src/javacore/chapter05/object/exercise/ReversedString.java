@@ -7,7 +7,7 @@ public class ReversedString {
         String text = "! ecicrexe'l issuér zeva suov ,ovarB";
         char newText;
 
-        for(int index = text.length() - 1; index > 0; index--) {
+        for(int index = text.length() - 1; index >= 0; index--) {
 
             newText = text.charAt(index);
             System.out.print(newText);

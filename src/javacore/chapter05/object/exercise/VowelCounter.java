@@ -6,12 +6,7 @@ public class VowelCounter {
 
     public static void main(String[] args) {
         String loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-        String vowelsA = "aàáâãäåæAÀÁÂÃÄÅÆ";
-        String vowelsE = "eèéêëEÈÉÊË";
-        String vowelsI = "iìíîïIÌÍÎÏ";
-        String vowelsO = "oòóôõöœOÒÓÔÕÖŒ";
-        String vowelsU = "uùúûüUÙÚÛÜ";
-        String vowelsY = "yýÿYÝŸ";
+        String vowels = "aAeEiIoOuUyY";
 
         int counterA = 0;
         int counterE = 0;
@@ -27,32 +22,53 @@ public class VowelCounter {
         /*System.out.print("Entrez le texte dont vous souhaitez compter les voyelles : ");
         String userText = scanner.nextLine();*/
 
-        for (int indexLoremIpsum = 0; indexLoremIpsum < loremIpsum.length(); indexLoremIpsum++) {
-            Character charLoremIpsum = loremIpsum.charAt(indexLoremIpsum);
 
-            if (vowelsA.indexOf(charLoremIpsum, 5) != -1) {
-                counterA++;
+
+
+        for (int indexVowel = 0; indexVowel < vowels.length(); indexVowel++) {
+            Character charVowels = vowels.charAt(indexVowel);
+            int index = 0;
+            while ((index = loremIpsum.indexOf(charVowels, index)) != -1) {
+                switch (charVowels) {
+
+
+                    case 'a':
+                    case 'A':
+                        counterA++;
+                        break;
+
+                    case 'e':
+                    case 'E':
+                        counterE++;
+                        break;
+
+                    case 'i':
+                    case 'I':
+                        counterI++;
+                        break;
+
+                    case 'o':
+                    case 'O':
+                        counterO++;
+                        break;
+
+                    case 'u':
+                    case 'U':
+                        counterU++;
+                        break;
+
+                    case 'y':
+                    case 'Y':
+
+                        counterY++;
+                        break;
+                }
+                index++;
             }
 
-            if (vowelsE.indexOf(charLoremIpsum, 10) != -1) {
-                counterE++;
-            }
 
-            if (vowelsI.indexOf(charLoremIpsum, 2) != -1) {
-                counterI++;
-            }
 
-            if (vowelsO.indexOf(charLoremIpsum, 15) != -1) {
-                counterO++;
-            }
 
-            if (vowelsU.indexOf(charLoremIpsum, 20) != -1) {
-                counterU++;
-            }
-
-            if (vowelsY.indexOf(charLoremIpsum, 25) != -1) {
-                counterY++;
-            }
         }
 
         System.out.println("Nombre de A : " + counterA);

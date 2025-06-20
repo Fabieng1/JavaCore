@@ -28,7 +28,9 @@ public class PaperOrderPriceCalculator {
 
         numberPaper = userQuestionnaire(numberOfAttempts,numberPaper, sc);
 
-        numberPaper = priceCalculator(numberPaper, resultPrice3, resultPrice2, resultPrice1, resultPrice, deliveryFees, BRACKET_MORE_30000,BRACKET1,PRICE_MORE_30000,PRICE_30000, PRICE_10000);
+        resultPrice = priceCalculator(numberPaper, resultPrice, deliveryFees, BRACKET_MORE_30000, BRACKET1, PRICE_MORE_30000, PRICE_30000, PRICE_10000);
+
+        System.out.println("Prix TTC : " + resultPrice);
     }
 
     public static int userQuestionnaire(int numberOfAttempts, int numberPaper, Scanner sc) {
@@ -52,7 +54,11 @@ public class PaperOrderPriceCalculator {
         return numberPaper;
     }
 
-    public static int priceCalculator(int numberPaper, float resultPrice3, float resultPrice2, float resultPrice1, float resultPrice, float deliveryFees, final int BRACKET_MORE_30000, final int BRACKET1, final float PRICE_MORE_30000, final float PRICE_30000, final float PRICE_10000) {
+    public static float priceCalculator(int numberPaper, float resultPrice, float deliveryFees, final int BRACKET_MORE_30000, final int BRACKET1, final float PRICE_MORE_30000, final float PRICE_30000, final float PRICE_10000) {
+
+        float resultPrice1 = 0.0f;
+        float resultPrice3 = 0.0f;
+        float resultPrice2 = 0.0f;
 
         if (numberPaper > 199 && numberPaper <= 200000) {
             if (numberPaper > 30000) {
@@ -80,13 +86,12 @@ public class PaperOrderPriceCalculator {
             float tva = (20.0f / 100.0f) * resultPrice;
             resultPrice = resultPrice + tva;
 
-            if (resultPrice < 201) {
+            if (resultPrice <= 200) {
                 resultPrice = resultPrice + deliveryFees;
             }
 
-            System.out.println("Prix TTC avec livraison : " + resultPrice);
         }
 
-        return numberPaper;
+        return resultPrice;
     }
 }
