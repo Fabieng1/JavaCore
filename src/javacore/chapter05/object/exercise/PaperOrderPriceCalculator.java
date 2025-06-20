@@ -33,14 +33,15 @@ public class PaperOrderPriceCalculator {
 
     public static int userQuestionnaire(int numberOfAttempts, int numberPaper, Scanner sc) {
         do {
-            numberOfAttempts++;
-            if (numberPaper < 200 || numberPaper > 200000) {
-                System.out.println("Quantitée invalide");
-            }
 
             System.out.println("Votre commande ne peut être inférieur à 200 et supérieur à 200.000");
             System.out.print("Combien de feuilles souhaitez-vous commander ?");
             numberPaper = sc.nextInt();
+
+            numberOfAttempts++;
+            if (numberPaper < 200 || numberPaper > 200000) {
+                System.out.println("Quantitée invalide");
+            }
 
             if (numberOfAttempts == 5) {
                 System.out.println("Vous avez fait trop de tentatives infructueuses ! Réessayez plus tard.");
