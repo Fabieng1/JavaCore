@@ -7,7 +7,6 @@ public class LongestWordFinder {
         String text = "a bb ccc ddddddddddd eeeeeeeeee fffffffff gggg hhhhh iiiiiiiiiiii jjjjjj kkkkkkk mmmmmmmm";
 
         char char1 = ' ';
-        char char2 = ' ';
 
         String result1 = "";
         String result2 = "";
