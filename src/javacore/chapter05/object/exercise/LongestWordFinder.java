@@ -50,6 +50,6 @@ public class LongestWordFinder {
             result2 = result1;
         }
 
-        System.out.println(result2);
+        System.out.println("Le mot le plus long est : " + result2);
     }
 }
