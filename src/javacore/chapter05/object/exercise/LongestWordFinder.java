@@ -6,19 +6,18 @@ public class LongestWordFinder {
 
         String text = "a bb ccc ddddddddddd eeeeeeeeee fffffffff gggg hhhhh iiiiiiiiiiii jjjjjj kkkkkkk mmmmmmmm";
 
-        String[] wordReference;
-        String[] result = text.split(" ");
+        /*String wordReference = "";
+        String[] result  = text.split(" ");
 
-        int counterCharacter = 0;
+        int currentWord;
 
-        for (int index = 0; index < result.length; index++) {
+        for (currentWord = 0; currentWord < result.length; currentWord++) {
 
-            counterCharacter++;
+            if (result[currentWord].length() > wordReference.length()) {
 
-            i
-
+                wordReference = result[currentWord];
+            }
         }
-
-
+        System.out.println(wordReference);*/
     }
 }
