@@ -44,7 +44,6 @@ public class LongestWordFinder {
             }
         }
 
-
         if (result1.length() > result2.length()) {
 
             result2 = result1;
