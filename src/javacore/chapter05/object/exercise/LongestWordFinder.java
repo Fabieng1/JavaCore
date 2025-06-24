@@ -33,7 +33,7 @@ public class LongestWordFinder {
                 result1 = result1 + char1;
             }
 
-            if (char1 == ' ' && result1.length() > result2.length()) {
+            if (result1.length() > result2.length()) {
 
                 result2 = result1;
             }
@@ -41,11 +41,6 @@ public class LongestWordFinder {
             if (char1 == ' ') {
                 result1 = "";
             }
-        }
-
-        if (result1.length() > result2.length()) {
-
-            result2 = result1;
         }
         System.out.println("Le mot le plus long est : " + result2);
     }
