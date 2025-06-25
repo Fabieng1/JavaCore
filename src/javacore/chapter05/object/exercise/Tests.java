@@ -2,21 +2,21 @@ package javacore.chapter05.object.exercise;
 
 public class Tests {
 
-    // Fiche produit
-    String produits;
-    String marque;
-    String descritpion;
+    public static void main (String[] args) {
+        String latinAlphabet = "abcdefghijklmnopqrstuvwxyz";
+        String substitutionAlphabet = "ntrhwbgeyjzlsoaqdmcuvfpxik";
+        String textToEncrypt = "ce message secret ne doit pas arriver entre de mauvaises mains !";
+        String textEncrypt = "";
 
-    int prix;
+        char charLatinAlphabet = ' ';
+        char charSubstitionAlphabet = ' ';
+        Character charTextToEncrypt;
 
-    // Fiches membre
-    String prenom;
-    String nom;
-    String adresse;
-    String ville;
-    String getAdresseEMail;
-
-    int codePostal;
-    int numeroDeRue;
-    int numeroDeTelephone;
+        textEncrypt = textToEncrypt;
+        for (int currentLatinAlphabet = 0; currentLatinAlphabet < latinAlphabet.length(); currentLatinAlphabet++) {
+            charLatinAlphabet = latinAlphabet.charAt(currentLatinAlphabet);
+            textEncrypt = textEncrypt.replaceAll(String.valueOf(charLatinAlphabet), String.valueOf(charLatinAlphabet + 13));
+        }
+        System.out.println(textEncrypt);
+    }
 }
