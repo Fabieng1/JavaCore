@@ -12,10 +12,28 @@ public class Tests {
         char charSubstitionAlphabet = ' ';
         Character charTextToEncrypt;
 
-        textEncrypt = textToEncrypt;
-        for (int currentLatinAlphabet = 0; currentLatinAlphabet < latinAlphabet.length(); currentLatinAlphabet++) {
-            charLatinAlphabet = latinAlphabet.charAt(currentLatinAlphabet);
-            textEncrypt = textEncrypt.replaceAll(String.valueOf(charLatinAlphabet), String.valueOf(charLatinAlphabet + 13));
+        int numberIteration = 3;
+
+        for (int cipherIteration = 0; cipherIteration < numberIteration; cipherIteration++) {
+            textEncrypt = "";
+            for (int charCurrentTexTotEncrypt = 0; charCurrentTexTotEncrypt < textToEncrypt.length(); charCurrentTexTotEncrypt++) {
+                charTextToEncrypt = textToEncrypt.charAt(charCurrentTexTotEncrypt);
+
+                if (Character.isLetter(charTextToEncrypt)) {
+                    char charLower = textToEncrypt.charAt(charCurrentTexTotEncrypt);
+                    int index = latinAlphabet.indexOf(charLower);
+
+                    if (index != -1) {
+                        charSubstitionAlphabet = substitutionAlphabet.charAt(index);
+                        textEncrypt = textEncrypt + charSubstitionAlphabet;
+                    } else {
+                        textEncrypt = textEncrypt + charTextToEncrypt;
+                    }
+                } else {
+                    textEncrypt = textEncrypt + charTextToEncrypt;
+                }
+            }
+            textToEncrypt = textEncrypt;
         }
         System.out.println(textEncrypt);
     }

@@ -66,20 +66,32 @@ public class SubsitutionCipher {
     public static String cipher (String textToEncrypt, String alphabet, String substitutionAlphabet, int cipherIteration) {
 
         String textEncrypt = "";
-        String latinAlphabet = "abcdefghijklmnopqrstuvwxyz";
 
-        char charLatinAlphabet = ' ';
         char charSubstitionAlphabet = ' ';
+        Character charTextToEncrypt;
 
         textEncrypt = textToEncrypt;
 
-        for (int currentLatinAlphabet = 0; currentLatinAlphabet < latinAlphabet.length(); currentLatinAlphabet++) {
-            charLatinAlphabet = latinAlphabet.charAt(currentLatinAlphabet);
-            charSubstitionAlphabet = substitutionAlphabet.charAt(currentLatinAlphabet);
+        for (int indexIteration = 0; indexIteration < cipherIteration; indexIteration++) {
+            textEncrypt = "";
+            for (int charCurrentTexTotEncrypt = 0; charCurrentTexTotEncrypt < textToEncrypt.length(); charCurrentTexTotEncrypt++) {
+                charTextToEncrypt = textToEncrypt.charAt(charCurrentTexTotEncrypt);
 
-            for (int cipherNumber = 0; cipherNumber < cipherIteration; cipherNumber++) {
-                textEncrypt = textEncrypt.replaceAll(String.valueOf(charLatinAlphabet), String.valueOf(charSubstitionAlphabet));
+                if (Character.isLetter(charTextToEncrypt)) {
+                    char charLower = textToEncrypt.charAt(charCurrentTexTotEncrypt);
+                    int index = alphabet.indexOf(charLower);
+
+                    if (index != -1) {
+                        charSubstitionAlphabet = substitutionAlphabet.charAt(index);
+                        textEncrypt = textEncrypt + charSubstitionAlphabet;
+                    } else {
+                        textEncrypt = textEncrypt + charTextToEncrypt;
+                    }
+                } else {
+                    textEncrypt = textEncrypt + charTextToEncrypt;
+                }
             }
+            textToEncrypt = textEncrypt;
         }
         return textEncrypt;
     }
