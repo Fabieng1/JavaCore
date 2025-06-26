@@ -1,5 +1,8 @@
 package javacore.chapter05.object.exercise.project;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 public class SubsitutionCipher {
 
     public static void main(String[] args) {
@@ -8,9 +11,11 @@ public class SubsitutionCipher {
         String substitutionAlphabet = "ntrhwbgeyjzlsoaqdmcuvfpxik";
         String textToEncrypt = "ce message secret ne doit pas arriver entre de mauvaises mains !";
         String textEncrypt = "";
+        String textUser = "";
 
         char charLatinAlphabet = ' ';
         char charSubstitionAlphabet = ' ';
+        char charTextUser = ' ';
         Character charTextToEncrypt;
 
         /*
@@ -37,8 +42,18 @@ public class SubsitutionCipher {
         }
         System.out.println(textEncrypt); */
 
+        Scanner scanner = new Scanner(System.in);
 
-        textEncrypt = cipher(textToEncrypt, latinAlphabet, substitutionAlphabet, 3);
+        textUser = inputUser(textUser, scanner, charTextUser);
+
+        textEncrypt = cipher(textUser, latinAlphabet, substitutionAlphabet, 3);
+
+        cipher(textUser, latinAlphabet, substitutionAlphabet, 3);
+
+
+
+
+
 
         System.out.println(textEncrypt);
     }
@@ -94,6 +109,20 @@ public class SubsitutionCipher {
             textToEncrypt = textEncrypt;
         }
         return textEncrypt;
+    }
+
+    public static String inputUser (String textUser, Scanner scanner, char charTextUser) {
+
+        do {
+            System.out.print("Entrez le code à crypter : ");
+            textUser = scanner.nextLine().toLowerCase();
+            for (int indexTextUser = 0; indexTextUser < textUser.length(); indexTextUser++) {
+                charTextUser = textUser.charAt(indexTextUser);
+            }
+
+        }while (!Character.isLetter(charTextUser));
+
+        return textUser;
     }
 }
 
