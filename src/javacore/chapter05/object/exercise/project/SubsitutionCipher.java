@@ -44,16 +44,13 @@ public class SubsitutionCipher {
 
         Scanner scanner = new Scanner(System.in);
 
+        textEncrypt = cipher(textToEncrypt, latinAlphabet, substitutionAlphabet);
+
         textUser = inputUser(textUser, scanner, charTextUser);
 
         textEncrypt = cipher(textUser, latinAlphabet, substitutionAlphabet, 3);
 
         cipher(textUser, latinAlphabet, substitutionAlphabet, 3);
-
-
-
-
-
 
         System.out.println(textEncrypt);
     }
