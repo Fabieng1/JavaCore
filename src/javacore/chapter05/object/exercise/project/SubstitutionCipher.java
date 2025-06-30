@@ -1,15 +1,14 @@
 package javacore.chapter05.object.exercise.project;
 
-import java.util.Locale;
 import java.util.Scanner;
 
-public class SubsitutionCipher {
+public class SubstitutionCipher {
 
     public static void main(String[] args) {
 
         String latinAlphabet = "abcdefghijklmnopqrstuvwxyz";
         String substitutionAlphabet = "";
-        String textToEncrypt = "ce message secret ne doit pas arriver entre de mauvaises mains !";
+        String textToEncrypt = "";
         String textEncrypt = "";
         String textUser = "";
         String inputUser = "";
@@ -45,13 +44,15 @@ public class SubsitutionCipher {
 
         Scanner scanner = new Scanner(System.in);
 
-        substitutionAlphabet = inputUser;
+        do {
+            substitutionAlphabet = inputUser(textUser, "Entrez l'alphabet de substitution souhaité : ", scanner, charTextUser);
+        }while (substitutionAlphabet.length() != 26);
 
-        textUser = inputUser(textUser, "Entrez le texte à chiffrer : ", scanner, charTextUser);
+        textToEncrypt = inputUser(textUser, "Entrez le texte à crypter : ", scanner, charTextUser);
 
-        textEncrypt = cipher(textUser, latinAlphabet, scanner, substitutionAlphabet, 3);
+        textEncrypt = textToEncrypt;
 
-        cipher(textUser, latinAlphabet, scanner, substitutionAlphabet, 3);
+        textEncrypt = cipher(textToEncrypt, latinAlphabet, substitutionAlphabet, 3);
 
         System.out.println(textEncrypt);
     }
@@ -76,23 +77,12 @@ public class SubsitutionCipher {
         return textEncrypt;
     }
 
-    public static String cipher (String textToEncrypt, String alphabet, Scanner scanner, String substitutionAlphabet, int cipherIteration) {
+    public static String cipher (String textToEncrypt, String alphabet, String substitutionAlphabet, int cipherIteration) {
 
         String textEncrypt = "";
-        String inputUser = "";
-        String textUser = "";
 
         char charSubstitionAlphabet = ' ';
-        char charTextUser = ' ';
         Character charTextToEncrypt;
-
-        do {
-
-            inputUser(textUser, "Entrez l'alphabet de substitutuin souhaité : ", scanner, charTextUser);
-
-            int index = inputUser.indexOf()
-        }while (inputUser.length() != 26);
-
 
         textEncrypt = textToEncrypt;
 
@@ -127,6 +117,11 @@ public class SubsitutionCipher {
             textUser = scanner.nextLine().toLowerCase();
             for (int indexTextUser = 0; indexTextUser < textUser.length(); indexTextUser++) {
                 charTextUser = textUser.charAt(indexTextUser);
+
+                if (!Character.isLetter(charTextUser)) {
+                    System.out.println("Un caractère invalide a été détecté. Recommencer !");
+                    break;
+                }
             }
 
         }while (!Character.isLetter(charTextUser));
