@@ -8,10 +8,11 @@ public class SubsitutionCipher {
     public static void main(String[] args) {
 
         String latinAlphabet = "abcdefghijklmnopqrstuvwxyz";
-        String substitutionAlphabet = "ntrhwbgeyjzlsoaqdmcuvfpxik";
+        String substitutionAlphabet = "";
         String textToEncrypt = "ce message secret ne doit pas arriver entre de mauvaises mains !";
         String textEncrypt = "";
         String textUser = "";
+        String inputUser = "";
 
         char charLatinAlphabet = ' ';
         char charSubstitionAlphabet = ' ';
@@ -44,13 +45,13 @@ public class SubsitutionCipher {
 
         Scanner scanner = new Scanner(System.in);
 
-        textEncrypt = cipher(textToEncrypt, latinAlphabet, substitutionAlphabet);
+        substitutionAlphabet = inputUser;
 
-        textUser = inputUser(textUser, scanner, charTextUser);
+        textUser = inputUser(textUser, "Entrez le texte à chiffrer : ", scanner, charTextUser);
 
-        textEncrypt = cipher(textUser, latinAlphabet, substitutionAlphabet, 3);
+        textEncrypt = cipher(textUser, latinAlphabet, scanner, substitutionAlphabet, 3);
 
-        cipher(textUser, latinAlphabet, substitutionAlphabet, 3);
+        cipher(textUser, latinAlphabet, scanner, substitutionAlphabet, 3);
 
         System.out.println(textEncrypt);
     }
@@ -75,12 +76,23 @@ public class SubsitutionCipher {
         return textEncrypt;
     }
 
-    public static String cipher (String textToEncrypt, String alphabet, String substitutionAlphabet, int cipherIteration) {
+    public static String cipher (String textToEncrypt, String alphabet, Scanner scanner, String substitutionAlphabet, int cipherIteration) {
 
         String textEncrypt = "";
+        String inputUser = "";
+        String textUser = "";
 
         char charSubstitionAlphabet = ' ';
+        char charTextUser = ' ';
         Character charTextToEncrypt;
+
+        do {
+
+            inputUser(textUser, "Entrez l'alphabet de substitutuin souhaité : ", scanner, charTextUser);
+
+            int index = inputUser.indexOf()
+        }while (inputUser.length() != 26);
+
 
         textEncrypt = textToEncrypt;
 
@@ -108,10 +120,10 @@ public class SubsitutionCipher {
         return textEncrypt;
     }
 
-    public static String inputUser (String textUser, Scanner scanner, char charTextUser) {
+    public static String inputUser (String textUser, String message, Scanner scanner, char charTextUser) {
 
         do {
-            System.out.print("Entrez le code à crypter : ");
+            System.out.print(message);
             textUser = scanner.nextLine().toLowerCase();
             for (int indexTextUser = 0; indexTextUser < textUser.length(); indexTextUser++) {
                 charTextUser = textUser.charAt(indexTextUser);
