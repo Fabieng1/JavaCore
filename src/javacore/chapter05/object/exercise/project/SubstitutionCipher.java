@@ -45,12 +45,10 @@ public class SubstitutionCipher {
         Scanner scanner = new Scanner(System.in);
 
         do {
-            substitutionAlphabet = inputUser(textUser, "Entrez l'alphabet de substitution souhaité : ", scanner, charTextUser);
+            substitutionAlphabet = inputUser(textUser, "Entrez l'alphabet de substitution souhaité : ", scanner);
         }while (substitutionAlphabet.length() != 26);
 
-        textToEncrypt = inputUser(textUser, "Entrez le texte à crypter : ", scanner, charTextUser);
-
-        textEncrypt = textToEncrypt;
+        textToEncrypt = inputUser(textUser, "Entrez le texte à crypter : ", scanner);
 
         textEncrypt = cipher(textToEncrypt, latinAlphabet, substitutionAlphabet, 3);
 
@@ -79,8 +77,10 @@ public class SubstitutionCipher {
 
     public static String cipher (String textToEncrypt, String alphabet, String substitutionAlphabet, int cipherIteration) {
 
+        String latinAlphabet = "azertyuiopqsdfghjklmwxcvbn";
         String textEncrypt = "";
 
+        char charLatinAlphabet = ' ';
         char charSubstitionAlphabet = ' ';
         Character charTextToEncrypt;
 
@@ -91,7 +91,7 @@ public class SubstitutionCipher {
             for (int charCurrentTexTotEncrypt = 0; charCurrentTexTotEncrypt < textToEncrypt.length(); charCurrentTexTotEncrypt++) {
                 charTextToEncrypt = textToEncrypt.charAt(charCurrentTexTotEncrypt);
 
-                if (Character.isLetter(charTextToEncrypt)) {
+                if (charTextToEncrypt != charLatinAlphabet) {
                     char charLower = textToEncrypt.charAt(charCurrentTexTotEncrypt);
                     int index = alphabet.indexOf(charLower);
 
@@ -110,25 +110,26 @@ public class SubstitutionCipher {
         return textEncrypt;
     }
 
-    public static String inputUser (String textUser, String message, Scanner scanner, char charTextUser) {
+    public static String inputUser (String textUser, String message, Scanner scanner) {
 
-        do {
-            System.out.print(message);
-            textUser = scanner.nextLine().toLowerCase();
-            for (int indexTextUser = 0; indexTextUser < textUser.length(); indexTextUser++) {
-                charTextUser = textUser.charAt(indexTextUser);
+        String latinAlphabet = "abcdefghijklmnopqrstuvwxyz";
 
-                if (!Character.isLetter(charTextUser)) {
-                    System.out.println("Un caractère invalide a été détecté. Recommencer !");
-                    break;
-                }
+        Character charTextUser = ' ';
+        char charLatinAlphabet = ' ';
+
+        System.out.print(message);
+        textUser = scanner.nextLine().toLowerCase();
+
+        for (int indexTextUser = 0; indexTextUser < textUser.length(); indexTextUser++) {
+            charTextUser = textUser.charAt(indexTextUser);
+
+            if (textUser.indexOf(latinAlphabet) != -1) {
+
+                System.out.println("Un caractère non autorisé a été détectée ! Veuillez recommencer !");
             }
 
-        }while (!Character.isLetter(charTextUser));
-
+        }
         return textUser;
     }
 }
-
-
 
