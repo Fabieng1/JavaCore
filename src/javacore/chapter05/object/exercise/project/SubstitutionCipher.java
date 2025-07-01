@@ -1,135 +1,132 @@
-package javacore.chapter05.object.exercise.project;
+    package javacore.chapter05.object.exercise.project;
 
-import java.util.Scanner;
+    import java.util.Scanner;
 
-public class SubstitutionCipher {
+    public class SubstitutionCipher {
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
-        String latinAlphabet = "abcdefghijklmnopqrstuvwxyz";
-        String substitutionAlphabet = "";
-        String textToEncrypt = "";
-        String textEncrypt = "";
-        String textUser = "";
-        String inputUser = "";
+            String latinAlphabet = "abcdefghijklmnopqrstuvwxyz";
+            String substitutionAlphabet = "";
+            String textToEncrypt = "";
+            String textEncrypt = "";
+            String textUser = "";
+            String inputUser = "";
 
-        char charLatinAlphabet = ' ';
-        char charSubstitionAlphabet = ' ';
-        char charTextUser = ' ';
-        Character charTextToEncrypt;
+            char charLatinAlphabet = ' ';
+            Character charSubstitionAlphabet = ' ';
+            char charTextUser = ' ';
+            Character charTextToEncrypt;
 
-        /*
-        Consigne 1
+            /*
+            Consigne 1
 
-        for (int charCurrentTexTotEncrypt = 0; charCurrentTexTotEncrypt < textToEncrypt.length(); charCurrentTexTotEncrypt++) {
-            charTextToEncrypt = textToEncrypt.charAt(charCurrentTexTotEncrypt);
+            for (int charCurrentTexTotEncrypt = 0; charCurrentTexTotEncrypt < textToEncrypt.length(); charCurrentTexTotEncrypt++) {
+                charTextToEncrypt = textToEncrypt.charAt(charCurrentTexTotEncrypt);
 
-            if (Character.isLetter(charTextToEncrypt)) {
-                char charLower = textToEncrypt.charAt(charCurrentTexTotEncrypt);
-                int index = latinAlphabet.indexOf(charLower);
+                if (Character.isLetter(charTextToEncrypt)) {
+                    char charLower = textToEncrypt.charAt(charCurrentTexTotEncrypt);
+                    int index = latinAlphabet.indexOf(charLower);
 
-                if (index != -1) {
-                    charSubstitionAlphabet = substitutionAlphabet.charAt(index);
-                    textEncrypt = textEncrypt + charSubstitionAlphabet;
+                    if (index != -1) {
+                        charSubstitionAlphabet = substitutionAlphabet.charAt(index);
+                        textEncrypt = textEncrypt + charSubstitionAlphabet;
+                    }
+                    else {
+                        textEncrypt = textEncrypt + charTextToEncrypt;
+                    }
                 }
                 else {
                     textEncrypt = textEncrypt + charTextToEncrypt;
                 }
             }
-            else {
-                textEncrypt = textEncrypt + charTextToEncrypt;
+            System.out.println(textEncrypt); */
+
+            Scanner scanner = new Scanner(System.in);
+
+            do {
+                substitutionAlphabet = inputUser(textUser, "Entrez l'alphabet de substitution souhaité : ", scanner);
+                if (substitutionAlphabet.length() != 26) {
+                    System.out.println("Votre alphabet ne contient pas 26 charactères ou contient des charactères non autorisé. Veuillez le ressaisir : ");
+                }
+
+                for (int indexSubstitutionAlphabet = 0; indexSubstitutionAlphabet < substitutionAlphabet.length(); indexSubstitutionAlphabet++) {
+                    charSubstitionAlphabet = substitutionAlphabet.charAt(indexSubstitutionAlphabet);
+                    if (substitutionAlphabet.indexOf(charLatinAlphabet, 0) != -1);
+                }
+
+
+
+            }while (substitutionAlphabet.length() != 26);
+
+            textToEncrypt = inputUser(textUser, "Entrez le texte à crypter : ", scanner);
+
+            textEncrypt = cipher(textToEncrypt, latinAlphabet, substitutionAlphabet, 3);
+
+            System.out.println(textEncrypt);
+        }
+
+        public static String cipher (String textToEncrypt, String alphabet, String substitutionAlphabet) {
+
+            String textEncrypt = "";
+            char charLatinAlphabet = ' ';
+            char charSubstitionAlphabet = ' ';
+
+            textEncrypt = textToEncrypt;
+
+            for (int currentLatinAlphabet = 0; currentLatinAlphabet < alphabet.length(); currentLatinAlphabet++) {
+                charLatinAlphabet = alphabet.charAt(currentLatinAlphabet);
+                charSubstitionAlphabet = substitutionAlphabet.charAt(currentLatinAlphabet);
+
+                textEncrypt = textEncrypt.replaceAll(String.valueOf(charLatinAlphabet), String.valueOf(charSubstitionAlphabet));
             }
-        }
-        System.out.println(textEncrypt); */
 
-        Scanner scanner = new Scanner(System.in);
-
-        do {
-            substitutionAlphabet = inputUser(textUser, "Entrez l'alphabet de substitution souhaité : ", scanner);
-        }while (substitutionAlphabet.length() != 26);
-
-        textToEncrypt = inputUser(textUser, "Entrez le texte à crypter : ", scanner);
-
-        textEncrypt = cipher(textToEncrypt, latinAlphabet, substitutionAlphabet, 3);
-
-        System.out.println(textEncrypt);
-    }
-
-    public static String cipher (String textToEncrypt, String alphabet, String substitutionAlphabet) {
-
-        String textEncrypt = "";
-        String latinAlphabet = "abcdefghijklmnopqrstuvwxyz";
-
-        char charLatinAlphabet = ' ';
-        char charSubstitionAlphabet = ' ';
-
-        textEncrypt = textToEncrypt;
-
-        for (int currentLatinAlphabet = 0; currentLatinAlphabet < latinAlphabet.length(); currentLatinAlphabet++) {
-            charLatinAlphabet = latinAlphabet.charAt(currentLatinAlphabet);
-            charSubstitionAlphabet = substitutionAlphabet.charAt(currentLatinAlphabet);
-
-            textEncrypt = textEncrypt.replaceAll(String.valueOf(charLatinAlphabet), String.valueOf(charSubstitionAlphabet));
+            return textEncrypt;
         }
 
-        return textEncrypt;
-    }
+        public static String cipher (String textToEncrypt, String alphabet, String substitutionAlphabet, int cipherIteration) {
 
-    public static String cipher (String textToEncrypt, String alphabet, String substitutionAlphabet, int cipherIteration) {
+            String textEncrypt = "";
 
-        String latinAlphabet = "azertyuiopqsdfghjklmwxcvbn";
-        String textEncrypt = "";
+            char charLatinAlphabet = ' ';
+            char charSubstitionAlphabet = ' ';
+            Character charTextToEncrypt;
 
-        char charLatinAlphabet = ' ';
-        char charSubstitionAlphabet = ' ';
-        Character charTextToEncrypt;
+            textEncrypt = textToEncrypt;
 
-        textEncrypt = textToEncrypt;
+            for (int indexIteration = 0; indexIteration < cipherIteration; indexIteration++) {
+                textEncrypt = "";
+                for (int charCurrentTexTotEncrypt = 0; charCurrentTexTotEncrypt < textToEncrypt.length(); charCurrentTexTotEncrypt++) {
+                    charTextToEncrypt = textToEncrypt.charAt(charCurrentTexTotEncrypt);
 
-        for (int indexIteration = 0; indexIteration < cipherIteration; indexIteration++) {
-            textEncrypt = "";
-            for (int charCurrentTexTotEncrypt = 0; charCurrentTexTotEncrypt < textToEncrypt.length(); charCurrentTexTotEncrypt++) {
-                charTextToEncrypt = textToEncrypt.charAt(charCurrentTexTotEncrypt);
+                    if (charTextToEncrypt != charLatinAlphabet) {
+                        char charLower = textToEncrypt.charAt(charCurrentTexTotEncrypt);
+                        int index = alphabet.indexOf(charLower);
 
-                if (charTextToEncrypt != charLatinAlphabet) {
-                    char charLower = textToEncrypt.charAt(charCurrentTexTotEncrypt);
-                    int index = alphabet.indexOf(charLower);
-
-                    if (index != -1) {
-                        charSubstitionAlphabet = substitutionAlphabet.charAt(index);
-                        textEncrypt = textEncrypt + charSubstitionAlphabet;
+                        if (index != -1) {
+                            charSubstitionAlphabet = substitutionAlphabet.charAt(index);
+                            textEncrypt = textEncrypt + charSubstitionAlphabet;
+                        } else {
+                            textEncrypt = textEncrypt + charTextToEncrypt;
+                        }
                     } else {
                         textEncrypt = textEncrypt + charTextToEncrypt;
                     }
-                } else {
-                    textEncrypt = textEncrypt + charTextToEncrypt;
                 }
+                textToEncrypt = textEncrypt;
             }
-            textToEncrypt = textEncrypt;
+            return textEncrypt;
         }
-        return textEncrypt;
-    }
 
-    public static String inputUser (String textUser, String message, Scanner scanner) {
+        public static String inputUser (String textUser, String message, Scanner scanner) {
 
-        String latinAlphabet = "abcdefghijklmnopqrstuvwxyz";
+            Character charTextUser = ' ';
+            char charLatinAlphabet = ' ';
 
-        Character charTextUser = ' ';
-        char charLatinAlphabet = ' ';
+            System.out.print(message);
+            textUser = scanner.nextLine().toLowerCase();
 
-        System.out.print(message);
-        textUser = scanner.nextLine().toLowerCase();
-
-        for (int indexTextUser = 0; indexTextUser < textUser.length(); indexTextUser++) {
-            charTextUser = textUser.charAt(indexTextUser);
-
-            if (textUser.indexOf(latinAlphabet) != -1) {
-
-                System.out.println("Un caractère non autorisé a été détectée ! Veuillez recommencer !");
-            }
-
+            return textUser;
         }
-        return textUser;
     }
-}
 
