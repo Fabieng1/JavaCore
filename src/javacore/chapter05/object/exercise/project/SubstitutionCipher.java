@@ -16,6 +16,10 @@ public class SubstitutionCipher {
 
         String latinAlphabet = "abcdefghijklmnopqrstuvwxyz";
         String substitutionAlphabet = "";
+
+        SubstitutionCipher cipher = new SubstitutionCipher(latinAlphabet, substitutionAlphabet);
+
+
         String textToEncrypt = "";
         String textEncrypt = "";
         String textUser = "";
@@ -24,8 +28,6 @@ public class SubstitutionCipher {
         char charLatinAlphabet = ' ';
 
         Scanner scanner = new Scanner(System.in);
-
-        SubstitutionCipher cipher = new SubstitutionCipher(latinAlphabet, substitutionAlphabet);
 
         do {
             substitutionAlphabet = inputUser(textUser, "Entrez l'alphabet de substitution souhaité : ", scanner);
@@ -47,11 +49,11 @@ public class SubstitutionCipher {
 
         inputUser(textUser, "Entrez le texte à crypter : ", scanner);
 
-        textToEncrypt = textEncrypt;
+        textToEncrypt = textUser;
 
-       textEncrypt = cipher.cipherMethod(textToEncrypt, latinAlphabet, substitutionAlphabet, 3);
+        textToEncrypt =  cipher.cipherMethod(textToEncrypt, latinAlphabet, substitutionAlphabet, 3);
 
-        System.out.print(textEncrypt);
+        System.out.println(textToEncrypt);
     }
 
     public String cipherMethod (String textToEncrypt, String alphabet, String substitutionAlphabet, int cipherIteration) {
