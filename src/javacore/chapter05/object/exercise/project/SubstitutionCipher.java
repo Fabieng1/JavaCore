@@ -13,7 +13,7 @@ public class SubstitutionCipher {
     public SubstitutionCipher (String alphabet, String substitutionAlphabet) {
 
         this.latinAlphabet = alphabet;
-        this.substitutionAlphabet = cipherMethod(textToEncrypt, 3);
+        this.substitutionAlphabet = substitutionAlphabet;
     }
     public static void main(String[] args) {
 
@@ -42,7 +42,7 @@ public class SubstitutionCipher {
 
                 charSubstitionAlphabet = cipher.substitutionAlphabet.charAt(indexSubstitutionAlphabet);
 
-                if (cipher.substitutionAlphabet.indexOf(charSubstitionAlphabet) != cipher.substitutionAlphabet.lastIndexOf(charSubstitionAlphabet) || cipher.substitutionAlphabet.matches(".*\\d.*")) { // Vérifie si un charactère est en double ou pas, si oui, demande une nouvelle saisie
+                if (cipher.substitutionAlphabet.indexOf(charSubstitionAlphabet) != cipher.substitutionAlphabet.lastIndexOf(charSubstitionAlphabet) || cipher.substitutionAlphabet.matches(".*\\d.*")) {
                     System.out.println("Charactère double ou présence de chiffre. Veuillez re-saisir l'alphabet de substitution : ");
                     break;
                 }
@@ -54,9 +54,9 @@ public class SubstitutionCipher {
 
         textToEncrypt = textUser;
 
-        cipher.cipherMethod(textToEncrypt, 3);
+        textEncrypt =  cipher.cipherMethod(textToEncrypt, 3);
 
-        System.out.println(textToEncrypt);
+        System.out.println(textEncrypt);
     }
 
     public String cipherMethod (String textToEncrypt, int cipherIteration) {
