@@ -13,7 +13,7 @@ public class SubstitutionCipher {
     public SubstitutionCipher (String alphabet, String substitutionAlphabet) {
 
         this.latinAlphabet = alphabet;
-        this.substitutionAlphabet = cipherMethod(textToEncrypt, 3);
+        this.substitutionAlphabet = substitutionAlphabet;
     }
     public static void main(String[] args) {
 
@@ -54,9 +54,9 @@ public class SubstitutionCipher {
 
         textToEncrypt = textUser;
 
-        cipher.cipherMethod(textToEncrypt, 3);
+        textEncrypt =  cipher.cipherMethod(textToEncrypt, 3);
 
-        System.out.println(textToEncrypt);
+        System.out.println(textEncrypt);
     }
 
     public String cipherMethod (String textToEncrypt, int cipherIteration) {
