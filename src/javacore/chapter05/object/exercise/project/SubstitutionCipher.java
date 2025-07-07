@@ -17,22 +17,41 @@ public class SubstitutionCipher {
     }
     public static void main(String[] args) {
 
+        /*
+         * Initialisation de l'alphabet et de l'alphabet de substitution vide pour accueillir celui de l'utilisateur
+         */
         String latinAlphabet = "abcdefghijklmnopqrstuvwxyz";
         String substitutionAlphabet = "";
 
+        /*
+         * Création de l'objet cipher
+         */
         SubstitutionCipher cipher = new SubstitutionCipher(latinAlphabet, substitutionAlphabet);
 
-
+        /*
+         * Création et initialisation à vide des variables à accueilir le texte de l'utilisateur, le texte à encrypter, et le texte une fois encrypter
+         */
         String textToEncrypt = "";
         String textEncrypt = "";
         String textUser = "";
 
+
+        /*
+         * Création et initialisation des variables servant à acceuillir charactères par charactère les textes saisies par l'utilisateur
+         */
         char charSubstitionAlphabet = ' ';
         char charLatinAlphabet = ' ';
 
+        /*
+         * Créarion du Scanner
+         */
         Scanner scanner = new Scanner(System.in);
 
+        /*
+         * Boucle servant à vérifier que la saisie de l'alphabet de substitution par l'utilisateur réponde bien à certains critères
+         */
         do {
+            // Est-ce l'alphabet de substitution de l'utilisateur comporte bien 26 lettres
             cipher.substitutionAlphabet = inputUser(textUser, "Entrez l'alphabet de substitution souhaité : ", scanner);
             if (cipher.substitutionAlphabet.length() != 26) {
                 System.out.println("Votre alphabet ne contient pas 26 charactères ou contient des charactères non autorisé. Veuillez le ressaisir : ");
@@ -42,20 +61,25 @@ public class SubstitutionCipher {
 
                 charSubstitionAlphabet = cipher.substitutionAlphabet.charAt(indexSubstitutionAlphabet);
 
+                //Est-ce l'alphabet de substitution de l'utilisateur n'a pas de lettres en double ou de chiffres
                 if (cipher.substitutionAlphabet.indexOf(charSubstitionAlphabet) != cipher.substitutionAlphabet.lastIndexOf(charSubstitionAlphabet) || cipher.substitutionAlphabet.matches(".*\\d.*")) {
                     System.out.println("Charactère double ou présence de chiffre. Veuillez re-saisir l'alphabet de substitution : ");
                     break;
                 }
             }
-
+            // Continue tant que l'alphabet de substitution ne comporte pas 26 lettres, sans doublons, ni chiffres
         }while (cipher.substitutionAlphabet.length() != 26 || cipher.substitutionAlphabet.indexOf(charSubstitionAlphabet) != cipher.substitutionAlphabet.lastIndexOf(charSubstitionAlphabet) || cipher.substitutionAlphabet.matches(".*\\d.*"));
 
+        // Méthode demandant le texte à crypter à l'utilisateur. Son renvoie est stocker dans la variable textUser
         textUser = inputUser(textUser, "Entrez le texte à crypter : ", scanner);
 
+        // textUser est stocké dans textToEncrypt
         textToEncrypt = textUser;
 
-        textEncrypt =  cipher.cipherMethod(textToEncrypt, 3);
+        // textToEncrypt est chiffré grace à la méthode chipherMethod et le résultat est stocké dans textEncypt
+        textEncrypt = cipher.cipherMethod(textToEncrypt, 3);
 
+        // Le text chiffré est affiché
         System.out.println(textEncrypt);
     }
 
