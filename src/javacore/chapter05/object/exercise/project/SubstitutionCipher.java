@@ -76,7 +76,7 @@ public class SubstitutionCipher {
 
         //textUser est désormais stocker dans textToEncrypt
         textToEncrypt = textUser;
-//Pouette
+
         // Le texte est crypté grace à la méthode cipherMethod, et son résultat est stocké dans textToEncrypt
         textToEncrypt = cipher.cipherMethod(textToEncrypt, 3);
 
