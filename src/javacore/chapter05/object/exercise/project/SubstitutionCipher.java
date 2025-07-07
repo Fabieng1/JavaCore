@@ -68,7 +68,7 @@ public class SubstitutionCipher {
         Character charTextToEncrypt;
 
         textEncrypt = textToEncrypt;
-//poe
+
         for (int indexIteration = 0; indexIteration < cipherIteration; indexIteration++) {
             textEncrypt = "";
             for (int charCurrentTexTotEncrypt = 0; charCurrentTexTotEncrypt < textToEncrypt.length(); charCurrentTexTotEncrypt++) {
