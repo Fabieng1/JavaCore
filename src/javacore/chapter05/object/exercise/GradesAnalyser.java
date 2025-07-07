@@ -1,50 +1,78 @@
-/*package javacore.chapter05.object.exercise;
+package javacore.chapter05.object.exercise;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class GradesAnalyser {
 
-    private static int[] note ;
-
-    public GradesAnalyser(int[] note) {
-
-        this.note = note;
-
-    }
-
     public static void main(String[] args) {
 
-        int numberNote = 0;
+        int numberGrade;
+
+        double indexGrade;
+        double averageMain;
+        double gradeMinMain = 0.0;
+
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.print("Combien de notes souhaitez-vous entrez ?");
-            numberNote = scanner.nextInt();
+            numberGrade = scanner.nextInt();
 
-            if (numberNote < 2) {
+            if (numberGrade < 2.0) {
                 System.out.println("Nombre minimum 2");
             }
-            else if (numberNote > 30) {
+            else if (numberGrade > 30.0) {
                 System.out.println("Nombre maximal 30");
             }
 
-        } while (numberNote < 2 || numberNote > 30);
+        } while (numberGrade < 2.0 || numberGrade > 30.0);
 
-        int[] note = new int[numberNote];
-        int indexNote = 0;
+        int[] grade = new int[numberGrade];
 
-            for (indexNote = 0; indexNote < note.length; indexNote++) {
-                do {
-                    if (note[indexNote] < 0 || note[indexNote] > 20) {
-                        System.out.println("Votre note doit aller de 0 à 20");
-                    }
-                    System.out.print("Entrez une note : ");
-                    note[indexNote] = scanner.nextInt();
-                } while (note[indexNote] < 0 || note[indexNote] > 20);
+        for (indexGrade = 0; indexGrade < grade.length; indexGrade++) {
+            do {
+                if (grade[(int)indexGrade] < 0 || grade[(int)indexGrade] > 20) {
+                    System.out.println("Votre note doit aller de 0 à 20");
+                }
+                System.out.print("Entrez une note : ");
+                grade[(int)indexGrade] = scanner.nextInt();
+            } while (grade[(int)indexGrade] < 0.0 || grade[(int)indexGrade] > 20.0);
+        }
+
+        averageMain = getAverage(grade, numberGrade);
+
+        double gradeMinimal = getMinGrades(grade, gradeMinMain);
+
+
+
+        System.out.println("Votre moyenne générale est de " + averageMain);
+        System.out.println("La plus petite note est " + gradeMinimal);
+    }
+
+    public static double getAverage(int[] gradesArray, int numberGrades) {
+
+        double average;
+
+        int sumGrades = 0;
+
+        for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
+
+            sumGrades = sumGrades + gradesArray[indexGrades];
+        }
+
+        average = (double) sumGrades / numberGrades;
+
+        return average;
+    }
+
+    public static double getMinGrades(int[] gradesArray, double gradesMin) {
+
+
+        for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
+
+            if (gradesArray[indexGrades] < gradesMin) {
+                gradesMin = gradesArray[indexGrades];
             }
+        }
+        return gradesMin;
     }
-
-    public static double getAverage(int[] gradesArray) {
-        
-    }
-}*/
+}
