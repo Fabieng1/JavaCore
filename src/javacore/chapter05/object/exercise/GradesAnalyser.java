@@ -46,7 +46,7 @@ public class GradesAnalyser {
         System.out.println("Votre moyenne générale est de " + averageMain);
         System.out.println("Votre note minumum est " + gradeMinimal);
         System.out.println("Votre note maximal est " + gradeMaximal);
-        System.out.println("Vous avez " + grabesAboveMain + " note(s) 10au dessus de 10");
+        System.out.println("Vous avez " + grabesAboveMain + " note(s) au dessus de 10");
     }
 
     public static double getAverage(double[] gradesArray, double numberGrades) {
@@ -90,9 +90,9 @@ public class GradesAnalyser {
         return gradeMax;
     }
 
-    public static int getGradeCountBetweenRange(double[] gradeArray, int threshold) {
+    public static double getGradeCountBetweenRange(double[] gradeArray, int threshold) {
 
-        int above = 0;
+        double above = 0;
 
         double[] gradesAboveThreshold = new double[threshold];
 
@@ -103,6 +103,11 @@ public class GradesAnalyser {
                 above++;
             }
         }
+
+        double percentage = (above / gradeArray.length) * 100;
+
+        System.out.println("Cela représente " + percentage + "%");
+
         return above;
     }
 }
