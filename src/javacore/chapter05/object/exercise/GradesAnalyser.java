@@ -6,10 +6,12 @@ public class GradesAnalyser {
 
     public static void main(String[] args) {
 
-        int numberGrade;
-        int indexGrade;
+        int numberGrade = 0;
+        int indexGrade = 0;
 
         double averageMain;
+        double[] from = new double[indexGrade];
+        double[] to = new double[indexGrade];
 
         Scanner scanner = new Scanner(System.in);
         do {
@@ -41,12 +43,14 @@ public class GradesAnalyser {
 
         double gradeMinimal = getMinGrades(grade);
         double gradeMaximal = getMaxGrades(grade);
-        double grabesAboveMain = getGradeCountBetweenRange(grade, 10);
+        double grabesAboveMain = getGradeCountAboveThreshold(grade, 10, numberGrade);
+        double gradesFromTo = getGradeCountBetweenRange(grade, from, to, numberGrade);
 
         System.out.println("Votre moyenne générale est de " + averageMain);
         System.out.println("Votre note minumum est " + gradeMinimal);
         System.out.println("Votre note maximal est " + gradeMaximal);
         System.out.println("Vous avez " + grabesAboveMain + " note(s) au dessus de 10");
+        System.out.println("fromTo : " + gradesFromTo);
     }
 
     public static double getAverage(double[] gradesArray, double numberGrades) {
@@ -89,12 +93,11 @@ public class GradesAnalyser {
         }
         return gradeMax;
     }
-
-    public static double getGradeCountBetweenRange(double[] gradeArray, int threshold) {
+    public static double getGradeCountAboveThreshold(double[] gradeArray, int threshold, int numberGrades) {
 
         double above = 0;
 
-        double[] gradesAboveThreshold = new double[threshold];
+        double[] gradesAboveThreshold = new double[numberGrades];
 
         for (int indexGrades = 0; indexGrades < gradeArray.length; indexGrades++) {
 
@@ -109,5 +112,34 @@ public class GradesAnalyser {
         System.out.println("Cela représente " + percentage + "%");
 
         return above;
+    }
+
+    public static double getGradeCountBetweenRange(double[] gradesArray, double[] from, double[] to, int numberGradesStudent) {
+
+        double[] numberGrades = new double[numberGradesStudent];
+
+        int count0to5 = 0;
+        int count6to10 = 0;
+        int count11to15 = 0;
+        int count16to20 = 0;
+        int countGeneralsGrades = count0to5 + count6to10 + count11to15 + count16to20;
+
+        for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
+            numberGrades = new double[]{};
+
+            if (numberGrades[indexGrades] <= 5) {
+                count0to5++;
+            }
+            else if (numberGrades[indexGrades] <= 10) {
+                count6to10++;
+            }
+            else if (numberGrades[indexGrades] <= 15) {
+                count11to15++;
+            }
+            else if (numberGrades[indexGrades] <= 20) {
+                count16to20++;
+            }
+        }
+        return numberGradesStudent;
     }
 }
