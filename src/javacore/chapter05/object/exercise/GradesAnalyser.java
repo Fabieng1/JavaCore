@@ -7,10 +7,9 @@ public class GradesAnalyser {
     public static void main(String[] args) {
 
         int numberGrade;
+        int indexGrade;
 
-        double indexGrade;
         double averageMain;
-        double gradeMinMain = 0.0;
 
         Scanner scanner = new Scanner(System.in);
         do {
@@ -26,46 +25,47 @@ public class GradesAnalyser {
 
         } while (numberGrade < 2.0 || numberGrade > 30.0);
 
-        int[] grade = new int[numberGrade];
+        double[] grade = new double[numberGrade];
 
         for (indexGrade = 0; indexGrade < grade.length; indexGrade++) {
             do {
-                if (grade[(int)indexGrade] < 0 || grade[(int)indexGrade] > 20) {
+                if (grade[indexGrade] < 0.0 || grade[indexGrade] > 20.0) {
                     System.out.println("Votre note doit aller de 0 à 20");
                 }
                 System.out.print("Entrez une note : ");
-                grade[(int)indexGrade] = scanner.nextInt();
-            } while (grade[(int)indexGrade] < 0.0 || grade[(int)indexGrade] > 20.0);
+                grade[indexGrade] = scanner.nextDouble();
+            } while (grade[indexGrade] < 0.0 || grade[indexGrade] > 20.0);
         }
 
         averageMain = getAverage(grade, numberGrade);
 
-        double gradeMinimal = getMinGrades(grade, gradeMinMain);
-
-
+        double gradeMinimal = getMinGrades(grade);
+        double gradeMaximal = getMaxGrades(grade);
 
         System.out.println("Votre moyenne générale est de " + averageMain);
-        System.out.println("La plus petite note est " + gradeMinimal);
+        System.out.println("Votre note minumum est " + gradeMinimal);
+        System.out.println("Votre note maximal est " + gradeMaximal);
     }
 
-    public static double getAverage(int[] gradesArray, int numberGrades) {
+    public static double getAverage(double[] gradesArray, double numberGrades) {
 
         double average;
 
-        int sumGrades = 0;
+        double sumGrades = 0.0;
 
         for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
 
             sumGrades = sumGrades + gradesArray[indexGrades];
         }
 
-        average = (double) sumGrades / numberGrades;
+        average = sumGrades / numberGrades;
 
         return average;
     }
 
-    public static double getMinGrades(int[] gradesArray, double gradesMin) {
+    public static double getMinGrades(double[] gradesArray) {
 
+        double gradesMin = 20.0;
 
         for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
 
@@ -74,5 +74,30 @@ public class GradesAnalyser {
             }
         }
         return gradesMin;
+    }
+    public static double getMaxGrades(double[] gradesArray) {
+
+        double gradeMax = 0.0;
+
+        for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
+
+            if (gradesArray[indexGrades] > gradeMax) {
+                gradeMax = gradesArray[indexGrades];
+            }
+        }
+        return gradeMax;
+    }
+
+    public static int getGradeCountBetweenRange(double[] gradeArray, int threshold) {
+
+        double[] gradesAboveThreshold;
+
+        for (int indexGrades = 0; indexGrades < gradeArray.length; indexGrades++) {
+
+            if (gradeArray[indexGrades] > threshold) {
+                gradesAboveThreshold = gradeArray[indexGrades];
+            }
+
+        }
     }
 }
