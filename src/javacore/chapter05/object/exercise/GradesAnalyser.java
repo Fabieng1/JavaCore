@@ -10,8 +10,8 @@ public class GradesAnalyser {
         int indexGrade = 0;
 
         double averageMain;
-        double[] from = new double[indexGrade];
-        double[] to = new double[indexGrade];
+        double[] from = new double[10];
+        double[] to = new double[19];
 
         Scanner scanner = new Scanner(System.in);
         do {
@@ -116,6 +116,8 @@ public class GradesAnalyser {
 
     public static double getGradeCountBetweenRange(double[] gradesArray, double[] from, double[] to, int numberGradesStudent) {
 
+        int indexGrades = 0;
+
         double[] numberGrades = new double[numberGradesStudent];
 
         int count0to5 = 0;
@@ -124,19 +126,21 @@ public class GradesAnalyser {
         int count16to20 = 0;
         int countGeneralsGrades = count0to5 + count6to10 + count11to15 + count16to20;
 
-        for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
-            numberGrades = new double[]{};
+        for (indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
+            numberGrades = new double[]{gradesArray[indexGrades]};
+        }
 
-            if (numberGrades[indexGrades] <= 5) {
+        for (int indexGradesRange = 0; indexGradesRange < numberGrades.length; indexGradesRange++) {
+            if (numberGrades[indexGrades] < 5) {
                 count0to5++;
             }
-            else if (numberGrades[indexGrades] <= 10) {
+            else if (numberGrades[indexGrades] < 10) {
                 count6to10++;
             }
-            else if (numberGrades[indexGrades] <= 15) {
+            else if (numberGrades[indexGrades] < 15) {
                 count11to15++;
             }
-            else if (numberGrades[indexGrades] <= 20) {
+            else if (numberGrades[indexGrades] < 20) {
                 count16to20++;
             }
         }
