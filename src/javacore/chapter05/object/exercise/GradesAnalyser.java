@@ -10,8 +10,8 @@ public class GradesAnalyser {
         int indexGrade = 0;
 
         double averageMain;
-        double[] from = new double[10];
-        double[] to = new double[19];
+        double from = 0;
+        double to = 0;
 
         Scanner scanner = new Scanner(System.in);
         do {
@@ -20,8 +20,7 @@ public class GradesAnalyser {
 
             if (numberGrade < 2.0) {
                 System.out.println("Nombre minimum 2");
-            }
-            else if (numberGrade > 30.0) {
+            } else if (numberGrade > 30.0) {
                 System.out.println("Nombre maximal 30");
             }
 
@@ -43,14 +42,14 @@ public class GradesAnalyser {
 
         double gradeMinimal = getMinGrades(grade);
         double gradeMaximal = getMaxGrades(grade);
-        double grabesAboveMain = getGradeCountAboveThreshold(grade, 10, numberGrade);
-        double gradesFromTo = getGradeCountBetweenRange(grade, from, to, numberGrade);
+        double grabesAboveMain = getGradeCountAboveThreshold(grade, 10);
+        double gradesFromTo = getGradeCountBetweenRange(grade, 10, 20);
 
         System.out.println("Votre moyenne générale est de " + averageMain);
         System.out.println("Votre note minumum est " + gradeMinimal);
         System.out.println("Votre note maximal est " + gradeMaximal);
         System.out.println("Vous avez " + grabesAboveMain + " note(s) au dessus de 10");
-        System.out.println("fromTo : " + gradesFromTo);
+        System.out.println("Nombre total de notes: " + gradesFromTo);
     }
 
     public static double getAverage(double[] gradesArray, double numberGrades) {
@@ -81,6 +80,7 @@ public class GradesAnalyser {
         }
         return gradesMin;
     }
+
     public static double getMaxGrades(double[] gradesArray) {
 
         double gradeMax = 0.0;
@@ -93,11 +93,12 @@ public class GradesAnalyser {
         }
         return gradeMax;
     }
-    public static double getGradeCountAboveThreshold(double[] gradeArray, int threshold, int numberGrades) {
+
+    public static double getGradeCountAboveThreshold(double[] gradeArray, int threshold) {
 
         double above = 0;
 
-        double[] gradesAboveThreshold = new double[numberGrades];
+        double[] gradesAboveThreshold = new double[gradeArray.length];
 
         for (int indexGrades = 0; indexGrades < gradeArray.length; indexGrades++) {
 
@@ -114,36 +115,43 @@ public class GradesAnalyser {
         return above;
     }
 
-    public static double getGradeCountBetweenRange(double[] gradesArray, double[] from, double[] to, int numberGradesStudent) {
+    public static double getGradeCountBetweenRange(double[] gradesArray, double from, double to) {
 
         int indexGrades = 0;
-
-        double[] numberGrades = new double[numberGradesStudent];
 
         int count0to5 = 0;
         int count6to10 = 0;
         int count11to15 = 0;
         int count16to20 = 0;
+        int countFromTo = 0;
         int countGeneralsGrades = count0to5 + count6to10 + count11to15 + count16to20;
 
         for (indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
-            numberGrades = new double[]{gradesArray[indexGrades]};
-        }
 
-        for (int indexGradesRange = 0; indexGradesRange < numberGrades.length; indexGradesRange++) {
-            if (numberGrades[indexGrades] < 5) {
+            if (gradesArray[indexGrades] >= from) {
+                countFromTo++;
+            }
+
+
+            if (gradesArray[indexGrades] <= 5) {
                 count0to5++;
-            }
-            else if (numberGrades[indexGrades] < 10) {
+            } else if (gradesArray[indexGrades] <= 10) {
                 count6to10++;
-            }
-            else if (numberGrades[indexGrades] < 15) {
+            } else if (gradesArray[indexGrades] <= 15) {
                 count11to15++;
-            }
-            else if (numberGrades[indexGrades] < 20) {
+            } else if (gradesArray[indexGrades] <= 20) {
                 count16to20++;
             }
         }
-        return numberGradesStudent;
+
+        System.out.println("Nombre de notes entre 0 et 5 est " + count0to5);
+        System.out.println("Nombre de note entre 6 et 10 est " + count6to10);
+        System.out.println("Nombre de note entre 11 et 15 est " + count11to15);
+        System.out.println("Nombre de note entre 16 et 20 est " + count16to20);
+        System.out.println("Notes de 10 à 20 : "+countFromTo);
+
+        return gradesArray.length;
+
     }
+
 }
