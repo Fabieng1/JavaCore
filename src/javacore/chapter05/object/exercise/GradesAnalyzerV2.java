@@ -1,24 +1,35 @@
 package javacore.chapter05.object.exercise;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class GradesAnalyzerV2 {
 
     public static void main(String[] args) {
 
-        int numberGrade;
+        int numberGrade = 30;
         int indexGrade = 0;
+        double[] gradesArray;
 
         double averageMain;
-        double[] gradesArray;
 
         boolean done = true;
 
         Scanner scanner = new Scanner(System.in);
 
         do {
-            System.out.println("Entrez une note : ");
-            gradesArray = new double[]{gradesArray[indexGrade]};
+
+            System.out.print("Entrez une note : ");
+            gradesArray = new double[indexGrade + 1];
+            gradesArray[indexGrade] = scanner.nextDouble();
+
+            System.out.println("Souhaitez-vous arrêter ? true/false");
+            done = scanner.nextBoolean();
+
+            if (!done) {
+                break;
+            }
+
             indexGrade++;
 
         } while (done);
