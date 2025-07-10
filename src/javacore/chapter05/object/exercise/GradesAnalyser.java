@@ -8,19 +8,18 @@ public class GradesAnalyser {
 
         int numberGrade;
         int indexGrade;
-
         double averageMain;
-
         boolean booleanGrade = true;
 
         Scanner scanner = new Scanner(System.in);
         do {
+
+            if (booleanGrade) {
+                System.out.println("Nombre de notes autotrisées de 2 à 30 autorisé");
+                booleanGrade = false;
+            }
             System.out.print("Combien de notes souhaitez-vous entrez ?");
             numberGrade = scanner.nextInt();
-
-            if (numberGrade < 2.0 || numberGrade > 30.0) {
-                System.out.println("Mauvaise entrée. De 2 à 30 autorisé");
-            }
 
 
         } while (numberGrade < 2.0 || numberGrade > 30.0);
@@ -32,17 +31,17 @@ public class GradesAnalyser {
                 if (grade[indexGrade] < 0.0 || grade[indexGrade] > 20.0) {
                     System.out.println("Votre note doit aller de 0 à 20");
                 }
-                System.out.print("Entrez une note : ");
+                System.out.print("Entrez une note " + (indexGrade + 1) + "/" + grade.length + " : ");
                 grade[indexGrade] = scanner.nextDouble();
-            } while (grade[indexGrade] < 0.0 || grade[indexGrade] > 20.0 || booleanGrade);
+            } while (grade[indexGrade] < 0.0 || grade[indexGrade] > 20.0);
         }
 
-        averageMain = getAverage(grade, numberGrade);
+        averageMain = getAverage(grade);
 
         double gradeMinimal = getMinGrades(grade);
         double gradeMaximal = getMaxGrades(grade);
         double grabesAboveMain = getGradeCountAboveThreshold(grade, 10);
-        double gradesFromTo = getGradeCountBetweenRange(grade, 10, 20);
+        double gradesFromTo = getGradesCountBetweenRange(grade, 10, 20);
 
         System.out.println("Votre moyenne générale est de " + averageMain);
         System.out.println("Votre note minumum est " + gradeMinimal);
@@ -51,7 +50,7 @@ public class GradesAnalyser {
         System.out.println("Nombre total de notes: " + gradesFromTo);
     }
 
-    public static double getAverage(double[] gradesArray, double numberGrades) {
+    public static double getAverage(double[] gradesArray) {
 
         double average;
 
@@ -62,7 +61,7 @@ public class GradesAnalyser {
             sumGrades = sumGrades + gradesArray[indexGrades];
         }
 
-        average = sumGrades / numberGrades;
+        average = sumGrades / gradesArray.length;
 
         return average;
     }
@@ -93,28 +92,28 @@ public class GradesAnalyser {
         return gradeMax;
     }
 
-    public static double getGradeCountAboveThreshold(double[] gradeArray, int threshold) {
+    public static double getGradeCountAboveThreshold(double[] gradesArray, int threshold) {
 
         double above = 0;
 
-        double[] gradesAboveThreshold = new double[gradeArray.length];
+        double[] gradesAboveThreshold = new double[gradesArray.length];
 
-        for (int indexGrades = 0; indexGrades < gradeArray.length; indexGrades++) {
+        for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
 
-            if (gradeArray[indexGrades] > threshold) {
-                gradesAboveThreshold = new double[]{gradeArray[indexGrades]};
+            if (gradesArray[indexGrades] > threshold) {
+                gradesAboveThreshold = new double[]{gradesArray[indexGrades]};
                 above++;
             }
         }
 
-        double percentage = (above / gradeArray.length) * 100;
+        double percentage = (above / gradesArray.length) * 100;
 
         System.out.println("Cela représente " + percentage + "%");
 
         return above;
     }
 
-    public static double getGradeCountBetweenRange(double[] gradesArray, double from, double to) {
+    public static double getGradesCountBetweenRange(double[] gradesArray, double from, double to) {
 
         int indexGrades = 0;
 
@@ -123,7 +122,6 @@ public class GradesAnalyser {
         int count11to15 = 0;
         int count16to20 = 0;
         int countFromTo = 0;
-        int countGeneralsGrades = count0to5 + count6to10 + count11to15 + count16to20;
 
         for (indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
 
