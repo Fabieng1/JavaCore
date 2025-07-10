@@ -2,7 +2,7 @@ package javacore.chapter05.object.exercise;
 
 import java.util.Scanner;
 
-public class GradesAnalyser {
+public class GradesAnalyzer {
 
     public static void main(String[] args) {
 
@@ -152,6 +152,6 @@ public class GradesAnalyser {
 
         System.out.println("Notes de 10 à 20 : " + countFromTo);
         return gradesArray.length;
-        }
-
     }
+
+}
