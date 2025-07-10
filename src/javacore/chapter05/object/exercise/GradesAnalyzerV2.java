@@ -142,5 +142,4 @@ public class GradesAnalyzerV2 {
         System.out.println("Notes de 10 à 20 : " + countFromTo);
         return gradesArray.length;
     }
-
 }
