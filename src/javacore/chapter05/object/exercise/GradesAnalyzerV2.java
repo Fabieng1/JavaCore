@@ -23,11 +23,11 @@ public class GradesAnalyzerV2 {
             gradesArray = new double[indexGrade + 1];
             gradesArray[indexGrade] = scanner.nextDouble();
 
-            System.out.println("Souhaitez-vous arrêter ? true/false");
-            done = scanner.nextBoolean();
+            System.out.print("Souhaitez-vous arrêter ? Oui/Non");
+            String stopOrAgain = scanner.nextLine();
 
-            if (!done) {
-                break;
+            if (stopOrAgain.equalsIgnoreCase("non")) {
+                done = false;
             }
 
             indexGrade++;
