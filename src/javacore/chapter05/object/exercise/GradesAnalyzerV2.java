@@ -21,10 +21,11 @@ public class GradesAnalyzerV2 {
         Scanner scanner = new Scanner(System.in);
 
         do {
-
-            System.out.print("Entrez une note : ");
-            gradesArray[indexGrade] = gradesArray[indexGrade] + scanner.nextDouble();
-            scanner.nextLine();
+            for (int indexInputGrades = 0; indexInputGrades < gradesArray.length; indexInputGrades++) {
+                System.out.print("Entrez une note : ");
+                gradesArray[indexGrade] = gradesArray[indexGrade] + scanner.nextDouble();
+                scanner.nextLine();
+            }
 
             System.out.print("Souhaitez-vous continuer ? Oui/Non ");
             stopOrAgain = scanner.nextLine().toLowerCase();
@@ -39,10 +40,9 @@ public class GradesAnalyzerV2 {
                 }
 
             }
-            else if (stopOrAgain.equalsIgnoreCase("oui")){
-                numberGrade++;
+            else if (stopOrAgain.equalsIgnoreCase("oui")) {
+                gradesArray = new double[numberGrade++];
             }
-
             indexGrade++;
         } while (done);
 
