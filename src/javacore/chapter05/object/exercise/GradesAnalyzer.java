@@ -1,5 +1,6 @@
 package javacore.chapter05.object.exercise;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GradesAnalyzer {
@@ -12,6 +13,7 @@ public class GradesAnalyzer {
         boolean booleanGrade = true;
 
         Scanner scanner = new Scanner(System.in);
+
         do {
 
             if (booleanGrade) {

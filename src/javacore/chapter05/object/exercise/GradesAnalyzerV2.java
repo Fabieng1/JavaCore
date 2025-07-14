@@ -1,5 +1,6 @@
 package javacore.chapter05.object.exercise;
 
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -11,7 +12,8 @@ public class GradesAnalyzerV2 {
 
         int numberGrade = 1;
         int indexGrade = 0;
-        double[] gradesArray = new double[1];
+        ArrayList<Double> gradeArray = new ArrayList<>();
+
         double[] inputUserGrade;
 
         double averageMain;
@@ -21,37 +23,35 @@ public class GradesAnalyzerV2 {
         Scanner scanner = new Scanner(System.in);
 
         do {
-            for (int indexInputGrades = 0; indexInputGrades < gradesArray.length; indexInputGrades++) {
-                System.out.print("Entrez une note : ");
-                gradesArray[indexGrade] = gradesArray[indexGrade] + scanner.nextDouble();
-                scanner.nextLine();
-            }
+            System.out.print("Entrez une note : ");
+            gradeArray.add(scanner.nextDouble());
+
+            scanner.nextLine();
 
             System.out.print("Souhaitez-vous continuer ? Oui/Non ");
             stopOrAgain = scanner.nextLine().toLowerCase();
 
             if (stopOrAgain.equalsIgnoreCase("non")) {
                 done = false;
-                for (int displayGrades = 0; displayGrades < gradesArray.length; displayGrades++) {
+                for (int displayGrades = 0; displayGrades < gradeArray.size(); displayGrades++) {
 
                     // Affichage du tableau à - 1. Reste que le tableau à une donnée de plus que nécessaire
                     // Doit afficher le contenu du tableau
-                    System.out.println("Tableau de notes : " + gradesArray[displayGrades]);
+                    System.out.println("Tableau de notes : " + gradeArray);
                 }
 
-            }
-            else if (stopOrAgain.equalsIgnoreCase("oui")) {
-                gradesArray = new double[numberGrade++];
             }
             indexGrade++;
         } while (done);
 
-        averageMain = getAverage(gradesArray);
+        averageMain = getAverage(gradeArray.get(indexGrade));
 
-        double gradeMinimal = getMinGrades(gradesArray);
-        double gradeMaximal = getMaxGrades(gradesArray);
-        double grabesAboveMain = getGradeCountAboveThreshold(gradesArray, 10);
-        double gradesFromTo = getGradesCountBetweenRange(gradesArray, 10, 20);
+        for (int indexGradeMinimal = 0; indexGradeMinimal < gradeArray.size(); indexGradeMinimal++) {
+            ArrayList<Double> gradeMinimal = getMinGrades(gradeArray[indexGrade]);
+        }
+        ArrayList<Double> gradeMaximal = getMaxGrades(gradeArray);
+        ArrayList<Double> grabesAboveMain = getGradeCountAboveThreshold(gradeArray, 10);
+        ArrayList<Double> gradesFromTo = getGradesCountBetweenRange(gradeArray, 10, 20);
 
         System.out.println("Votre moyenne générale est de " + averageMain);
         System.out.println("Votre note minumum est " + gradeMinimal);
@@ -60,18 +60,18 @@ public class GradesAnalyzerV2 {
         System.out.println("Nombre total de notes: " + gradesFromTo);
     }
 
-    public static double getAverage(double[] gradesArray) {
+    public static double getAverage (double gradesArray) {
 
         double average;
 
         double sumGrades = 0.0;
 
-        for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
+        for (int indexGrades = 0; indexGrades < gradesArray; indexGrades++) {
 
-            sumGrades = sumGrades + gradesArray[indexGrades];
+            sumGrades = sumGrades + gradesArray;
         }
 
-        average = sumGrades / gradesArray.length;
+        average = sumGrades / gradesArray;
 
         return average;
     }
@@ -89,17 +89,16 @@ public class GradesAnalyzerV2 {
         return gradesMin;
     }
 
-    public static double getMaxGrades(double[] gradesArray) {
+    public static ArrayList<Double> getMaxGrades(ArrayList<Double> gradesMax) {
 
         double gradeMax = 0.0;
 
-        for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
+        for (int indexGrades = 0; indexGrades < gradesMax.size(); indexGrades++) {
 
-            if (gradesArray[indexGrades] > gradeMax) {
-                gradeMax = gradesArray[indexGrades];
-            }
+            if (gradesMax.get(indexGrades) > gradeMax) {
+                gradeMax = gradesMax.get(indexGrades);         }
         }
-        return gradeMax;
+        return gradesMax;
     }
 
     public static double getGradeCountAboveThreshold(double[] gradesArray, int threshold) {
@@ -123,7 +122,7 @@ public class GradesAnalyzerV2 {
         return above;
     }
 
-    public static double getGradesCountBetweenRange(double[] gradesArray, double from, double to) {
+    public static double getGradesCountBetweenRange(ArrayList<Double> gradesArray, double from, double to) {
 
         int indexGrades = 0;
 
@@ -133,24 +132,24 @@ public class GradesAnalyzerV2 {
         int count16to20 = 0;
         int countFromTo = 0;
 
-        for (indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
+        for (indexGrades = 0; indexGrades < gradesArray.size(); indexGrades++) {
 
-            if (gradesArray[indexGrades] >= from) {
+            if (gradesArray.get(indexGrades) >= from) {
                 countFromTo++;
             }
 
 
 
-            if (gradesArray[indexGrades] <= 5) {
+            if (gradesArray.get(indexGrades) <= 5) {
                 count0to5++;
             }
-            else if (gradesArray[indexGrades] <= 10) {
+            else if (gradesArray.get(indexGrades) <= 10) {
                 count6to10++;
             }
-            else if (gradesArray[indexGrades] <= 15) {
+            else if (gradesArray.get(indexGrades) <= 15) {
                 count11to15++;
             }
-            else if (gradesArray[indexGrades] <= 20) {
+            else if (gradesArray.get(indexGrades) <= 20) {
                 count16to20++;
             }
         }
@@ -161,6 +160,7 @@ public class GradesAnalyzerV2 {
         System.out.println("Nombre de note entre 16 et 20 est " + count16to20);
 
         System.out.println("Notes de 10 à 20 : " + countFromTo);
-        return gradesArray.length;
+
+        return gradesArray.size();
     }
 }
