@@ -7,9 +7,12 @@ public class GradesAnalyzerV2 {
 
     public static void main(String[] args) {
 
-        int numberGrade = 30;
+        String stopOrAgain;
+
+        int numberGrade = 1;
         int indexGrade = 0;
-        double[] gradesArray;
+        double[] gradesArray = new double[1];
+        double[] inputUserGrade;
 
         double averageMain;
 
@@ -20,21 +23,28 @@ public class GradesAnalyzerV2 {
         do {
 
             System.out.print("Entrez une note : ");
-            gradesArray = new double[indexGrade + 1];
-            gradesArray[indexGrade] = scanner.nextDouble();
+            gradesArray[indexGrade] = gradesArray[indexGrade] + scanner.nextDouble();
+            scanner.nextLine();
 
-            System.out.print("Souhaitez-vous arrêter ? Oui/Non");
-            String stopOrAgain = scanner.nextLine();
+            System.out.print("Souhaitez-vous continuer ? Oui/Non ");
+            stopOrAgain = scanner.nextLine().toLowerCase();
 
             if (stopOrAgain.equalsIgnoreCase("non")) {
                 done = false;
+                for (int displayGrades = 0; displayGrades < gradesArray.length; displayGrades++) {
+
+                    // Affichage du tableau à - 1. Reste que le tableau à une donnée de plus que nécessaire
+                    // Doit afficher le contenu du tableau
+                    System.out.println("Tableau de notes : " + gradesArray[displayGrades]);
+                }
+
+            }
+            else if (stopOrAgain.equalsIgnoreCase("oui")){
+                numberGrade++;
             }
 
             indexGrade++;
-
         } while (done);
-
-        System.out.println("Tableau de notes : " + gradesArray[indexGrade]);
 
         averageMain = getAverage(gradesArray);
 
