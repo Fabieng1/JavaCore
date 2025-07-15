@@ -123,13 +123,14 @@ public class GradesAnalyzerV2 {
     }
 
     public static ArrayList<Double> getGradesCountBetweenRange(ArrayList<Double> gradesArray, double from, double to) {
-
+;;
         int indexGrades = 0;
 
         ArrayList<Double> above = new ArrayList<>();
+        above.add(0.0);
 
         double sum = above.get(0);
-        sum += 1;
+        sum++;
         above.set(0, sum);
 
         int count0to5 = 0;
@@ -138,7 +139,10 @@ public class GradesAnalyzerV2 {
         int count16to20 = 0;
         int countFromTo = 0;
 
-        for ()
+        for (int indexContainsGrades = 0; indexContainsGrades < gradesArray.size(); indexContainsGrades++) {
+            gradesArray.get(indexGrades);
+        }
+
 
         for (indexGrades = 0; indexGrades < gradesArray.size(); indexGrades++) {
 
