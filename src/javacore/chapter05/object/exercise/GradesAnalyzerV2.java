@@ -95,8 +95,8 @@ public class GradesAnalyzerV2 {
 
         for (int indexGrades = 0; indexGrades < gradesArray.size(); indexGrades++) {
 
-            if (gradesArray.get(indexGrades) > gradesMax.get(indexGrades)) {
-                gradesMax.set(indexGrades, gradesMax.get(indexGrades));
+            if (gradesArray.get(indexGrades) > gradesMax.get(0)) {
+                gradesMax.set(0, gradesArray.get(indexGrades));
             }
         }
         return gradesMax;
