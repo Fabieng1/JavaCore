@@ -1,7 +1,6 @@
 package javacore.chapter05.object.exercise;
 
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class GradesAnalyzerV2 {
@@ -47,16 +46,17 @@ public class GradesAnalyzerV2 {
         averageMain = getAverage(gradeArray.get(indexGrade));
 
         for (int indexGradeMinimal = 0; indexGradeMinimal < gradeArray.size(); indexGradeMinimal++) {
-            ArrayList<Double> gradeMinimal = getMinGrades(gradeArray[indexGrade]);
+            ArrayList<Double> gradesMinimal = getMinGrades(gradeArray);
         }
+        ArrayList<Double> gradesMinimal = getMinGrades(gradeArray);
         ArrayList<Double> gradeMaximal = getMaxGrades(gradeArray);
-        ArrayList<Double> grabesAboveMain = getGradeCountAboveThreshold(gradeArray, 10);
+        Double gradesAboveMain = getGradeCountAboveThreshold(gradeArray, 10.0);
         ArrayList<Double> gradesFromTo = getGradesCountBetweenRange(gradeArray, 10, 20);
 
         System.out.println("Votre moyenne générale est de " + averageMain);
-        System.out.println("Votre note minumum est " + gradeMinimal);
+        System.out.println("Votre note minumum est " + gradesMinimal);
         System.out.println("Votre note maximal est " + gradeMaximal);
-        System.out.println("Vous avez " + grabesAboveMain + " note(s) au dessus de 10");
+        System.out.println("Vous avez " + gradesAboveMain + " note(s) au dessus de 10");
         System.out.println("Nombre total de notes: " + gradesFromTo);
     }
 
@@ -76,14 +76,14 @@ public class GradesAnalyzerV2 {
         return average;
     }
 
-    public static double getMinGrades(double[] gradesArray) {
+    public static ArrayList<Double> getMinGrades(ArrayList<Double> gradesArray) {
 
-        double gradesMin = 20.0;
+        ArrayList<Double> gradesMin = new ArrayList<>();
+        gradesMin.add(20.0);
+        for (int indexGrades = 0; indexGrades < gradesArray.size(); indexGrades++) {
 
-        for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
-
-            if (gradesArray[indexGrades] < gradesMin) {
-                gradesMin = gradesArray[indexGrades];
+            if (gradesArray.get(indexGrades) < gradesMin.get(0)) {
+                gradesMin.set(indexGrades, gradesArray.get(indexGrades));
             }
         }
         return gradesMin;
@@ -96,35 +96,42 @@ public class GradesAnalyzerV2 {
         for (int indexGrades = 0; indexGrades < gradesMax.size(); indexGrades++) {
 
             if (gradesMax.get(indexGrades) > gradeMax) {
-                gradeMax = gradesMax.get(indexGrades);         }
+                gradeMax = gradesMax.get(indexGrades);
+            }
         }
         return gradesMax;
     }
 
-    public static double getGradeCountAboveThreshold(double[] gradesArray, int threshold) {
+    public static Double getGradeCountAboveThreshold(ArrayList<Double> gradesArray, Double threshold) {
 
         double above = 0;
 
-        double[] gradesAboveThreshold = new double[gradesArray.length];
+        double[] gradesAboveThreshold;
+        for (int indexGrades = 0; indexGrades < gradesArray.size(); indexGrades++) {
 
-        for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
+            if (gradesArray.get(indexGrades) > threshold) {
 
-            if (gradesArray[indexGrades] > threshold) {
-                gradesAboveThreshold = new double[]{gradesArray[indexGrades]};
+                gradesAboveThreshold = new double[] {gradesArray.get(indexGrades)};
                 above++;
             }
         }
 
-        double percentage = (above / gradesArray.length) * 100;
+        double percentage = (above / gradesArray.size()) * 100;
 
         System.out.println("Cela représente " + percentage + "%");
 
         return above;
     }
 
-    public static double getGradesCountBetweenRange(ArrayList<Double> gradesArray, double from, double to) {
+    public static ArrayList<Double> getGradesCountBetweenRange(ArrayList<Double> gradesArray, double from, double to) {
 
         int indexGrades = 0;
+
+        ArrayList<Double> above = new ArrayList<>();
+
+        double sum = above.get(0);
+        sum += 1;
+        above.set(0, sum);
 
         int count0to5 = 0;
         int count6to10 = 0;
@@ -137,8 +144,6 @@ public class GradesAnalyzerV2 {
             if (gradesArray.get(indexGrades) >= from) {
                 countFromTo++;
             }
-
-
 
             if (gradesArray.get(indexGrades) <= 5) {
                 count0to5++;
@@ -161,6 +166,6 @@ public class GradesAnalyzerV2 {
 
         System.out.println("Notes de 10 à 20 : " + countFromTo);
 
-        return gradesArray.size();
+        return above;
     }
 }
