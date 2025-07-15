@@ -43,7 +43,7 @@ public class GradesAnalyzerV2 {
             indexGrade++;
         } while (done);
 
-        averageMain = getAverage(gradeArray.get(indexGrade));
+        averageMain = getAverage(gradeArray.get(indexGrade - 1));
 
         for (int indexGradeMinimal = 0; indexGradeMinimal < gradeArray.size(); indexGradeMinimal++) {
             ArrayList<Double> gradesMinimal = getMinGrades(gradeArray);
@@ -67,7 +67,6 @@ public class GradesAnalyzerV2 {
         double sumGrades = 0.0;
 
         for (int indexGrades = 0; indexGrades < gradesArray; indexGrades++) {
-
             sumGrades = sumGrades + gradesArray;
         }
 
@@ -139,7 +138,11 @@ public class GradesAnalyzerV2 {
         int count16to20 = 0;
         int countFromTo = 0;
 
+        for ()
+
         for (indexGrades = 0; indexGrades < gradesArray.size(); indexGrades++) {
+
+
 
             if (gradesArray.get(indexGrades) >= from) {
                 countFromTo++;
