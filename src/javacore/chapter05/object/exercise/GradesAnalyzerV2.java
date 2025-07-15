@@ -81,21 +81,21 @@ public class GradesAnalyzerV2 {
         gradesMin.add(20.0);
         for (int indexGrades = 0; indexGrades < gradesArray.size(); indexGrades++) {
 
-            if (gradesArray.get(indexGrades) < gradesMin.get(0)) {
-                gradesMin.set(indexGrades, gradesArray.get(indexGrades));
+            if (gradesArray.get(indexGrades) < gradesMin.get(indexGrades)) {
+                gradesMin = gradesArray;
             }
         }
         return gradesMin;
     }
 
-    public static ArrayList<Double> getMaxGrades(ArrayList<Double> gradesMax) {
+    public static ArrayList<Double> getMaxGrades(ArrayList<Double> gradesArray) {
 
-        double gradeMax = 0.0;
+        ArrayList<Double> gradesMax = new ArrayList<>();
 
-        for (int indexGrades = 0; indexGrades < gradesMax.size(); indexGrades++) {
+        for (int indexGrades = 0; indexGrades < gradesArray.size(); indexGrades++) {
 
-            if (gradesMax.get(indexGrades) > gradeMax) {
-                gradeMax = gradesMax.get(indexGrades);
+            if (gradesArray.get(indexGrades) > gradesMax.get(indexGrades)) {
+                gradesMax.set(indexGrades, gradesMax.get(indexGrades));
             }
         }
         return gradesMax;
@@ -140,7 +140,9 @@ public class GradesAnalyzerV2 {
         int countFromTo = 0;
 
         for (int indexContainsGrades = 0; indexContainsGrades < gradesArray.size(); indexContainsGrades++) {
-            gradesArray.get(indexGrades);
+            if (gradesArray.get(indexGrades) >= from) {
+                countFromTo++;
+            }
         }
 
 
