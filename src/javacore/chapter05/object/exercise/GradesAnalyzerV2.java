@@ -91,6 +91,7 @@ public class GradesAnalyzerV2 {
     public static ArrayList<Double> getMaxGrades(ArrayList<Double> gradesArray) {
 
         ArrayList<Double> gradesMax = new ArrayList<>();
+        gradesMax.add(0.0);
 
         for (int indexGrades = 0; indexGrades < gradesArray.size(); indexGrades++) {
 
