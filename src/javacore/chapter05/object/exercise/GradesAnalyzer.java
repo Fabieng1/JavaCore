@@ -49,7 +49,7 @@ public class GradesAnalyzer {
         System.out.println("Votre note minumum est " + gradeMinimal);
         System.out.println("Votre note maximal est " + gradeMaximal);
         System.out.println("Vous avez " + grabesAboveMain + " note(s) au dessus de 10");
-        System.out.println("Nombre total de notes: " + gradesFromTo);
+        System.out.println("Nombre total de notes: " + gradesFromTo + " comprises dans l'interval demandé");
     }
 
     public static double getAverage(double[] gradesArray) {
@@ -153,6 +153,7 @@ public class GradesAnalyzer {
         System.out.println("Nombre de note entre 16 et 20 est " + count16to20);
 
         System.out.println("Notes de 10 à 20 : " + countFromTo);
+
         return gradesArray.length;
     }
 
