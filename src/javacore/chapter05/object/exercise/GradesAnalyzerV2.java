@@ -68,13 +68,7 @@ public class GradesAnalyzerV2 {
 
         for (int indexGrades = 0; indexGrades < gradesArray.size(); indexGrades++) {
 
-            // above.get(0);
-            // sum++;
-            // above.set(0, sum);
-
             sumGrades = sumGrades + gradesArray.get(indexGrades);
-
-
         }
 
         average = sumGrades / gradesArray.size();
