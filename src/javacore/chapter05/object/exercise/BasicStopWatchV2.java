@@ -21,7 +21,7 @@ public class BasicStopWatchV2 {
 
         while(start < 10000) {
 
-            Thread.sleep(1);
+            Thread.sleep(1000);
 
             this.seconds++;
 
