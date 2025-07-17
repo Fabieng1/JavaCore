@@ -9,7 +9,7 @@ public class GradesAnalyzerV2 {
 
         String stopOrAgain;
 
-        double[] gradesTab = {1, 2, 3};
+        double[] gradesTab = {};
 
         int indexGrade = 0;
 
@@ -24,13 +24,13 @@ public class GradesAnalyzerV2 {
             int newGrades = scanner.nextInt();
             scanner.nextLine();
 
-            double[] tempTab = new double[]{gradesTab.length + 1};
+            double[] tempTab = new double[gradesTab.length + 1];
 
             for (int indexTab = 0; indexTab < gradesTab.length; indexTab++) {
                 tempTab[indexTab] = (int) gradesTab[indexTab];
             }
 
-            tempTab[indexGrade] = newGrades;
+            tempTab[gradesTab.length] = newGrades;
 
             gradesTab = tempTab;
 
@@ -85,7 +85,7 @@ public class GradesAnalyzerV2 {
 
     public static double getMinGrades(double[] gradesTab) {
 
-        double gradesMin = 0;
+        double gradesMin = 20;
 
         for (int indexGrades = 0; indexGrades < gradesTab.length; indexGrades++) {
 
@@ -131,7 +131,7 @@ public class GradesAnalyzerV2 {
     }
 
     public static double getGradesCountBetweenRange(double[] gradesTab, int from, double to) {
-        ;;
+
         int indexGrades = 0;
 
         int above = 0;
@@ -143,15 +143,14 @@ public class GradesAnalyzerV2 {
         int countFromTo = 0;
 
         for (int indexContainsGrades = 0; indexContainsGrades < gradesTab.length; indexContainsGrades++) {
-            if (gradesTab[indexGrades] > from) {
+            if (gradesTab[indexContainsGrades] > from) {
                 above++;
             }
         }
 
-
         for (indexGrades = 0; indexGrades < gradesTab.length; indexGrades++) {
 
-            if (gradesTab[indexGrades] >= from) {
+            if (gradesTab[indexGrades] > from) {
                 countFromTo++;
             }
 
