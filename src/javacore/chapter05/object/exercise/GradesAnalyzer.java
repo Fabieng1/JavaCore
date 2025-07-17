@@ -10,16 +10,14 @@ public class GradesAnalyzer {
         int numberGrade;
         int indexGrade;
         double averageMain;
-        boolean booleanGrade = true;
 
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Nombre de notes autotrisées de 2 à 30 autorisé");
+
         do {
 
-            if (booleanGrade) {
-                System.out.println("Nombre de notes autotrisées de 2 à 30 autorisé");
-                booleanGrade = false;
-            }
+
             System.out.print("Combien de notes souhaitez-vous entrez ?");
             numberGrade = scanner.nextInt();
 
@@ -68,14 +66,14 @@ public class GradesAnalyzer {
         return average;
     }
 
-    public static double getMinGrades(double[] gradesArray) {
+    public static double getMinGrades(double[] gradesTab) {
 
         double gradesMin = 20.0;
 
-        for (int indexGrades = 0; indexGrades < gradesArray.length; indexGrades++) {
+        for (int indexGrades = 0; indexGrades < gradesTab.length; indexGrades++) {
 
-            if (gradesArray[indexGrades] < gradesMin) {
-                gradesMin = gradesArray[indexGrades];
+            if (gradesTab[indexGrades] < gradesMin) {
+                gradesMin = gradesTab[indexGrades];
             }
         }
         return gradesMin;
