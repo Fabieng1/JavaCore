@@ -10,7 +10,7 @@ public class BubbleSorting {
         int numberAlone1 = 0;
         int numberAlone2 = 0;
 
-        for (int indexNumbers = 1; indexNumbers < numbers.length - 1; indexNumbers++) {
+        for (int indexNumbers = 1; indexNumbers <= numbers.length; indexNumbers++) {
 
 
             numberAlone1 = indexNumbers;
