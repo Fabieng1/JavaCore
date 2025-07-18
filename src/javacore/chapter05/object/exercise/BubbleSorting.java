@@ -13,32 +13,23 @@ public class BubbleSorting {
         int numberAlone2 = 0;
         int numberMax = 0;
 
-        for (int indexNumbers = 1; indexNumbers < numbers.length; indexNumbers++) {
-            for (int indexNumbers2 = 1; indexNumbers2 < numbers.length; indexNumbers2++) {
+        for (int indexNumbers = 1; indexNumbers < numbers.length - 1; indexNumbers++) {
+            for (int indexNumbers2 = 0; indexNumbers2 < numbers.length; indexNumbers2++) {
 
-                if (numbers[indexNumbers2] > numberMax) {
+                if (numbers[indexNumbers] > numbers[indexNumbers2]) {
 
-                    numberMax = numbers[indexNumbers2];
+                    tempTabNumber[indexNumbers] = numbers[indexNumbers2];
                 }
+
             }
 
-            tempTabNumber[tempTabNumber.length - 1] = numberMax;
-
-            tempTabNumber[indexNumbers];
-
-
-            for (int indexNumbers3 = 1; indexNumbers3 < numbers.length; indexNumbers3++) {
-
-                if (numbers[indexNumbers3] == numberMax) {
-                    numberMax = 0;
-                }
-        }
-
-            tempTabNumber[tempTabNumber.length - 1] = numberMax;
-
-            numberMax = numbers[indexNumbers];
 
             System.out.print(tempTabNumber[indexNumbers] + " ");
+
+
+
+
+
         }
     }
 }
