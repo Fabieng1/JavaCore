@@ -12,9 +12,9 @@ public class BubbleSorting {
 
         int remainder = 0;
         int remainder2 = 0;
-        int indexNumbers;
+        int indexNumbers = 0;
 
-        for (int indexVerif = 0; indexVerif < 500; indexVerif++) {
+        for (int indexVerif = 0; indexVerif < numbers.length; indexVerif++) {
             for (indexNumbers = 0; indexNumbers < numbers.length - 1; indexNumbers++) {
 
                 if (numbers[indexNumbers] > numbers[indexNumbers + 1]) {
@@ -26,9 +26,11 @@ public class BubbleSorting {
                     numbers[indexNumbers + 1] = remainder;
                 }
                 System.out.print(numbers[indexNumbers] + " ");
+                tempsNumber = numbers;
             }
 
         }
+        System.out.println(tempsNumber[indexNumbers]);
     }
 }
 
