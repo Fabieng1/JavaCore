@@ -12,7 +12,6 @@ public class BubbleSorting {
 
         int remainder = 0;
         int remainder2 = 0;
-        int indexGenerals = numbers.length;
         int indexNumber = 0;
         int numberMax = 0;
 
