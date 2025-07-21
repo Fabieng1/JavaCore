@@ -18,19 +18,28 @@ public class BubbleSorting {
 
         boolean done = true;
 
+        for (int indexMax = 0; indexMax < numbers.length; indexMax++) {
 
-        for (int indexNumbers = 0; indexNumbers < numbers.length - 1; indexNumbers++) {
+            if (numbers[indexNumber] < numberMax) {
 
-            if (numbers[indexNumbers] > numbers[indexNumbers + 1]) {
-
-                remainder = numbers[indexNumbers];
-                remainder2 = numbers[indexNumbers + 1];
-
-                numbers[indexNumbers] = remainder2;
-                numbers[indexNumbers + 1] = remainder;
+                numberMax = numbers[indexNumber];
             }
+        }
 
-            System.out.print(numbers[indexNumbers] + " ");
+        for (int indexVerif = 0; indexVerif < 1000; indexVerif++) {
+            for (int indexNumbers = 0; indexNumbers <= numbers.length; indexNumbers++) {
+
+                if (numbers[indexNumbers] > numbers[indexNumbers + 1]) {
+
+                    remainder = numbers[indexNumbers];
+                    remainder2 = numbers[indexNumbers + 1];
+
+                    numbers[indexNumbers] = remainder2;
+                    numbers[indexNumbers + 1] = remainder;
+                }
+
+                System.out.print(numbers[indexNumbers] + " ");
+            }
         }
     }
 }
