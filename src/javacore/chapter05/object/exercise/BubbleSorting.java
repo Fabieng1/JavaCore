@@ -25,8 +25,8 @@ public class BubbleSorting {
             }
         }
 
-        for (int indexVerif = 0; indexVerif < 1000; indexVerif++) {
-            for (int indexNumbers = 0; indexNumbers <= numbers.length; indexNumbers++) {
+        for (int indexVerif = 0; indexVerif <= 500; indexVerif++) {
+            for (int indexNumbers = 0; indexNumbers < numbers.length - 1; indexNumbers++) {
 
                 if (numbers[indexNumbers] > numbers[indexNumbers + 1]) {
 
