@@ -12,21 +12,10 @@ public class BubbleSorting {
 
         int remainder = 0;
         int remainder2 = 0;
-        int indexNumber = 0;
-        int numberMax = 0;
+        int indexNumbers;
 
-        boolean done = true;
-
-        for (int indexMax = 0; indexMax < numbers.length; indexMax++) {
-
-            if (numbers[indexNumber] < numberMax) {
-
-                numberMax = numbers[indexNumber];
-            }
-        }
-
-        for (int indexVerif = 0; indexVerif <= 500; indexVerif++) {
-            for (int indexNumbers = 0; indexNumbers < numbers.length - 1; indexNumbers++) {
+        for (int indexVerif = 0; indexVerif < 500; indexVerif++) {
+            for (indexNumbers = 0; indexNumbers < numbers.length - 1; indexNumbers++) {
 
                 if (numbers[indexNumbers] > numbers[indexNumbers + 1]) {
 
@@ -36,9 +25,9 @@ public class BubbleSorting {
                     numbers[indexNumbers] = remainder2;
                     numbers[indexNumbers + 1] = remainder;
                 }
-
                 System.out.print(numbers[indexNumbers] + " ");
             }
+
         }
     }
 }
