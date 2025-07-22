@@ -27,7 +27,6 @@ public class BubbleSorting {
                 }
                 System.out.print(numbers[indexNumbers] + " ");
             }
-
         }
     }
 }
