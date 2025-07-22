@@ -26,12 +26,9 @@ public class BubbleSorting {
                     numbers[indexNumbers + 1] = remainder;
                 }
                 System.out.print(numbers[indexNumbers] + " ");
-                tempsNumber = numbers;
             }
 
         }
-        System.out.println(tempsNumber[indexNumbers]);
     }
 }
-
 
