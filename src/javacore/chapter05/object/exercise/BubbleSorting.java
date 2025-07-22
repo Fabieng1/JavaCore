@@ -25,9 +25,12 @@ public class BubbleSorting {
                     numbers[indexNumbers] = remainder2;
                     numbers[indexNumbers + 1] = remainder;
                 }
-                System.out.print(numbers[indexNumbers] + " ");
             }
         }
+
+        for (int displayTab = 0; displayTab < numbers.length; displayTab++) {
+            System.out.print(numbers[displayTab] + " ");
+        }
+
     }
 }
-
