@@ -13,22 +13,18 @@ public class BubbleSorting {
         int numberAlone2 = 0;
         int numberMax = 0;
 
-        for (int indexNumbers = 1; indexNumbers < numbers.length - 1; indexNumbers++) {
+        for (int indexNumbers = 0; indexNumbers < numbers.length; indexNumbers++) {
             for (int indexNumbers2 = 0; indexNumbers2 < numbers.length; indexNumbers2++) {
 
                 if (numbers[indexNumbers] > numbers[indexNumbers2]) {
 
-                    tempTabNumber[indexNumbers] = numbers[indexNumbers2];
+                    tempTabNumber[indexNumbers2] = numbers[indexNumbers];
                 }
 
             }
 
 
             System.out.print(tempTabNumber[indexNumbers] + " ");
-
-
-
-
 
         }
     }
