@@ -19,7 +19,14 @@ public class BubbleSorting {
         for (int indexVerif = 0; indexVerif < numbers.length; indexVerif++) {
             for (indexNumbers = 0; indexNumbers < numbers.length - 1; indexNumbers++) {
 
-                Arrays.sort(numbers);
+                if (numbers[indexNumbers] > numbers[indexNumbers + 1]) {
+
+                    remainder = numbers[indexNumbers];
+                    remainder2 = numbers[indexNumbers + 1];
+
+                    numbers[indexNumbers] = remainder2;
+                    numbers[indexNumbers + 1] = remainder;
+                }
             }
         }
 
