@@ -15,16 +15,12 @@ public class ProductSorting {
         this.currency = currency;
     }
 
-
-
     public static void main(String[] args) {
 
         ProductSorting[] remainder = generateFakeProductList();
         ProductSorting[] remainder2 = generateFakeProductList();
 
         ProductSorting[] productArray = generateFakeProductList();
-
-
 
         for (int indexCurrencyConversion = 0; indexCurrencyConversion < productArray.length; indexCurrencyConversion++) {
 
@@ -54,8 +50,6 @@ public class ProductSorting {
                     productArray[indexProduct] = remainder2[indexProduct];
                     productArray[indexProduct + 1] = remainder[indexProduct];
                 }
-
-
             }
         }
 
