@@ -1,6 +1,8 @@
 package javacore.chapter05.object.exercise;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
 public class BubbleSorting {
 
@@ -15,7 +17,7 @@ public class BubbleSorting {
         int indexNumbers = 0;
 
         for (int indexVerif = 0; indexVerif < numbers.length; indexVerif++) {
-            for (indexNumbers = 0; indexNumbers < numbers.length - 1; indexNumbers++) {
+            for (indexNumbers = 1; indexNumbers < numbers.length - 1; indexNumbers++) {
 
                 if (numbers[indexNumbers] > numbers[indexNumbers + 1]) {
 
