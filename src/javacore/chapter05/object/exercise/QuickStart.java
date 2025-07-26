@@ -1,8 +1,6 @@
 package javacore.chapter05.object.exercise;
 
-import java.util.Random;
-
-public class BubbleSortingQuickStart {
+public class QuickStart {
 
     public static void main(String[] args) {
 
