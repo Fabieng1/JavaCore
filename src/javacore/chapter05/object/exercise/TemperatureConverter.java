@@ -38,22 +38,12 @@ public class TemperatureConverter {
 
     }
 
-    public static double converter (String degreStart, String degreEnd, double temperature) {
-
-        if ()
-    }
-
     public static double celsiusToFahrenheitConverter (double celsiusTemperature) {
 
         return (celsiusTemperature * 1.8) + 32.0;
     }
 
     public static double fahrenheitToCelsiusConverter (double fahrenheitTemperature) {
-
-        return (fahrenheitTemperature - 32.0) / 1.8;
-    }
-
-    public static double kelvinT (double fahrenheitTemperature) {
 
         return (fahrenheitTemperature - 32.0) / 1.8;
     }
