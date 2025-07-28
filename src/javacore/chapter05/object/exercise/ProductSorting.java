@@ -31,12 +31,13 @@ public class ProductSorting {
                 productArray[indexCurrencyConversion].currency = '$';
             }
 
-            if (productArray[indexCurrencyConversion].currency == '¥');
+            if (productArray[indexCurrencyConversion].currency == '¥') {
 
-            double newPriceYD = productArray[indexCurrencyConversion].price * 7.27;
+                double newPriceYD = productArray[indexCurrencyConversion].price * 7.27;
 
-            productArray[indexCurrencyConversion].price = newPriceYD;
-            productArray[indexCurrencyConversion].currency = '$';
+                productArray[indexCurrencyConversion].price = newPriceYD;
+                productArray[indexCurrencyConversion].currency = '$';
+            }
         }
 
         for (int indexVerif = 0; indexVerif < productArray.length; indexVerif++) {
