@@ -9,20 +9,38 @@ public class BinaryConverter {
         // Math.pow(double a, double b) : Calcule la puissance a exposant b (i.e. a^b), en renvoyant un double
 
         String binaryText = "10110110";
-        char number = ' ';
-        String converterString = "";
+        String binaryReverse = "";
+        String charConvert = "";
+        char binary = ' ';
 
-        int converterNumber = 0;
-        int intBinary = Integer.parseInt(binaryText);
+        int converterInt = 0;
+        int indexPower = 0;
+        double sum = 0.0;
+        double result = 0;
 
-        for (int indexBinary = binaryText.length() - 1; indexBinary >= 0; indexBinary--) {
+        for (int indexBinary = binaryText.length(); indexBinary > 0; indexBinary--) {
+            binary = binaryText.charAt(indexBinary - 1);
+            charConvert = String.valueOf(binary);
+            converterInt = Integer.parseInt(charConvert);
 
-            number = binaryText.charAt(indexBinary);
-            converterString = String.valueOf(number);
-            converterNumber = Integer.parseInt(converterString);
 
-            System.out.print(converterNumber);
+                if (converterInt == 1) {
+                    result = Math.pow(2, indexPower);
+                    indexPower++;
+                }
+                else {
+                    indexPower++;
+                    continue;
+                }
 
+                sum += result;
+
+                // Affichage du produit des puissances
+                System.out.println(result);
+
+            binaryReverse = binaryReverse + binary;
         }
+        // Somme des puissances
+        System.out.println("Somme : " + sum);
     }
 }
