@@ -29,13 +29,13 @@ public class ProductSorting {
         System.out.println("A partir de quel money voulez-vous convertir en Dollars ?");
         System.out.println("€ pour Euros");
         System.out.println("¥ pour Yens");
-        System.out.println("£ pour Livre Sterling");
+        System.out.print("£ pour Livre Sterling");
         char sigle = scanner.nextLine().trim().charAt(0);
 
-        System.out.println("Combien vaut 1$ dans votre money ?");
+        System.out.print("Combien vaut 1$ dans votre money ?");
         double money = scanner.nextDouble();
 
-        scanner.nextLine();
+
 
         for (int indexCurrencyConversion = 0; indexCurrencyConversion < productArray.length; indexCurrencyConversion++) {
 
@@ -45,24 +45,27 @@ public class ProductSorting {
                 productArray[indexCurrencyConversion].currency = '$';
             }
 
-            for (int indexVerif = 0; indexVerif < productArray.length; indexVerif++) {
-                for (int indexProduct = 0; indexProduct < productArray.length - 1; indexProduct++) {
 
-                    if (productArray[indexProduct].price > productArray[indexProduct + 1].price) {
 
-                        remainder[indexProduct] = productArray[indexProduct];
-                        remainder2[indexProduct] = productArray[indexProduct + 1];
+        }
+        for (int indexVerif = 0; indexVerif < productArray.length; indexVerif++) {
+            for (int indexProduct = 0; indexProduct < productArray.length -1; indexProduct++) {
 
-                        productArray[indexProduct] = remainder2[indexProduct];
-                        productArray[indexProduct + 1] = remainder[indexProduct];
-                    }
+                if (productArray[indexProduct].price > productArray[indexProduct + 1].price) {
+
+                    remainder[indexProduct] = productArray[indexProduct];
+                    remainder2[indexProduct] = productArray[indexProduct + 1];
+
+                    productArray[indexProduct] = remainder2[indexProduct];
+                    productArray[indexProduct + 1] = remainder[indexProduct];
                 }
             }
+        }
 
-            for (int indexDisplay = 0; indexDisplay < productArray.length; indexDisplay++) {
 
-                productArray[indexDisplay].displayProduct();
-            }
+        for (int indexDisplay = 0; indexDisplay < productArray.length; indexDisplay++) {
+
+            productArray[indexDisplay].displayProduct();
         }
         System.out.println("Sigle saisie : " + sigle);
     }
