@@ -26,33 +26,23 @@ public class ProductSorting {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Quel est le sigle de votre monnaie ?");
-        char sigle = productArray[0].currency = scanner.nextLine().charAt(0);
+        System.out.println("A partir de quel money voulez-vous convertir en Dollars ?");
+        System.out.println("€ pour Euros");
+        System.out.println("¥ pour Yens");
+        System.out.println("£ pour Livre Sterling");
+        char sigle = scanner.nextLine().trim().charAt(0);
 
-        System.out.println("Combien vaut 1$ dans votre monnaie ?");
+        System.out.println("Combien vaut 1$ dans votre money ?");
         double money = scanner.nextDouble();
+
+        scanner.nextLine();
 
         for (int indexCurrencyConversion = 0; indexCurrencyConversion < productArray.length; indexCurrencyConversion++) {
 
+            if (productArray[indexCurrencyConversion].currency == sigle) {
 
-
-
-
-            switch (sigle) {
-
-                case '€':
-                    double newPriceED = productArray[indexCurrencyConversion].price * money;
-                    productArray[indexCurrencyConversion].price = newPriceED;
-                    productArray[indexCurrencyConversion].currency = '$';
-                    break;
-
-                case '¥':
-                    double newPriceYD = productArray[indexCurrencyConversion].price * money;
-                    productArray[indexCurrencyConversion].price = newPriceYD;
-                    productArray[indexCurrencyConversion].currency = '$';
-                    break;
-
-
+                productArray[indexCurrencyConversion].price = productArray[indexCurrencyConversion].price * money;
+                productArray[indexCurrencyConversion].currency = '$';
             }
 
             for (int indexVerif = 0; indexVerif < productArray.length; indexVerif++) {
@@ -74,7 +64,9 @@ public class ProductSorting {
                 productArray[indexDisplay].displayProduct();
             }
         }
+        System.out.println("Sigle saisie : " + sigle);
     }
+
 
     public void displayProduct () {
         System.out.println("Product Name : " + this.name + " | Category : " + this.category + " | Price : " + this.price + this.currency);
