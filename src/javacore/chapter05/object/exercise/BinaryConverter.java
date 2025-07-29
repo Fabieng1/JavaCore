@@ -2,6 +2,7 @@ package javacore.chapter05.object.exercise;
 
 import java.text.DecimalFormat;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class BinaryConverter {
 
@@ -15,13 +16,24 @@ public class BinaryConverter {
         String binaryReverse = "";
         String charConvert = "";
         char binary = ' ';
+        char charVerif = ' ';
 
         int converterInt = 0;
         int indexPower = 0;
         double sum = 0.0;
         double result = 0.0;
 
+        Scanner scanner = new Scanner(System.in);
+
+            do {
+                System.out.println("Seul le binaire est autotisé !");
+                System.out.println("Entrez le code binaire à convertire : ");
+                binaryText = scanner.nextLine();
+
+            }while (!binaryText.matches("[0-1]+"));
+
         for (int indexBinary = binaryText.length(); indexBinary > 0; indexBinary--) {
+
             binary = binaryText.charAt(indexBinary - 1);
             charConvert = String.valueOf(binary);
             converterInt = Integer.parseInt(charConvert);
@@ -43,6 +55,5 @@ public class BinaryConverter {
         // Somme des puissances
 
         System.out.printf(Locale.FRENCH, "Somme : %, .0f%n", sum);
-        System.out.println("Somme 2 : " + sum);
     }
 }
