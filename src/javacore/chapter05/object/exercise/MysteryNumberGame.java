@@ -22,6 +22,16 @@ public class MysteryNumberGame {
             System.out.print("Seul les nombres de cette teanches sont autorisés. Essai " + numberOfTrils + "/7 ");
             trial = scanner.nextInt();
 
+            if (randomNumber < trial) {
+                System.out.println("Le nombre est plus petit");
+                System.out.println();
+            }
+
+            if (randomNumber > trial) {
+                System.out.println("Le nombre est plus grand");
+                System.out.println();
+            }
+
             if (trial == randomNumber) {
 
                 System.out.println("Bravo ! Vous avez trouvé !");
