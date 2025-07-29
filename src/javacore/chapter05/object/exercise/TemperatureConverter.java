@@ -8,10 +8,6 @@ public class TemperatureConverter {
     public static String fahrenheit = "°F";
     public static String kelvin = "°K";
 
-    public static double fahrenheitTemperature = 0.0;
-    public static double celsiusTemperarture = 0.0;
-    public static double kelvinTemperarture = 0.0;
-
     public static void main (String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -28,36 +24,38 @@ public class TemperatureConverter {
         System.out.println("Quelle température souhaitez-vous convertir ?");
         double temperatureUser = scanner.nextDouble();
 
+        double convertedTemperature = 0.0;
+
         switch (choiceUser) {
 
             case 1:
-                TemperatureConverter.fahrenheitTemperature = celsiusToFahrenheitConverter(temperatureUser);
-                System.out.println(temperatureUser + celsius + " fait " + celsiusTemperarture + fahrenheit);
+                convertedTemperature = TemperatureConverter.celsiusToFahrenheitConverter(temperatureUser);
+                System.out.println(temperatureUser + celsius + " fait " + convertedTemperature + fahrenheit);
                 break;
 
             case 2:
-                TemperatureConverter.celsiusTemperarture = fahrenheitToCelsiusConverter(temperatureUser);
-                System.out.println(temperatureUser + fahrenheit + " fait " + fahrenheitTemperature + celsius);
+                convertedTemperature = TemperatureConverter.fahrenheitToCelsiusConverter(temperatureUser);
+                System.out.println(temperatureUser + fahrenheit + " fait " + convertedTemperature + celsius);
                 break;
 
             case 3:
-                TemperatureConverter.kelvinTemperarture = celsiusToKelvin(temperatureUser);
-                System.out.println(temperatureUser + celsius + " fait " +  kelvinTemperarture + kelvin);
+                convertedTemperature = TemperatureConverter.celsiusToKelvin(temperatureUser);
+                System.out.println(temperatureUser + celsius + " fait " +  convertedTemperature + kelvin);
                 break;
 
             case 4:
-                TemperatureConverter.celsiusTemperarture = kelvinToCelsius(temperatureUser);
-                System.out.println(temperatureUser + kelvin + " fait " + celsiusTemperarture + celsius);
+                convertedTemperature = TemperatureConverter.kelvinToCelsius(temperatureUser);
+                System.out.println(temperatureUser + kelvin + " fait " + convertedTemperature + celsius);
                 break;
 
             case 5:
-                TemperatureConverter.kelvinTemperarture = fahrenheitToKelvin(temperatureUser);
-                System.out.println(temperatureUser + fahrenheit + " fait " + kelvinTemperarture + kelvin);
+                convertedTemperature = TemperatureConverter.fahrenheitToKelvin(temperatureUser);
+                System.out.println(temperatureUser + fahrenheit + " fait " + convertedTemperature + kelvin);
                 break;
 
             case 6:
-                TemperatureConverter.fahrenheitTemperature = kelvinToFahrenheit(temperatureUser);
-                System.out.println(temperatureUser + kelvin + " fait " + fahrenheitTemperature + fahrenheit);
+                convertedTemperature = TemperatureConverter.kelvinToFahrenheit(temperatureUser);
+                System.out.println(temperatureUser + kelvin + " fait " + convertedTemperature + fahrenheit);
                 break;
         }
 

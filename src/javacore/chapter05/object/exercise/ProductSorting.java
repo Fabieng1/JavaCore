@@ -1,5 +1,7 @@
 package javacore.chapter05.object.exercise;
 
+import java.util.Scanner;
+
 public class ProductSorting {
 
     public String name;
@@ -22,49 +24,63 @@ public class ProductSorting {
 
         ProductSorting[] productArray = generateFakeProductList();
 
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Quel est le sigle de votre monnaie ?");
+        char sigle = productArray[0].currency = scanner.nextLine().charAt(0);
+
+        System.out.println("Combien vaut 1$ dans votre monnaie ?");
+        double money = scanner.nextDouble();
+
         for (int indexCurrencyConversion = 0; indexCurrencyConversion < productArray.length; indexCurrencyConversion++) {
 
-            if (productArray[indexCurrencyConversion].currency == '€') {
-                double newPriceED = productArray[indexCurrencyConversion].price * 0.95;
 
-                productArray[indexCurrencyConversion].price = newPriceED;
-                productArray[indexCurrencyConversion].currency = '$';
+
+
+
+            switch (sigle) {
+
+                case '€':
+                    double newPriceED = productArray[indexCurrencyConversion].price * money;
+                    productArray[indexCurrencyConversion].price = newPriceED;
+                    productArray[indexCurrencyConversion].currency = '$';
+                    break;
+
+                case '¥':
+                    double newPriceYD = productArray[indexCurrencyConversion].price * money;
+                    productArray[indexCurrencyConversion].price = newPriceYD;
+                    productArray[indexCurrencyConversion].currency = '$';
+                    break;
+
+
             }
 
-            if (productArray[indexCurrencyConversion].currency == '¥') {
+            for (int indexVerif = 0; indexVerif < productArray.length; indexVerif++) {
+                for (int indexProduct = 0; indexProduct < productArray.length - 1; indexProduct++) {
 
-                double newPriceYD = productArray[indexCurrencyConversion].price * 7.27;
+                    if (productArray[indexProduct].price > productArray[indexProduct + 1].price) {
 
-                productArray[indexCurrencyConversion].price = newPriceYD;
-                productArray[indexCurrencyConversion].currency = '$';
-            }
-        }
+                        remainder[indexProduct] = productArray[indexProduct];
+                        remainder2[indexProduct] = productArray[indexProduct + 1];
 
-        for (int indexVerif = 0; indexVerif < productArray.length; indexVerif++) {
-            for (int indexProduct = 0; indexProduct < productArray.length - 1; indexProduct++) {
-
-                if (productArray[indexProduct].price > productArray[indexProduct + 1].price) {
-
-                    remainder[indexProduct] = productArray[indexProduct];
-                    remainder2[indexProduct] = productArray[indexProduct + 1];
-
-                    productArray[indexProduct] = remainder2[indexProduct];
-                    productArray[indexProduct + 1] = remainder[indexProduct];
+                        productArray[indexProduct] = remainder2[indexProduct];
+                        productArray[indexProduct + 1] = remainder[indexProduct];
+                    }
                 }
             }
-        }
 
-        for (int indexDisplay = 0; indexDisplay < productArray.length; indexDisplay++) {
+            for (int indexDisplay = 0; indexDisplay < productArray.length; indexDisplay++) {
 
-            productArray[indexDisplay].displayProduct();
+                productArray[indexDisplay].displayProduct();
+            }
         }
     }
 
-    public void displayProduct() {
+    public void displayProduct () {
         System.out.println("Product Name : " + this.name + " | Category : " + this.category + " | Price : " + this.price + this.currency);
     }
 
-    public static ProductSorting[] generateFakeProductList() {
+    public static ProductSorting[] generateFakeProductList () {
 
         ProductSorting[] productArray = new ProductSorting[10];
 
