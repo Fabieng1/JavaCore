@@ -31,6 +31,6 @@ public class PrimeNumberSearcherV4 {
         }
 
         System.out.println(multiplicator);
-
     }
 }
+
