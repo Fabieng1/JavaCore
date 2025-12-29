@@ -4,7 +4,7 @@ public class PrimeNumberSearcherV3 {
 
     public static void main(String[] args) {
 
-        int endNumber = 5000;
+        int endNumber = 10000;
 
         for (int potentialPrimeNumber = 2; potentialPrimeNumber < endNumber; potentialPrimeNumber++) {
 

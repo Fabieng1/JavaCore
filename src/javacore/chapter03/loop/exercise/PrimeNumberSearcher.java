@@ -4,7 +4,7 @@ public class PrimeNumberSearcher {
 
     public static void main(String[] args) {
 
-        int number = 249;
+        int number = 10000;
         int nbPrimeNumber = 0;
         int positionPrimeNumber = 1;
 
