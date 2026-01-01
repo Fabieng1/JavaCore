@@ -24,7 +24,7 @@ public class PrimeNumberSearcherV4 {
 
                 multiplicateur = potentialFirst * multiplicatorNumber;
 
-                for (int y = multiplicator.size(); y > 1; y--) {
+                for (int y = 0; y < multiplicator.size(); y++) {
 
                     if (multiplicateur == multiplicator.get(y)) {
 
