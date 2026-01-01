@@ -5,23 +5,27 @@ import java.util.List;
 
 public class PrimeNumberSearcherV4 {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         int endNumber = 10000;
-        /*Création et insertion dans un tableau de la plage dans laquelle je souhaite chercher et trouver les différents
-         * nombre premiers afin de trouver les différents multiplicateurs*/
+        int multiplicateur = 0;
+
         List<Integer> multiplicator = new ArrayList<>();
 
+        //Insertion des nombres de la plage demandé dans un tableau
         for (int i = 2; i <= endNumber; i++) {
 
             multiplicator.add(i);
         }
-        for (int potentialFirst = 2; potentialFirst <= endNumber; potentialFirst++) {
-            for (int multiplicatorNumber = 2; multiplicatorNumber <= endNumber; multiplicatorNumber++) {
 
-                int multiplicateur = potentialFirst * multiplicatorNumber;
+        for (int potentialFirst = 2; potentialFirst < multiplicator.size(); potentialFirst++) {
+            //Parcours du tableau à partir de la fin afin
+            for (int multiplicatorNumber = 2; multiplicatorNumber < multiplicator.size(); multiplicatorNumber++) {
 
-                for (int y = 0; y < multiplicator.size(); y++) {
+                multiplicateur = potentialFirst * multiplicatorNumber;
+
+                for (int y = multiplicator.size(); y > 1; y--) {
+
                     if (multiplicateur == multiplicator.get(y)) {
 
                         multiplicator.remove(y);
@@ -29,8 +33,6 @@ public class PrimeNumberSearcherV4 {
                 }
             }
         }
-
         System.out.println(multiplicator);
     }
 }
-
