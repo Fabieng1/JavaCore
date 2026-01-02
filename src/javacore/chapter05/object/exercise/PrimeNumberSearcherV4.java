@@ -19,17 +19,20 @@ public class PrimeNumberSearcherV4 {
         }
 
         for (int potentialFirst = 2; potentialFirst < multiplicator.size(); potentialFirst++) {
-            //Parcours du tableau à partir de la fin afin
+            //Je cherche en dessous les multiplicateur du nombre du dessus
             for (int multiplicatorNumber = 2; multiplicatorNumber < multiplicator.size(); multiplicatorNumber++) {
 
                 multiplicateur = potentialFirst * multiplicatorNumber;
 
-                for (int y = 0; y < multiplicator.size(); y++) {
+                for (int y = 2; y < multiplicator.size(); y++) {
 
                     if (multiplicateur == multiplicator.get(y)) {
 
                         multiplicator.remove(y);
+                        break;
                     }
+
+
                 }
             }
         }
