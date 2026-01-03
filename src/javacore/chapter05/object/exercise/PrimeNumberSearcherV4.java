@@ -24,15 +24,13 @@ public class PrimeNumberSearcherV4 {
 
                 multiplicateur = potentialFirst * multiplicatorNumber;
 
-                for (int y = 2; y < multiplicator.size(); y++) {
+                for (int y = 0; y < multiplicator.size(); y++) {
 
                     if (multiplicateur == multiplicator.get(y)) {
 
                         multiplicator.remove(y);
                         break;
                     }
-
-
                 }
             }
         }
